@@ -1,0 +1,1003 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrint X9000 - Professional UV Flatbed Printer | TechPrint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-black': '#0a0a0a',
+                        'tech-dark': '#1a1a1a',
+                        'tech-gray': '#2a2a2a',
+                        'tech-light': '#f5f5f7',
+                        'tech-accent': '#0071e3',
+                        'tech-accent-dark': '#0062c3'
+                    },
+                    fontFamily: {
+                        'sans': ['"Noto Sans SC"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .section-height {
+            min-height: 100vh;
+        }
+
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 80%, rgba(10, 10, 10, 1) 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f5f5f7;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+
+        /* Scroll Animation Styles */
+        .scroll-feature {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .scroll-feature.from-left {
+            transform: translateX(-100px);
+        }
+
+        .scroll-feature.from-right {
+            transform: translateX(100px);
+        }
+
+        .scroll-feature.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .hero-stat {
+            position: relative;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat:last-child::after {
+            display: none;
+        }
+
+        .feature-image {
+            transition: all 0.5s ease;
+            filter: brightness(0.9);
+        }
+
+        .feature-image:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .btn-primary {
+            background-color: #0071e3;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #0062c3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(245, 245, 247, 0.3);
+            color: #f5f5f7;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(245, 245, 247, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-check {
+            color: #f5f5f7;
+        }
+
+        .feature-highlight {
+            position: relative;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 70%;
+            background: #f5f5f7;
+            border-radius: 2px;
+        }
+
+        .apple-style-gradient {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .apple-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .apple-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .clean-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body></body></html><!-- Header/Navigation --><html><head></head><body><header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-tech-light text-2xl font-bold">
+                    TechPrint
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Home</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Products</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Solutions</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Support</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">About Us</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
+                    Request a Quote
+                </a>
+                <button class="md:hidden text-tech-light text-xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="flex flex-col space-y-4 mt-4 pb-4">
+                <a href="#" class="text-tech-light hover:text-white transition-colors">Home</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">Products</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">Solutions</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">Support</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">About Us</a>
+                <a href="#contact" class="px-4 py-2 btn-primary rounded-full text-center">
+                    Request a Quote
+                </a>
+            </div>
+        </div>
+    </div>
+</header></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+        <img src="/img/20250321211200916_hcsore.png" alt="FR2010" class="w-full h-full object-cover object-center">
+        <div class="absolute inset-0 bg-gradient-to-b from-tech-black/60 via-tech-black/70 to-tech-black"></div>
+    </div>
+
+    <div class="container mx-auto px-4 z-10 py-12">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+                <div class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium mb-6 hero-badge">
+                    New Arrival | Industrial UV Hybrid Printer
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">FR2010</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl text-tech-light/90">
+                    Standard 2.1m wide UV hybrid printer, compatible with Ricoh, Kyocera, and Konica printheads, balancing speed and precision, suitable for various materials and applications
+                </p>
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#specs" class="px-8 py-3 btn-primary rounded-full text-lg">
+                        View Specifications
+                    </a>
+                    <a href="#contact" class="px-8 py-3 btn-secondary rounded-full text-lg">
+                        Request a Quote
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 max-w-2xl">
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">726×2400dpi</div>
+                        <div class="text-sm text-tech-light/70">Maximum Resolution</div>
+                    </div>
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">70㎡/h</div>
+                        <div class="text-sm text-tech-light/70">Max Print Speed (per hour)</div>
+                    </div>
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">35mm</div>
+                        <div class="text-sm text-tech-light/70">Maximum Media Thickness</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 flex justify-center">
+                <img src="/img/20250321211200916_hcsore.png" alt="FR2010" class="max-w-full max-h-[500px] object-contain rounded-lg clean-shadow">
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-tech-light/80 scroll-indicator">
+        <i class="fas fa-chevron-down text-2xl"></i>
+    </div>
+</section></body></html><!-- Introduction Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">Redefining Industrial Printing Standards</h2>
+            <p class="text-lg text-tech-light/80 mb-12 fade-in">
+                The ProPrint X9000 leverages the latest UV printing technology, combining precision engineering and smart control systems to deliver exceptional printing solutions for various industries. Whether it's glass, acrylic, wood, metal, or plastic, it achieves high-precision, high-quality direct printing.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div class="apple-card p-6 fade-in">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-print"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Ultra-High Precision Printing</h3>
+                <p class="text-tech-light/70">
+                    Equipped with industrial-grade print heads, achieving up to 1440dpi ultra-high precision printing for detailed textures and accurate colors.
+                </p>
+            </div>
+
+            <div class="apple-card p-6 fade-in" style="transition-delay: 0.2s;">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Multi-Material Compatibility</h3>
+                <p class="text-tech-light/70">
+                    Compatible with a variety of surfaces including glass, acrylic, wood, metal, and plastic, meeting diverse production needs.
+                </p>
+            </div>
+
+            <div class="apple-card p-6 fade-in" style="transition-delay: 0.4s;">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">High Efficiency Production</h3>
+                <p class="text-tech-light/70">
+                    Innovative dual-track system and intelligent workflow increase production efficiency by 50% compared to traditional equipment, reducing operational costs.
+                </p>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Scroll Feature Section --><html><head></head><body><section id="features" class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Core Technology Highlights</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                Discover the revolutionary technology of the ProPrint X9000 and experience unparalleled printing performance
+            </p>
+        </div>
+
+        <!-- Feature 1 - Left to Right -->
+        <div class="scroll-feature from-left mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">Intelligent Printhead System</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        Equipped with 8 industrial-grade printheads, supporting CMYK+white+varnish+spot color printing, with automatic inkjet height adjustment to ensure perfect printing on materials of varying thicknesses.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Automatic printhead height adjustment for materials 0-150mm thick</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Intelligent nozzle monitoring system for real-time status detection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Automatic cleaning and maintenance system to extend printhead lifespan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/800/600?random=3" alt="Intelligent Printhead System" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2 - Right to Left -->
+        <div class="scroll-feature from-right mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/800/600?random=4" alt="Precision Guide Rail System" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">Precision Guide Rail System</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        Utilizes imported Japanese linear guides and servo motors for high-precision, stable motion control, ensuring accurate positioning and smooth operation during printing.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Positioning accuracy of ±0.01mm for precise image alignment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>High-rigidity steel frame to minimize vibration impact</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Intelligent collision prevention system for safe operation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3 - Left to Right -->
+        <div class="scroll-feature from-left mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">UV LED Curing System</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        Incorporates the latest UV LED curing technology for instant drying, eliminating wait times, significantly improving production efficiency, and reducing energy consumption for a more eco-friendly solution.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Dual-zone independent control for adjustable curing intensity based on different materials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Low-heat design suitable for heat-sensitive materials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>50,000-hour ultra-long lifespan, significantly reducing maintenance costs</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/800/600?random=5" alt="UV LED Curing System" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 4 - Right to Left -->
+        <div class="scroll-feature from-right">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/800/600?random=6" alt="Smart Control System" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">Smart Control System</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        Equipped with a 15.6-inch HD touchscreen and proprietary smart control software, supporting remote operation, automatic layout, and intelligent color management for simpler and more efficient operation.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Cloud connectivity for remote monitoring and fault diagnosis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Smart layout system to optimize material utilization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>Automated workflow with one-click operation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Applications Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Versatile Applications</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                The ProPrint X9000 is suitable for a wide range of industry applications, meeting diverse customer needs and unlocking endless possibilities for your business.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="relative overflow-hidden rounded-2xl group fade-in">
+                <img src="https://picsum.photos/600/400?random=7" alt="Advertising Signage应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">Advertising Signage</h3>
+                    <p class="text-tech-light/90">High-quality indoor and outdoor signs, display boards, directional signs, and more</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.1s;">
+                <img src="https://picsum.photos/600/400?random=8" alt="Home Decor应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">Home Decor</h3>
+                    <p class="text-tech-light/90">Custom wall decorations, glass art, furniture customization, and more</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.2s;">
+                <img src="https://picsum.photos/600/400?random=9" alt="Industrial Customization应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">Industrial Customization</h3>
+                    <p class="text-tech-light/90">Control panels, dashboards, machinery labels, and more</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.3s;">
+                <img src="https://picsum.photos/600/400?random=10" alt="Packaging Printing应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">Packaging Printing</h3>
+                    <p class="text-tech-light/90">Premium product packaging, custom gift boxes, small-batch customization, and more</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.4s;">
+                <img src="https://picsum.photos/600/400?random=11" alt="Art Creation应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">Art Creation</h3>
+                    <p class="text-tech-light/90">Art reproductions, limited edition prints, creative artworks, and more</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.5s;">
+                <img src="https://picsum.photos/600/400?random=12" alt="Electronics应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">Electronics</h3>
+                    <p class="text-tech-light/90">Phone cases, computer accessories, consumer electronics housings, and more</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Parallax Showcase Section --><html><head></head><body><section class="parallax-section">
+    <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/1920/1080?random=13" alt="" class="w-full h-full object-cover" id="parallax-bg">
+        <div class="absolute inset-0 bg-tech-black/50"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
+        <div class="max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">Pushing Performance Limits</h2>
+            <p class="text-xl text-tech-light/90 mb-8">
+                The ProPrint X9000 is more than just a printer; it's a powerful engine for your business growth. With exceptional performance and reliability, it helps you explore new markets and create more business opportunities.
+            </p>
+            <a href="#contact" class="inline-block px-8 py-3 btn-primary rounded-full text-lg">
+                Consult Now
+            </a>
+        </div>
+    </div>
+</section></body></html><!-- Specifications Section --><html><head></head><body><section id="specs" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Technical Specifications</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                Explore the detailed technical parameters of the ProPrint X9000 to meet your professional needs
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6 text-white">Basic Parameters</h3>
+                <table class="w-full specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Printing Area</td>
+                            <td class="py-3 text-right font-medium">1600mm × 1000mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Printing Height</td>
+                            <td class="py-3 text-right font-medium">Max 150mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Printing Resolution</td>
+                            <td class="py-3 text-right font-medium">Up to 1440 × 1440 dpi</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Printing Speed</td>
+                            <td class="py-3 text-right font-medium">Draft Mode: 60㎡/h<br>Standard Mode: 30㎡/h<br>High Quality Mode: 15㎡/h</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Print Head Configuration</td>
+                            <td class="py-3 text-right font-medium">8 Industrial Piezo Print Heads</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Ink Type</td>
+                            <td class="py-3 text-right font-medium">UV LED Curable Ink</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Ink Colors</td>
+                            <td class="py-3 text-right font-medium">CMYK + White + Varnish + 2 Spot Colors</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
+                <h3 class="text-2xl font-bold mb-6 text-white">System &amp; Interfaces</h3>
+                <table class="w-full specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Control System</td>
+                            <td class="py-3 text-right font-medium">15.6-inch HD Touch Screen</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Supported Formats</td>
+                            <td class="py-3 text-right font-medium">PDF, TIFF, JPG, PNG, AI, PSD</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Connection Interfaces</td>
+                            <td class="py-3 text-right font-medium">USB 3.0, Ethernet, Wi-Fi</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">RIP Software</td>
+                            <td class="py-3 text-right font-medium">Professional RIP Software with Color Management</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Power Requirements</td>
+                            <td class="py-3 text-right font-medium">AC 220V±10%, 50/60Hz</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Power Consumption</td>
+                            <td class="py-3 text-right font-medium">Operating: 3.5kW<br>Standby: 0.5kW</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Device Dimensions</td>
+                            <td class="py-3 text-right font-medium">2800mm × 1800mm × 1200mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">Device Weight</td>
+                            <td class="py-3 text-right font-medium">Approx. 850kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="#" class="inline-block px-6 py-3 btn-secondary rounded-full fade-in">
+                <i class="fas fa-download mr-2"></i> Download Full Specifications
+            </a>
+        </div>
+    </div>
+</section></body></html><!-- Testimonials Section --><html><head></head><body><section class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Customer Testimonials</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                Hear what our customers have to say about the exceptional performance of the ProPrint X9000
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="apple-card p-8 fade-in">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "The ProPrint X9000 has revolutionized our production process, with print quality exceeding expectations and productivity increasing by nearly 60%. Customer satisfaction with the finished products has significantly improved."
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=14" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">Manager Zhang</h4>
+                        <p class="text-sm text-tech-light/70">An advertising production company in Guangzhou</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "As a custom home furnishings company, we require high-quality printing on various materials. The ProPrint X9000's multi-material compatibility and color accuracy allow us to meet all our customers' diverse needs."
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=15" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">Director Li</h4>
+                        <p class="text-sm text-tech-light/70">A custom home furnishings brand in Shanghai</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.4s;">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "The intelligent control system is very intuitive and easy to use, allowing even novice operators to get up to speed quickly. The equipment's stability is outstanding, with almost no malfunctions over the past year, significantly reducing downtime."
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=16" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">Engineer Wang</h4>
+                        <p class="text-sm text-tech-light/70">An electronics manufacturer in Shenzhen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Contact Section --><html><head></head><body><section id="contact" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Contact Us</h2>
+                <p class="text-lg text-tech-light/80 mb-8 fade-in">
+                    Whether you want to learn more about our products or need a customized solution, our expert team is here to support you.
+                </p>
+
+                <div class="space-y-6 fade-in">
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Company Address</h4>
+                            <p class="text-tech-light/70">No. 88 Keyuan Road, Zhangjiang Hi-Tech Park, Pudong New Area, Shanghai</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Phone</h4>
+                            <p class="text-tech-light/70">400-888-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Email</h4>
+                            <p class="text-tech-light/70">info@techprint.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 fade-in">
+                    <h4 class="font-medium mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">Request a Quote</h3>
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium">Company Name</label>
+                            <input type="text" id="company" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interest" class="block mb-2 text-sm font-medium">Product of Interest</label>
+                        <select id="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                            <option value="">Select...</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
+                            <option value="custom">Custom Solutions</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 btn-primary rounded-full">
+                        Submit Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Footer --><html><head></head><body><footer class="bg-tech-dark py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="#" class="text-tech-light text-2xl font-bold mb-6 inline-block">
+                    TechPrint
+                </a>
+                <p class="text-tech-light/70 mb-6">
+                    Specializing in industrial-grade UV printing solutions, providing high-quality, high-efficiency printing equipment and comprehensive technical support.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Product Series</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X9000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X7000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X5000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint R Series Roll-to-Roll Printer</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Accessories &amp; Consumables</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Solutions</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Signage Industry</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Home Decor Industry</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Industrial Customization</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Packaging Printing</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Electronics Industry</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Support &amp; Services</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Technical Support</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">After-Sales Service</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Training Courses</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">FAQs</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Download Center</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-tech-gray/30 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-tech-light/50 text-sm mb-4 md:mb-0">
+                © 2023 TechPrint Technologies Co., Ltd. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Terms of Use</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Site Map</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fade-in animation for elements
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll Feature Animations
+        const scrollFeatures = document.querySelectorAll('.scroll-feature');
+
+        scrollFeatures.forEach((feature) => {
+            ScrollTrigger.create({
+                trigger: feature,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleClass: { targets: feature, className: "visible" },
+                once: true
+            });
+        });
+
+        // Parallax effect for background image
+        window.addEventListener('scroll', function () {
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                const scrollPosition = window.pageYOffset;
+                const parallaxSection = document.querySelector('.parallax-section');
+                const sectionTop = parallaxSection.offsetTop;
+                const sectionHeight = parallaxSection.offsetHeight;
+
+                if (scrollPosition > sectionTop - window.innerHeight &&
+                    scrollPosition < sectionTop + sectionHeight) {
+                    const yPos = (scrollPosition - sectionTop) * 0.3;
+                    parallaxBg.style.transform = `translateY(${yPos}px)`;
+                }
+            }
+        });
+    });
+</script>
+
+
+</body></html>

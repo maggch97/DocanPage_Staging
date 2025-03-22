@@ -1,0 +1,1003 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrint X9000 - 专业UV平板打印机 | TechPrint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-black': '#0a0a0a',
+                        'tech-dark': '#1a1a1a',
+                        'tech-gray': '#2a2a2a',
+                        'tech-light': '#f5f5f7',
+                        'tech-accent': '#0071e3',
+                        'tech-accent-dark': '#0062c3'
+                    },
+                    fontFamily: {
+                        'sans': ['"Noto Sans SC"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .section-height {
+            min-height: 100vh;
+        }
+
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 80%, rgba(10, 10, 10, 1) 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f5f5f7;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+
+        /* Scroll Animation Styles */
+        .scroll-feature {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .scroll-feature.from-left {
+            transform: translateX(-100px);
+        }
+
+        .scroll-feature.from-right {
+            transform: translateX(100px);
+        }
+
+        .scroll-feature.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .hero-stat {
+            position: relative;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat:last-child::after {
+            display: none;
+        }
+
+        .feature-image {
+            transition: all 0.5s ease;
+            filter: brightness(0.9);
+        }
+
+        .feature-image:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .btn-primary {
+            background-color: #0071e3;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #0062c3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(245, 245, 247, 0.3);
+            color: #f5f5f7;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(245, 245, 247, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-check {
+            color: #f5f5f7;
+        }
+
+        .feature-highlight {
+            position: relative;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 70%;
+            background: #f5f5f7;
+            border-radius: 2px;
+        }
+
+        .apple-style-gradient {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .apple-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .apple-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .clean-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body></body></html><!-- Header/Navigation --><html><head></head><body><header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-tech-light text-2xl font-bold">
+                    TechPrint
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">首页</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">产品</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">解决方案</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">服务支持</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">关于我们</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
+                    咨询报价
+                </a>
+                <button class="md:hidden text-tech-light text-xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="flex flex-col space-y-4 mt-4 pb-4">
+                <a href="#" class="text-tech-light hover:text-white transition-colors">首页</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">产品</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">解决方案</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">服务支持</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">关于我们</a>
+                <a href="#contact" class="px-4 py-2 btn-primary rounded-full text-center">
+                    咨询报价
+                </a>
+            </div>
+        </div>
+    </div>
+</header></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+        <img src="/img/20250321211200916_hcsore.png" alt="FR2010" class="w-full h-full object-cover object-center">
+        <div class="absolute inset-0 bg-gradient-to-b from-tech-black/60 via-tech-black/70 to-tech-black"></div>
+    </div>
+
+    <div class="container mx-auto px-4 z-10 py-12">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+                <div class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium mb-6 hero-badge">
+                    全新上市 | 工业级UV卷板一体打印机
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">FR2010</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl text-tech-light/90">
+                    标准2.1米宽幅UV卷板一体打印机，支持Ricoh、京瓷、柯尼卡多型号喷头，兼顾速度与精度，适配多种材质与场景
+                </p>
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#specs" class="px-8 py-3 btn-primary rounded-full text-lg">
+                        查看规格
+                    </a>
+                    <a href="#contact" class="px-8 py-3 btn-secondary rounded-full text-lg">
+                        咨询报价
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 max-w-2xl">
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">726×2400dpi</div>
+                        <div class="text-sm text-tech-light/70">最高分辨率</div>
+                    </div>
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">70㎡/h</div>
+                        <div class="text-sm text-tech-light/70">最高打印速度 (每小时)</div>
+                    </div>
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">35mm</div>
+                        <div class="text-sm text-tech-light/70">支持最大介质厚度</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 flex justify-center">
+                <img src="/img/20250321211200916_hcsore.png" alt="FR2010" class="max-w-full max-h-[500px] object-contain rounded-lg clean-shadow">
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-tech-light/80 scroll-indicator">
+        <i class="fas fa-chevron-down text-2xl"></i>
+    </div>
+</section></body></html><!-- Introduction Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">重新定义工业打印标准</h2>
+            <p class="text-lg text-tech-light/80 mb-12 fade-in">
+                ProPrint X9000 采用最新的UV打印技术，结合精密工程和智能控制系统，为各行业提供卓越的打印解决方案。无论是玻璃、亚克力、木材、金属还是塑料，都能实现高精度、高品质的直接打印。
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div class="apple-card p-6 fade-in">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-print"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">超高精度打印</h3>
+                <p class="text-tech-light/70">
+                    配备工业级喷头，最高可实现1440dpi的超高精度打印，呈现细腻纹理和精准色彩。
+                </p>
+            </div>
+
+            <div class="apple-card p-6 fade-in" style="transition-delay: 0.2s;">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">多材质兼容</h3>
+                <p class="text-tech-light/70">
+                    适用于多种材质表面，包括玻璃、亚克力、木材、金属、塑料等，满足多样化生产需求。
+                </p>
+            </div>
+
+            <div class="apple-card p-6 fade-in" style="transition-delay: 0.4s;">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">高效生产</h3>
+                <p class="text-tech-light/70">
+                    创新的双轨道系统和智能工作流程，比传统设备提升50%的生产效率，降低运营成本。
+                </p>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Scroll Feature Section --><html><head></head><body><section id="features" class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">核心技术亮点</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                探索ProPrint X9000的革命性技术，体验前所未有的打印体验
+            </p>
+        </div>
+
+        <!-- Feature 1 - Left to Right -->
+        <div class="scroll-feature from-left mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">智能喷头系统</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        配备8个工业级喷头，支持CMYK+白色+光油+专色打印，自动调节喷墨高度，确保在不同厚度材料上都能实现完美打印效果。
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>自动喷头高度调节，适应0-150mm厚度材料</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>智能喷嘴监测系统，实时检测喷嘴状态</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>自动清洗维护系统，延长喷头使用寿命</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/800/600?random=3" alt="智能喷头系统" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2 - Right to Left -->
+        <div class="scroll-feature from-right mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/800/600?random=4" alt="精密导轨系统" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">精密导轨系统</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        采用日本进口线性导轨和伺服电机，实现高精度、高稳定性的运动控制，确保打印过程中的精确定位和平稳运行。
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>定位精度达±0.01mm，确保图像精准对位</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>高刚性钢结构框架，减少振动影响</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>智能防撞系统，保障设备安全运行</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3 - Left to Right -->
+        <div class="scroll-feature from-left mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">UV LED固化系统</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        采用最新一代UV LED固化技术，实现即打即干，无需等待，大幅提高生产效率，同时降低能耗，更加环保。
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>双区域独立控制，可根据不同材质调整固化强度</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>低热量设计，适用于热敏感材料打印</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>50,000小时超长使用寿命，大幅降低维护成本</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/800/600?random=5" alt="UV LED固化系统" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 4 - Right to Left -->
+        <div class="scroll-feature from-right">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/800/600?random=6" alt="智能控制系统" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">智能控制系统</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        配备15.6英寸高清触控屏和自主研发的智能控制软件，支持远程操控、自动排版、智能色彩管理等功能，让操作更简单高效。
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>云端连接，支持远程监控和故障诊断</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>智能排版系统，优化材料利用率</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>自动化工作流程，一键式操作</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Applications Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">广泛的应用领域</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                ProPrint X9000 适用于多种行业应用场景，满足不同客户的个性化需求，为您的业务创造无限可能。
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="relative overflow-hidden rounded-2xl group fade-in">
+                <img src="https://picsum.photos/600/400?random=7" alt="广告标牌应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">广告标牌</h3>
+                    <p class="text-tech-light/90">高品质户内外广告牌、展示牌、导向标识等</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.1s;">
+                <img src="https://picsum.photos/600/400?random=8" alt="家居装饰应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">家居装饰</h3>
+                    <p class="text-tech-light/90">个性化墙面装饰、玻璃艺术、家具定制等</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.2s;">
+                <img src="https://picsum.photos/600/400?random=9" alt="工业定制应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">工业定制</h3>
+                    <p class="text-tech-light/90">控制面板、仪表盘、机械设备标识等</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.3s;">
+                <img src="https://picsum.photos/600/400?random=10" alt="包装印刷应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">包装印刷</h3>
+                    <p class="text-tech-light/90">高端产品包装、个性化礼盒、小批量定制等</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.4s;">
+                <img src="https://picsum.photos/600/400?random=11" alt="艺术创作应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">艺术创作</h3>
+                    <p class="text-tech-light/90">艺术复制品、限量版画、创意艺术品等</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.5s;">
+                <img src="https://picsum.photos/600/400?random=12" alt="电子产品应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">电子产品</h3>
+                    <p class="text-tech-light/90">手机壳、电脑配件、消费电子产品外壳等</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Parallax Showcase Section --><html><head></head><body><section class="parallax-section">
+    <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/1920/1080?random=13" alt="" class="w-full h-full object-cover" id="parallax-bg">
+        <div class="absolute inset-0 bg-tech-black/50"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
+        <div class="max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">突破性能极限</h2>
+            <p class="text-xl text-tech-light/90 mb-8">
+                ProPrint X9000 不仅仅是一台打印机，更是您业务增长的强大引擎。凭借卓越的性能和可靠性，帮助您开拓新市场，创造更多商机。
+            </p>
+            <a href="#contact" class="inline-block px-8 py-3 btn-primary rounded-full text-lg">
+                立即咨询
+            </a>
+        </div>
+    </div>
+</section></body></html><!-- Specifications Section --><html><head></head><body><section id="specs" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">技术规格</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                了解ProPrint X9000的详细技术参数，满足您的专业需求
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6 text-white">基本参数</h3>
+                <table class="w-full specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">打印幅面</td>
+                            <td class="py-3 text-right font-medium">1600mm × 1000mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">打印高度</td>
+                            <td class="py-3 text-right font-medium">最大150mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">打印分辨率</td>
+                            <td class="py-3 text-right font-medium">最高1440 × 1440 dpi</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">打印速度</td>
+                            <td class="py-3 text-right font-medium">草稿模式: 60㎡/h<br>标准模式: 30㎡/h<br>高质量模式: 15㎡/h</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">喷头配置</td>
+                            <td class="py-3 text-right font-medium">8个工业级压电喷头</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">墨水类型</td>
+                            <td class="py-3 text-right font-medium">UV LED固化墨水</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">墨水颜色</td>
+                            <td class="py-3 text-right font-medium">CMYK + 白色 + 光油 + 2专色</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
+                <h3 class="text-2xl font-bold mb-6 text-white">系统与接口</h3>
+                <table class="w-full specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">控制系统</td>
+                            <td class="py-3 text-right font-medium">15.6英寸高清触控屏</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">支持格式</td>
+                            <td class="py-3 text-right font-medium">PDF, TIFF, JPG, PNG, AI, PSD</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">连接接口</td>
+                            <td class="py-3 text-right font-medium">USB 3.0, 以太网, Wi-Fi</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">RIP软件</td>
+                            <td class="py-3 text-right font-medium">专业版RIP软件，支持色彩管理</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">电源要求</td>
+                            <td class="py-3 text-right font-medium">AC 220V±10%, 50/60Hz</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">功耗</td>
+                            <td class="py-3 text-right font-medium">工作时: 3.5kW<br>待机时: 0.5kW</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">设备尺寸</td>
+                            <td class="py-3 text-right font-medium">2800mm × 1800mm × 1200mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">设备重量</td>
+                            <td class="py-3 text-right font-medium">约850kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="#" class="inline-block px-6 py-3 btn-secondary rounded-full fade-in">
+                <i class="fas fa-download mr-2"></i> 下载完整规格说明书
+            </a>
+        </div>
+    </div>
+</section></body></html><!-- Testimonials Section --><html><head></head><body><section class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">客户评价</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                听听我们的客户如何评价ProPrint X9000的卓越性能
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="apple-card p-8 fade-in">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "ProPrint X9000彻底改变了我们的生产流程，打印质量超出预期，生产效率提高了近60%。客户对成品的满意度大幅提升。"
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=14" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">张经理</h4>
+                        <p class="text-sm text-tech-light/70">广州某广告制作公司</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "作为一家定制家居企业，我们需要在各种材质上进行高质量打印。ProPrint X9000的多材质兼容性和色彩还原度让我们能够满足客户的各种需求。"
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=15" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">李总监</h4>
+                        <p class="text-sm text-tech-light/70">上海某定制家居品牌</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.4s;">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "智能控制系统非常直观易用，即使是新手操作员也能快速上手。设备稳定性出色，一年来几乎没有出现过故障，大大减少了停机时间。"
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=16" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">王工程师</h4>
+                        <p class="text-sm text-tech-light/70">深圳某电子产品制造商</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Contact Section --><html><head></head><body><section id="contact" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">联系我们</h2>
+                <p class="text-lg text-tech-light/80 mb-8 fade-in">
+                    无论您是想了解更多产品信息，还是需要定制解决方案，我们的专业团队随时为您提供支持。
+                </p>
+
+                <div class="space-y-6 fade-in">
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">公司地址</h4>
+                            <p class="text-tech-light/70">上海市浦东新区张江高科技园区科苑路88号</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">联系电话</h4>
+                            <p class="text-tech-light/70">400-888-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">电子邮箱</h4>
+                            <p class="text-tech-light/70">info@techprint.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 fade-in">
+                    <h4 class="font-medium mb-4">关注我们</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">咨询报价</h3>
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">姓名</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium">公司名称</label>
+                            <input type="text" id="company" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">电子邮箱</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium">联系电话</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interest" class="block mb-2 text-sm font-medium">感兴趣的产品</label>
+                        <select id="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                            <option value="">请选择...</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
+                            <option value="custom">定制解决方案</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium">留言</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 btn-primary rounded-full">
+                        提交咨询
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Footer --><html><head></head><body><footer class="bg-tech-dark py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="#" class="text-tech-light text-2xl font-bold mb-6 inline-block">
+                    TechPrint
+                </a>
+                <p class="text-tech-light/70 mb-6">
+                    专注于工业级UV打印解决方案，为客户提供高品质、高效率的打印设备和全方位的技术支持。
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">产品系列</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X9000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X7000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X5000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint R系列卷材打印机</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">配件与耗材</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">解决方案</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">广告标识行业</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">家居装饰行业</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">工业定制行业</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">包装印刷行业</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">电子产品行业</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">服务支持</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">技术支持</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">售后服务</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">培训课程</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">常见问题</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">下载中心</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-tech-gray/30 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-tech-light/50 text-sm mb-4 md:mb-0">
+                © 2023 TechPrint 科技有限公司. 保留所有权利.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">隐私政策</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">使用条款</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">网站地图</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fade-in animation for elements
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll Feature Animations
+        const scrollFeatures = document.querySelectorAll('.scroll-feature');
+
+        scrollFeatures.forEach((feature) => {
+            ScrollTrigger.create({
+                trigger: feature,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleClass: { targets: feature, className: "visible" },
+                once: true
+            });
+        });
+
+        // Parallax effect for background image
+        window.addEventListener('scroll', function () {
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                const scrollPosition = window.pageYOffset;
+                const parallaxSection = document.querySelector('.parallax-section');
+                const sectionTop = parallaxSection.offsetTop;
+                const sectionHeight = parallaxSection.offsetHeight;
+
+                if (scrollPosition > sectionTop - window.innerHeight &&
+                    scrollPosition < sectionTop + sectionHeight) {
+                    const yPos = (scrollPosition - sectionTop) * 0.3;
+                    parallaxBg.style.transform = `translateY(${yPos}px)`;
+                }
+            }
+        });
+    });
+</script>
+
+
+</body></html>

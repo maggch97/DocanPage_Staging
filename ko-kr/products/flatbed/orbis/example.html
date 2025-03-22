@@ -1,0 +1,1003 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrint X9000 - 전문 UV 평판 프린터 | TechPrint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-black': '#0a0a0a',
+                        'tech-dark': '#1a1a1a',
+                        'tech-gray': '#2a2a2a',
+                        'tech-light': '#f5f5f7',
+                        'tech-accent': '#0071e3',
+                        'tech-accent-dark': '#0062c3'
+                    },
+                    fontFamily: {
+                        'sans': ['"Noto Sans SC"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .section-height {
+            min-height: 100vh;
+        }
+
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 80%, rgba(10, 10, 10, 1) 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f5f5f7;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+
+        /* Scroll Animation Styles */
+        .scroll-feature {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .scroll-feature.from-left {
+            transform: translateX(-100px);
+        }
+
+        .scroll-feature.from-right {
+            transform: translateX(100px);
+        }
+
+        .scroll-feature.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .hero-stat {
+            position: relative;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat:last-child::after {
+            display: none;
+        }
+
+        .feature-image {
+            transition: all 0.5s ease;
+            filter: brightness(0.9);
+        }
+
+        .feature-image:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .btn-primary {
+            background-color: #0071e3;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #0062c3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(245, 245, 247, 0.3);
+            color: #f5f5f7;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(245, 245, 247, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-check {
+            color: #f5f5f7;
+        }
+
+        .feature-highlight {
+            position: relative;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 70%;
+            background: #f5f5f7;
+            border-radius: 2px;
+        }
+
+        .apple-style-gradient {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .apple-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .apple-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .clean-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body></body></html><!-- Header/Navigation --><html><head></head><body><header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-tech-light text-2xl font-bold">
+                    TechPrint
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">홈</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">제품</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">솔루션</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">서비스 지원</a>
+                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">회사 소개</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
+                    견적 문의
+                </a>
+                <button class="md:hidden text-tech-light text-xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="flex flex-col space-y-4 mt-4 pb-4">
+                <a href="#" class="text-tech-light hover:text-white transition-colors">홈</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">제품</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">솔루션</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">서비스 지원</a>
+                <a href="#" class="text-tech-light hover:text-white transition-colors">회사 소개</a>
+                <a href="#contact" class="px-4 py-2 btn-primary rounded-full text-center">
+                    견적 문의
+                </a>
+            </div>
+        </div>
+    </div>
+</header></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+        <img src="/img/20250321211200916_hcsore.png" alt="FR2010" class="w-full h-full object-cover object-center">
+        <div class="absolute inset-0 bg-gradient-to-b from-tech-black/60 via-tech-black/70 to-tech-black"></div>
+    </div>
+
+    <div class="container mx-auto px-4 z-10 py-12">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+                <div class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium mb-6 hero-badge">
+                    신제품 출시 | 산업용 UV 롤-플랫 일체형 프린터
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">FR2010</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl text-tech-light/90">
+                    표준 2.1미터 폭 UV 롤-플랫 일체형 프린터, Ricoh, Kyocera, Konica 등 다양한 노즐 지원, 속도와 정밀도를 겸비한 다양한 소재와 시나리오에 적합
+                </p>
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#specs" class="px-8 py-3 btn-primary rounded-full text-lg">
+                        사양 보기
+                    </a>
+                    <a href="#contact" class="px-8 py-3 btn-secondary rounded-full text-lg">
+                        견적 문의
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 max-w-2xl">
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">726×2400dpi</div>
+                        <div class="text-sm text-tech-light/70">최고 해상도</div>
+                    </div>
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">70㎡/h</div>
+                        <div class="text-sm text-tech-light/70">최대 인쇄 속도 (시간당)</div>
+                    </div>
+                    <div class="hero-stat text-center px-2">
+                        <div class="text-3xl font-bold text-white mb-1">35mm</div>
+                        <div class="text-sm text-tech-light/70">지원 최대 매체 두께</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 flex justify-center">
+                <img src="/img/20250321211200916_hcsore.png" alt="FR2010" class="max-w-full max-h-[500px] object-contain rounded-lg clean-shadow">
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-tech-light/80 scroll-indicator">
+        <i class="fas fa-chevron-down text-2xl"></i>
+    </div>
+</section></body></html><!-- Introduction Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">산업 인쇄 표준 재정의</h2>
+            <p class="text-lg text-tech-light/80 mb-12 fade-in">
+                ProPrint X9000은 최신 UV 프린팅 기술을 도입하여 정밀 공학과 스마트 제어 시스템을 결합하여 다양한 산업에 우수한 프린팅 솔루션을 제공합니다. 유리, 아크릴, 목재, 금속, 플라스틱 등 모든 소재에 고정밀도, 고품질의 직접 인쇄가 가능합니다.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div class="apple-card p-6 fade-in">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-print"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">초고정밀도 인쇄</h3>
+                <p class="text-tech-light/70">
+                    산업용 헤드를 장착하여 최대 1440dpi의 초고정밀도 인쇄를 실현하여 섬세한 질감과 정확한 색상을 구현합니다.
+                </p>
+            </div>
+
+            <div class="apple-card p-6 fade-in" style="transition-delay: 0.2s;">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">다양한 소재 호환</h3>
+                <p class="text-tech-light/70">
+                    유리, 아크릴, 목재, 금속, 플라스틱 등 다양한 소재 표면에 적용 가능하며, 다양한 생산 요구를 충족시킵니다.
+                </p>
+            </div>
+
+            <div class="apple-card p-6 fade-in" style="transition-delay: 0.4s;">
+                <div class="text-white text-4xl mb-4">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">고효율 생산</h3>
+                <p class="text-tech-light/70">
+                    혁신적인 듀얼 트랙 시스템과 스마트 워크플로우로 기존 장비 대비 50% 생산 효율을 높이고 운영 비용을 절감합니다.
+                </p>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Scroll Feature Section --><html><head></head><body><section id="features" class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">핵심 기술 하이라이트</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                ProPrint X9000의 혁신적인 기술을 탐구하고, 이전에 경험하지 못한 인쇄 경험을 만나보세요.
+            </p>
+        </div>
+
+        <!-- Feature 1 - Left to Right -->
+        <div class="scroll-feature from-left mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">스마트 헤드 시스템</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        8개의 산업용 헤드를 장착하여 CMYK+흰색+광택+전용색 인쇄를 지원하며, 자동으로 잉크 높이를 조절하여 다양한 두께의 재료에서도 완벽한 인쇄 효과를 구현합니다.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>자동 헤드 높이 조절, 0-150mm 두께 재료 적응</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>스마트 노즐 모니터링 시스템, 실시간 노즐 상태 감지</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>자동 세척 유지보수 시스템, 헤드 수명 연장</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/800/600?random=3" alt="스마트 헤드 시스템" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2 - Right to Left -->
+        <div class="scroll-feature from-right mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/800/600?random=4" alt="정밀 가이드 시스템" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">정밀 가이드 시스템</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        일본산 선형 가이드와 서보 모터를 사용하여 고정밀, 고안정성의 운동 제어를 실현하며, 인쇄 과정에서의 정확한 위치 지정과 원활한 작동을 보장합니다.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>위치 정확도 ±0.01mm, 이미지 정확한 위치 지정</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>고강성 강철 구조 프레임, 진동 영향 감소</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>스마트 충돌 방지 시스템, 장비 안전 작동 보장</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3 - Left to Right -->
+        <div class="scroll-feature from-left mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">UV LED 경화 시스템</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        최신 UV LED 경화 기술을 적용하여 즉시 건조가 가능하며, 대기 시간 없이 생산성을 크게 향상시키고, 에너지 소비를 줄여 더욱 친환경적입니다.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>이중 영역 독립 제어, 다양한 소재에 따라 경화 강도 조절 가능</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>저열 설계, 열에 민감한 소재에 적합</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>50,000시간의 긴 수명, 유지보수 비용 대폭 절감</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/800/600?random=5" alt="UV LED 경화 시스템" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 4 - Right to Left -->
+        <div class="scroll-feature from-right">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/800/600?random=6" alt="스마트 제어 시스템" class="feature-image w-full rounded-2xl clean-shadow">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">스마트 제어 시스템</h3>
+                    <p class="text-lg text-tech-light/90 mb-6">
+                        15.6인치 HD 터치스크린과 자체 개발한 스마트 제어 소프트웨어로 원격 제어, 자동 레이아웃, 스마트 색상 관리 등의 기능을 지원하여 작업을 더 간편하고 효율적으로 만듭니다.
+                    </p>
+                    <ul class="space-y-3 text-tech-light/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>클라우드 연결, 원격 모니터링 및 고장 진단 지원</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>스마트 레이아웃 시스템, 소재 활용률 최적화</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
+                            <span>자동화된 작업流程, 원클릭 조작</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Applications Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">다양한 응용 분야</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                ProPrint X9000은 다양한 산업 응용 시나리오에 적합하며, 고객의 개별 요구를 충족시켜 비즈니스에 무한한 가능성을 창출합니다.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="relative overflow-hidden rounded-2xl group fade-in">
+                <img src="https://picsum.photos/600/400?random=7" alt="광고 간판应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">광고 간판</h3>
+                    <p class="text-tech-light/90">고품질 실내외 광고판, 전시판, 안내 표지 등</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.1s;">
+                <img src="https://picsum.photos/600/400?random=8" alt="홈 데코应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">홈 데코</h3>
+                    <p class="text-tech-light/90">개성 있는 벽면 장식, 유리 아트, 가구 맞춤 제작 등</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.2s;">
+                <img src="https://picsum.photos/600/400?random=9" alt="산업 맞춤 제작应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">산업 맞춤 제작</h3>
+                    <p class="text-tech-light/90">제어 패널, 계기판, 기계 장비 표지 등</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.3s;">
+                <img src="https://picsum.photos/600/400?random=10" alt="포장 인쇄应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">포장 인쇄</h3>
+                    <p class="text-tech-light/90">고급 제품 포장, 개성 있는 선물 상자, 소량 맞춤 제작 등</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.4s;">
+                <img src="https://picsum.photos/600/400?random=11" alt="예술 창작应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">예술 창작</h3>
+                    <p class="text-tech-light/90">예술 복제품, 한정판 판화, 창의적인 예술품 등</p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.5s;">
+                <img src="https://picsum.photos/600/400?random=12" alt="전자 제품应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-xl font-bold mb-2">전자 제품</h3>
+                    <p class="text-tech-light/90">휴대폰 케이스, 컴퓨터 액세서리, 소비자 전자 제품 외관 등</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Parallax Showcase Section --><html><head></head><body><section class="parallax-section">
+    <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/1920/1080?random=13" alt="" class="w-full h-full object-cover" id="parallax-bg">
+        <div class="absolute inset-0 bg-tech-black/50"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
+        <div class="max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">성능의 한계를 넘어</h2>
+            <p class="text-xl text-tech-light/90 mb-8">
+                ProPrint X9000은 단순한 프린터가 아닌, 귀사의 비즈니스 성장을 위한 강력한 엔진입니다. 탁월한 성능과 신뢰성으로 새로운 시장을 개척하고 더 많은 비즈니스 기회를 창출합니다.
+            </p>
+            <a href="#contact" class="inline-block px-8 py-3 btn-primary rounded-full text-lg">
+                지금 문의하기
+            </a>
+        </div>
+    </div>
+</section></body></html><!-- Specifications Section --><html><head></head><body><section id="specs" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">기술 사양</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                ProPrint X9000의 상세 기술 사양을 확인하여 전문적인 요구를 충족하세요
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6 text-white">기본 사양</h3>
+                <table class="w-full specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">프린트 크기</td>
+                            <td class="py-3 text-right font-medium">1600mm × 1000mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">프린트 높이</td>
+                            <td class="py-3 text-right font-medium">최대 150mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">프린트 해상도</td>
+                            <td class="py-3 text-right font-medium">최대 1440 × 1440 dpi</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">프린트 속도</td>
+                            <td class="py-3 text-right font-medium">초고속 모드: 60㎡/h<br>표준 모드: 30㎡/h<br>고품질 모드: 15㎡/h</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">헤드 구성</td>
+                            <td class="py-3 text-right font-medium">8개의 산업용 피에조 헤드</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">잉크 타입</td>
+                            <td class="py-3 text-right font-medium">UV LED 경화 잉크</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">잉크 색상</td>
+                            <td class="py-3 text-right font-medium">CMYK + 화이트 + 바니시 + 2가지 특수색</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
+                <h3 class="text-2xl font-bold mb-6 text-white">시스템 및 인터페이스</h3>
+                <table class="w-full specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">제어 시스템</td>
+                            <td class="py-3 text-right font-medium">15.6인치 HD 터치스크린</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">지원 형식</td>
+                            <td class="py-3 text-right font-medium">PDF, TIFF, JPG, PNG, AI, PSD</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">연결 인터페이스</td>
+                            <td class="py-3 text-right font-medium">USB 3.0, 이더넷, Wi-Fi</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">RIP 소프트웨어</td>
+                            <td class="py-3 text-right font-medium">프로페셔널 RIP 소프트웨어, 색상 관리 지원</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">전원 요구 사항</td>
+                            <td class="py-3 text-right font-medium">AC 220V±10%, 50/60Hz</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">전력 소비</td>
+                            <td class="py-3 text-right font-medium">작동 시: 3.5kW<br>대기 시: 0.5kW</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">기기 크기</td>
+                            <td class="py-3 text-right font-medium">2800mm × 1800mm × 1200mm</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-tech-light/70">기기 무게</td>
+                            <td class="py-3 text-right font-medium">약 850kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="#" class="inline-block px-6 py-3 btn-secondary rounded-full fade-in">
+                <i class="fas fa-download mr-2"></i> 전체 사양서 다운로드
+            </a>
+        </div>
+    </div>
+</section></body></html><!-- Testimonials Section --><html><head></head><body><section class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">고객 평가</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                ProPrint X9000의 뛰어난 성능에 대한 고객들의 평가를 들어보세요
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="apple-card p-8 fade-in">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "ProPrint X9000은 우리의 생산 프로세스를 완전히 바꿔놓았습니다. 인쇄 품질은 기대를 뛰어넘었고, 생산 효율은 거의 60%나 향상되었습니다. 고객들의 완제품에 대한 만족도도 크게 높아졌습니다."
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=14" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">장 매니저</h4>
+                        <p class="text-sm text-tech-light/70">광저우 광고 제작 회사</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "맞춤형 가구 기업으로서, 다양한 소재에 고품질 인쇄가 필요했습니다. ProPrint X9000의 다중 소재 호환성과 색상 재현도는 고객의 다양한 요구를 충족시켜 주었습니다."
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=15" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">이 디렉터</h4>
+                        <p class="text-sm text-tech-light/70">상하이 맞춤형 가구 브랜드</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in" style="transition-delay: 0.4s;">
+                <div class="flex items-center mb-4">
+                    <div class="text-white text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <p class="text-tech-light/90 mb-6 italic">
+                    "스마트 제어 시스템은 매우 직관적이고 사용하기 쉬워, 초보 운영자도 빠르게 익힐 수 있었습니다. 장비의 안정성도 뛰어나, 1년 동안 거의 고장 없이 작동하여 가동 중단 시간을 크게 줄였습니다."
+                </p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/100?random=16" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-medium">왕 엔지니어</h4>
+                        <p class="text-sm text-tech-light/70">심천 전자 제품 제조업체</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Contact Section --><html><head></head><body><section id="contact" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">문의하기</h2>
+                <p class="text-lg text-tech-light/80 mb-8 fade-in">
+                    제품 정보를 더 알아보거나 맞춤형 솔루션이 필요하시면, 저희 전문 팀이 항상 도와드리겠습니다.
+                </p>
+
+                <div class="space-y-6 fade-in">
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">회사 주소</h4>
+                            <p class="text-tech-light/70">상하이시 푸동신구 장장하이테크파크 케위안로 88호</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">전화번호</h4>
+                            <p class="text-tech-light/70">400-888-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">이메일</h4>
+                            <p class="text-tech-light/70">info@techprint.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 fade-in">
+                    <h4 class="font-medium mb-4">소셜 미디어</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">견적 문의</h3>
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">이름</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium">회사명</label>
+                            <input type="text" id="company" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">이메일</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium">전화번호</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interest" class="block mb-2 text-sm font-medium">관심 제품</label>
+                        <select id="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                            <option value="">선택하세요...</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
+                            <option value="custom">맞춤형 솔루션</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium">메시지</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 btn-primary rounded-full">
+                        문의 제출
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Footer --><html><head></head><body><footer class="bg-tech-dark py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="#" class="text-tech-light text-2xl font-bold mb-6 inline-block">
+                    TechPrint
+                </a>
+                <p class="text-tech-light/70 mb-6">
+                    산업용 UV 프린팅 솔루션에 집중하여 고품질, 고효율의 프린팅 장비와 전방위적인 기술 지원을 제공합니다.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">제품 시리즈</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X9000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X7000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X5000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint R 시리즈 롤 프린터</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">부품 및 소모품</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">솔루션</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">광고 및 표지판 산업</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">가구 및 인테리어 산업</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">산업 맞춤 제작 산업</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">포장 및 인쇄 산업</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">전자 제품 산업</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">서비스 지원</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">기술 지원</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">애프터 서비스</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">교육 과정</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">자주 묻는 질문</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">다운로드 센터</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-tech-gray/30 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-tech-light/50 text-sm mb-4 md:mb-0">
+                © 2023 TechPrint 기술 유한회사. 모든 권리 보유.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">개인정보 보호정책</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">이용 약관</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">사이트 맵</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fade-in animation for elements
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll Feature Animations
+        const scrollFeatures = document.querySelectorAll('.scroll-feature');
+
+        scrollFeatures.forEach((feature) => {
+            ScrollTrigger.create({
+                trigger: feature,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleClass: { targets: feature, className: "visible" },
+                once: true
+            });
+        });
+
+        // Parallax effect for background image
+        window.addEventListener('scroll', function () {
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                const scrollPosition = window.pageYOffset;
+                const parallaxSection = document.querySelector('.parallax-section');
+                const sectionTop = parallaxSection.offsetTop;
+                const sectionHeight = parallaxSection.offsetHeight;
+
+                if (scrollPosition > sectionTop - window.innerHeight &&
+                    scrollPosition < sectionTop + sectionHeight) {
+                    const yPos = (scrollPosition - sectionTop) * 0.3;
+                    parallaxBg.style.transform = `translateY(${yPos}px)`;
+                }
+            }
+        });
+    });
+</script>
+
+
+</body></html>
