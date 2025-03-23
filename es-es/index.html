@@ -999,21 +999,25 @@
         }
     ];
 
+    function filterEmptyItems(data) {
+        return data.filter(item => item.name !== "" && item.preview.title !== "");
+    }
+
     // Function to generate mega menu HTML
     function generateMegaMenu(data) {
         let html = '';
-        
+
         // Generate columns for each category
-        data.filter(category => category.name !== "").forEach(category => {
+        filterEmptyItems(data).forEach(category => {
             html += `<div class="mega-menu-column ${category.width || ''}" ${category.columnSpan ? `style="grid-column: span ${category.columnSpan}"` : ''}>`;
             html += `<h3 class="text-lg font-medium text-white">${category.name}</h3>`;
-            
+
             if (category.subcategories) {
                 html += `<div class="grid grid-cols-2 gap-x-6">`;
-                category.subcategories.forEach(subcat => {
+                filterEmptyItems(category.subcategories).forEach(subcat => {
                     html += `<div>`;
                     html += `<h4 class="text-sm font-medium text-tech-accent mt-4">${subcat.name}</h4>`;
-                    subcat.items.forEach(item => {
+                    filterEmptyItems(subcat.items).forEach(item => {
                         html += `<a href="${item.url || '#'}" class="mega-menu-item" data-preview="${item.id}">${item.name}</a>`;
                     });
                     html += `</div>`;
@@ -1025,30 +1029,30 @@
                     const half = Math.ceil(category.items.length / 2);
                     const firstHalf = category.items.slice(0, half);
                     const secondHalf = category.items.slice(half);
-                    
+
                     html += `<div>`;
-                    firstHalf.forEach(item => {
+                    filterEmptyItems(firstHalf).forEach(item => {
                         html += `<a href="${item.url || '#'}" class="mega-menu-item" ${item.id ? `data-preview="${item.id}"` : ''}>${item.name}</a>`;
                     });
                     html += `</div>`;
-                    
+
                     html += `<div>`;
-                    secondHalf.forEach(item => {
+                    filterEmptyItems(secondHalf).forEach(item => {
                         html += `<a href="${item.url || '#'}" class="mega-menu-item" ${item.id ? `data-preview="${item.id}"` : ''}>${item.name}</a>`;
                     });
                     html += `</div>`;
-                    
+
                     html += `</div>`;
                 } else {
                     html += `<div class="space-y-1">`;
-                    category.items.forEach(item => {
+                    filterEmptyItems(category.items).forEach(item => {
                         html += `<a href="${item.url || '#'}" class="mega-menu-item" ${item.id ? `data-preview="${item.id}"` : ''}>${item.name}</a>`;
                     });
                     html += `</div>`;
                 }
             } else if (category.contactInfo) {
                 html += `<div class="mt-4 grid grid-cols-2 gap-6">`;
-                category.contactInfo.forEach(contact => {
+                filterEmptyItems(category.contactInfo).forEach(contact => {
                     html += `
                     <div class="flex items-start">
                         <div class="text-tech-accent text-xl mt-1 mr-4">
@@ -1062,10 +1066,10 @@
                 });
                 html += `</div>`;
             }
-            
+
             html += `</div>`;
         });
-        
+
         return html;
     }
 
@@ -1073,7 +1077,7 @@
     function generateProductPreviews(data) {
         let html = `<div class="mega-menu-image">`;
         let allItems = [];
-        
+
         // Collect all preview items
         data.forEach(category => {
             if (category.subcategories) {
@@ -1084,7 +1088,7 @@
                 allItems = [...allItems, ...category.items.filter(item => item.preview)];
             }
         });
-        
+
         // Generate preview HTML for each item
         allItems.filter(item => item.preview.title != "").forEach((item, index) => {
             html += `
@@ -1094,23 +1098,23 @@
                 <p class="text-tech-light/70 text-center">${item.preview.description}</p>
             </div>`;
         });
-        
+
         html += `</div>`;
         return html;
     }
-    
+
     // Function to generate mobile support submenu
     function generateMobileSupportSubmenu(data) {
         let html = '';
         let supportItems = [];
-        
+
         // Collect all support menu items
         data.forEach(category => {
             if (category.items && !category.contactInfo) {
                 supportItems = [...supportItems, ...category.items];
             }
         });
-        
+
         // Generate mobile submenu HTML for each item
         supportItems.forEach(item => {
             html += `
@@ -1118,7 +1122,7 @@
                 <a href="${item.url || '#'}" class="mobile-submenu-link">${item.name}</a>
             </div>`;
         });
-        
+
         return html;
     }
 
@@ -1137,17 +1141,17 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         // Populate mega menus with data from arrays
-        document.getElementById('printer-mega-menu').innerHTML = 
+        document.getElementById('printer-mega-menu').innerHTML =
             generateMegaMenu(printerData) + generateProductPreviews(printerData);
-        
-        document.getElementById('ink-mega-menu').innerHTML = 
+
+        document.getElementById('ink-mega-menu').innerHTML =
             generateMegaMenu(inkData) + generateProductPreviews(inkData);
-        
-        document.getElementById('support-mega-menu').innerHTML = 
+
+        document.getElementById('support-mega-menu').innerHTML =
             generateMegaMenu(supportData);
-            
+
         // Populate mobile support submenu
-        document.getElementById('mobile-support-submenu').innerHTML = 
+        document.getElementById('mobile-support-submenu').innerHTML =
             generateMobileSupportSubmenu(supportData);
 
         const fadeElements = document.querySelectorAll('.fade-in');
