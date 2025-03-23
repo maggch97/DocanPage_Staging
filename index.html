@@ -442,12 +442,12 @@
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link text-tech-light hover:text-white transition-colors">首页</a>
+                <a href="index.html" class="nav-link text-tech-light hover:text-white transition-colors">Home</a>
 
                 <!-- 打印机 Dropdown -->
                 <div class="nav-item relative group">
                     <a href="products.html" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
-                        打印机
+                        Printers
                         <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </a>
                     <div class="mega-menu">
@@ -460,7 +460,7 @@
                 <!-- 墨水 Dropdown -->
                 <div class="nav-item relative group">
                     <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
-                        墨水
+                        Inks
                         <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </a>
                     <div class="mega-menu">
@@ -473,7 +473,7 @@
                 <!-- 服务支持 Dropdown -->
                 <div class="nav-item relative group">
                     <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
-                        服务支持
+                        Support
                         <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </a>
                     <div class="mega-menu">
@@ -486,7 +486,7 @@
 
             <div class="flex items-center space-x-4">
                 <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
-                    咨询报价
+                    Request a Quote
                 </a>
                 <button class="md:hidden text-tech-light text-xl" id="mobile-menu-button">
                     <i class="fas fa-bars"></i>
@@ -509,40 +509,26 @@
 
     <div class="mobile-menu-content">
         <div class="mobile-menu-item">
-            <a href="index.html" class="mobile-menu-link">首页</a>
+            <a href="index.html" class="mobile-menu-link">Home</a>
         </div>
 
         <div class="mobile-menu-item">
-            <a href="products.html" class="mobile-menu-link">打印机</a>
+            <a href="products.html" class="mobile-menu-link">Printers</a>
         </div>
 
         <div class="mobile-menu-item">
-            <a href="#" class="mobile-menu-link">墨水</a>
+            <a href="#" class="mobile-menu-link">Inks</a>
         </div>
 
         <div class="mobile-menu-item">
-            <span class="mobile-menu-link">服务支持</span>
-            <div class="mobile-submenu">
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">联系我们</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">技术支持</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">售后服务</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">常见问题</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">下载中心</a>
-                </div>
+            <span class="mobile-menu-link">Support</span>
+            <div class="mobile-submenu" id="mobile-support-submenu">
+                <!-- Will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="mobile-menu-item">
-            <a href="#contact" class="mobile-menu-link text-tech-accent">咨询报价</a>
+            <a href="#contact" class="mobile-menu-link text-tech-accent">Request a Quote</a>
         </div>
     </div>
 </div>
@@ -551,11 +537,11 @@
     // Navigation data for Printers
     const printerData = [
         {
-            name: "平板打印机",
+            name: "Flatbed Printers",
             width: "wide",
             subcategories: [
                 {
-                    name: "Horizo 系列",
+                    name: "Horizo",
                     items: [
                         {
                             name: "Horizo X9000",
@@ -563,7 +549,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=20",
                                 title: "Horizo X9000",
-                                description: "旗舰级工业打印机，适用于高端广告、艺术品复制等领域"
+                                description: "Flagship industrial printer for high-end advertising, art reproduction, and more"
                             }
                         },
                         {
@@ -572,7 +558,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=21",
                                 title: "Horizo X7000",
-                                description: "中高端工业打印机，兼顾性能与成本，适合中小型企业"
+                                description: "Mid-to-high-end industrial printer, balancing performance and cost, ideal for SMEs"
                             }
                         },
                         {
@@ -581,7 +567,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=22",
                                 title: "Horizo X5000",
-                                description: "经济型工业打印机，性价比高，适合初创企业和小型工作室"
+                                description: "Economical industrial printer with high cost-performance, perfect for startups and small studios"
                             }
                         },
                         {
@@ -590,13 +576,13 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=23",
                                 title: "Horizo X3000",
-                                description: "入门级桌面打印机，体积小巧，适合个人工作室和小型定制"
+                                description: "Entry-level desktop printer, compact and ideal for personal studios and small custom projects"
                             }
                         }
                     ]
                 },
                 {
-                    name: "Orbit 系列",
+                    name: "Orbit",
                     items: [
                         {
                             name: "Orbit Pro",
@@ -604,7 +590,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=24",
                                 title: "Orbit Pro",
-                                description: "大幅面工业打印机，适用于大型广告牌、展示板等大尺寸打印"
+                                description: "Large-format industrial printer for billboards, display boards, and other large-scale printing"
                             }
                         },
                         {
@@ -613,7 +599,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=25",
                                 title: "Orbit Plus",
-                                description: "中大型工业打印机，适用于广告公司和大型制作工厂"
+                                description: "Mid-to-large industrial printer for advertising agencies and large production facilities"
                             }
                         },
                         {
@@ -622,7 +608,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=26",
                                 title: "Orbit Standard",
-                                description: "标准型工业打印机，适合中小型广告公司和制作工厂"
+                                description: "Standard industrial printer for small-to-medium advertising agencies and production facilities"
                             }
                         },
                         {
@@ -631,7 +617,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=27",
                                 title: "Orbit Lite",
-                                description: "经济型工业打印机，适合小型广告公司和初创企业"
+                                description: "Economical industrial printer for small advertising agencies and startups"
                             }
                         }
                     ]
@@ -639,11 +625,11 @@
             ]
         },
         {
-            name: "混合型打印机",
+            name: "Hybrid Printers",
             width: "wide",
             subcategories: [
                 {
-                    name: "Fusion 系列",
+                    name: "Fusion",
                     items: [
                         {
                             name: "Fusion Pro",
@@ -651,7 +637,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=28",
                                 title: "Fusion Pro",
-                                description: "旗舰级混合型打印机，适用于高端广告公司和大型制作工厂"
+                                description: "Flagship hybrid printer for high-end advertising agencies and large production facilities"
                             }
                         },
                         {
@@ -660,7 +646,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=29",
                                 title: "Fusion Plus",
-                                description: "高端混合型打印机，适用于中大型广告公司和制作工厂"
+                                description: "High-end hybrid printer for mid-to-large advertising agencies and production facilities"
                             }
                         },
                         {
@@ -669,7 +655,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=30",
                                 title: "Fusion Standard",
-                                description: "标准型混合打印机，适合中小型广告公司和制作工厂"
+                                description: "Standard hybrid printer for small-to-medium advertising agencies and production facilities"
                             }
                         },
                         {
@@ -678,13 +664,13 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=31",
                                 title: "Fusion Lite",
-                                description: "入门级混合打印机，适合小型广告公司和初创企业"
+                                description: "Entry-level hybrid printer for small advertising agencies and startups"
                             }
                         }
                     ]
                 },
                 {
-                    name: "Nexus 系列",
+                    name: "Nexus",
                     items: [
                         {
                             name: "Nexus X8",
@@ -692,7 +678,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=32",
                                 title: "Nexus X8",
-                                description: "大幅面混合型打印机，适用于大型广告牌和展示板制作"
+                                description: "Large-format hybrid printer, ideal for billboards and display boards"
                             }
                         },
                         {
@@ -701,7 +687,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=33",
                                 title: "Nexus X6",
-                                description: "中大型混合打印机，适用于广告公司和大型制作工厂"
+                                description: "Mid-to-large hybrid printer, perfect for advertising agencies and large production facilities"
                             }
                         },
                         {
@@ -710,7 +696,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=34",
                                 title: "Nexus X4",
-                                description: "标准型混合打印机，适合中小型广告公司和制作工厂"
+                                description: "Standard hybrid printer, suitable for small to medium-sized advertising agencies and production facilities"
                             }
                         }
                     ]
@@ -718,11 +704,11 @@
             ]
         },
         {
-            name: "卷材打印机",
+            name: "Roll-to-Roll Printers",
             width: "wide",
             subcategories: [
                 {
-                    name: "Velocity 系列",
+                    name: "Velocity",
                     items: [
                         {
                             name: "Velocity R9000",
@@ -730,7 +716,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=35",
                                 title: "Velocity R9000",
-                                description: "旗舰级超宽幅卷材打印机，适用于大型广告布、墙纸等制作"
+                                description: "Flagship ultra-wide roll-to-roll printer, ideal for large-scale banners, wallpapers, and more"
                             }
                         },
                         {
@@ -739,7 +725,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=36",
                                 title: "Velocity R7000",
-                                description: "高端宽幅卷材打印机，适用于广告布、墙纸等制作"
+                                description: "High-end wide-format roll-to-roll printer, perfect for banners, wallpapers, and more"
                             }
                         },
                         {
@@ -748,7 +734,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=37",
                                 title: "Velocity R5000",
-                                description: "标准型卷材打印机，适合中小型广告公司和制作工厂"
+                                description: "Standard roll-to-roll printer, suitable for small to medium-sized advertising agencies and production facilities"
                             }
                         },
                         {
@@ -757,13 +743,13 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=38",
                                 title: "Velocity R3000",
-                                description: "入门级卷材打印机，适合小型广告公司和初创企业"
+                                description: "Entry-level roll-to-roll printer, ideal for small advertising agencies and startups"
                             }
                         }
                     ]
                 },
                 {
-                    name: "Spectrum 系列",
+                    name: "Spectrum",
                     items: [
                         {
                             name: "Spectrum Ultra",
@@ -771,7 +757,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=39",
                                 title: "Spectrum Ultra",
-                                description: "超宽幅高精度卷材打印机，适用于高端广告布、墙纸等制作"
+                                description: "Ultra-wide high-precision roll-to-roll printer, perfect for premium banners, wallpapers, and more"
                             }
                         },
                         {
@@ -780,7 +766,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=40",
                                 title: "Spectrum Pro",
-                                description: "专业级宽幅卷材打印机，适用于广告布、墙纸等制作"
+                                description: "Professional wide-format roll-to-roll printer, ideal for banners, wallpapers, and more"
                             }
                         },
                         {
@@ -789,7 +775,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=41",
                                 title: "Spectrum Plus",
-                                description: "中高端卷材打印机，适用于中大型广告公司和制作工厂"
+                                description: "Mid-to-high-end roll-to-roll printer, suitable for medium to large advertising agencies and production facilities"
                             }
                         },
                         {
@@ -798,7 +784,7 @@
                             preview: {
                                 image: "https://picsum.photos/600/400?random=42",
                                 title: "Spectrum Standard",
-                                description: "标准型卷材打印机，适合中小型广告公司和制作工厂"
+                                description: "Standard roll-to-roll printer, ideal for small to medium-sized advertising agencies and production facilities"
                             }
                         }
                     ]
@@ -810,78 +796,78 @@
     // Navigation data for Inks
     const inkData = [
         {
-            name: "UV墨水",
+            name: "UV Inks",
             width: "wide",
             subcategories: [
                 {
-                    name: "标准墨水",
+                    name: "Standard Inks",
                     items: [
                         {
-                            name: "标准UV墨水",
+                            name: "Standard UV Ink",
                             id: "uv-standard",
                             preview: {
                                 image: "https://picsum.photos/600/400?random=50",
-                                title: "标准UV墨水",
-                                description: "适用于各类刚性材料，色彩鲜艳，附着力强，耐候性好"
+                                title: "Standard UV Ink",
+                                description: "Suitable for various rigid materials, vibrant colors, strong adhesion, and excellent weather resistance"
                             }
                         },
                         {
-                            name: "柔性UV墨水",
+                            name: "Flexible UV Ink",
                             id: "uv-flexible",
                             preview: {
                                 image: "https://picsum.photos/600/400?random=51",
-                                title: "柔性UV墨水",
-                                description: "专为柔性材料设计，弹性好，不开裂，适合弯折和拉伸"
+                                title: "Flexible UV Ink",
+                                description: "Designed for flexible materials, excellent elasticity, no cracking, ideal for bending and stretching"
                             }
                         },
                         {
-                            name: "白色UV墨水",
+                            name: "White UV Ink",
                             id: "uv-white",
                             preview: {
                                 image: "https://picsum.photos/600/400?random=52",
-                                title: "白色UV墨水",
-                                description: "高遮盖力白墨，适用于透明和深色材料，提供鲜明底色"
+                                title: "White UV Ink",
+                                description: "High-opacity white ink, perfect for transparent and dark materials, providing a vivid base"
                             }
                         },
                         {
-                            name: "UV光油",
+                            name: "UV Varnish",
                             id: "uv-varnish",
                             preview: {
                                 image: "https://picsum.photos/600/400?random=53",
-                                title: "UV光油",
-                                description: "提供亮光或哑光效果，增强打印品的质感和保护性"
+                                title: "UV Varnish",
+                                description: "Offers glossy or matte finishes, enhancing the texture and protection of printed products"
                             }
                         }
                     ]
                 },
                 {
-                    name: "特殊墨水",
+                    name: "Special Inks",
                     items: [
                         {
-                            name: "金属效果墨水",
+                            name: "Metallic Effect Ink",
                             id: "special-metallic",
                             preview: {
                                 image: "https://picsum.photos/600/400?random=54",
-                                title: "金属效果墨水",
-                                description: "提供金、银、铜等金属质感，适用于高端包装和装饰"
+                                title: "Metallic Effect Ink",
+                                description: "Provides gold, silver, and copper metallic finishes, ideal for premium packaging and decoration"
                             }
                         },
                         {
-                            name: "荧光墨水",
+                            name: "Fluorescent Ink",
                             id: "special-fluorescent",
                             preview: {
                                 image: "https://picsum.photos/600/400?random=55",
-                                title: "荧光墨水",
-                                description: "在紫外光下呈现荧光效果，适用于安全标识和特殊装饰"
+                                title: "Fluorescent Ink",
+                                description: "Glows under UV light, perfect for safety markings and special decorations"
                             }
                         },
                         {
-                            name: "防伪墨水",
+                            name: "Anti-Counterfeit Ink",
                             id: "special-security",
                             preview: {
                                 image: "https://picsum.photos/600/400?random=56",
-                                title: "防伪墨水",
-                                description: "含有特殊标记物，可用于产品防伪和追踪"
+                                title: "Anti-Counterfeit Ink",
+                                description: "Contains special markers for product anti-counterfeiting and tracking"
                             }
                         }
                     ]
@@ -889,67 +875,67 @@
             ]
         },
         {
-            name: "墨水套装",
+            name: "Ink Sets",
             width: "wide",
             items: [
                 {
-                    name: "CMYK套装",
+                    name: "CMYK Set",
                     id: "set-cmyk",
                     preview: {
                         image: "https://picsum.photos/600/400?random=57",
-                        title: "CMYK套装",
-                        description: "基础四色墨水套装，适用于大多数常规打印需求"
+                        title: "CMYK Set",
+                        description: "Basic four-color ink set for most standard printing needs"
                     }
                 },
                 {
-                    name: "CMYK+白色套装",
+                    name: "CMYK+White Set",
                     id: "set-cmyk-w",
                     preview: {
                         image: "https://picsum.photos/600/400?random=58",
-                        title: "CMYK+白色套装",
-                        description: "含白墨的五色套装，适用于透明和深色材料打印"
+                        title: "CMYK+White Set",
+                        description: "Five-color set including white ink, suitable for transparent and dark materials"
                     }
                 },
                 {
-                    name: "CMYK+白色+光油套装",
+                    name: "CMYK+White+Varnish Set",
                     id: "set-cmyk-wv",
                     preview: {
                         image: "https://picsum.photos/600/400?random=59",
-                        title: "CMYK+白色+光油套装",
-                        description: "高端六色套装，可实现丰富的视觉和触感效果"
+                        title: "CMYK+White+Varnish Set",
+                        description: "Premium six-color set for rich visual and tactile effects"
                     }
                 },
                 {
-                    name: "全色套装",
+                    name: "Full Color Set",
                     id: "set-full",
                     preview: {
                         image: "https://picsum.photos/600/400?random=60",
-                        title: "全色套装",
-                        description: "包含所有颜色的专业套装，满足高端印刷需求"
+                        title: "Full Color Set",
+                        description: "Professional set with all colors for high-end printing needs"
                     }
                 }
             ]
         },
         {
-            name: "清洁用品",
+            name: "Cleaning Supplies",
             width: "wide",
             items: [
                 {
-                    name: "清洗液",
+                    name: "Cleaning Solution",
                     id: "cleaning-solution",
                     preview: {
                         image: "https://picsum.photos/600/400?random=61",
-                        title: "清洗液",
-                        description: "专业喷头清洗液，有效清除墨水残留，延长喷头寿命"
+                        title: "Cleaning Solution",
+                        description: "Professional nozzle cleaning solution to remove ink residue and extend nozzle life"
                     }
                 },
                 {
-                    name: "清洁套件",
+                    name: "Cleaning Kit",
                     id: "cleaning-kit",
                     preview: {
                         image: "https://picsum.photos/600/400?random=62",
-                        title: "清洁套件",
-                        description: "全面的打印机维护清洁套件，包含所有必要的清洁工具"
+                        title: "Cleaning Kit",
+                        description: "Comprehensive printer maintenance kit with all necessary cleaning tools"
                     }
                 }
             ]
@@ -959,55 +945,55 @@
     // Navigation data for Support
     const supportData = [
         {
-            name: "服务支持",
+            name: "Support",
             width: "wide",
             layout: "grid",
             items: [
-                { name: "联系我们", url: "#" },
-                { name: "技术支持", url: "#" },
-                { name: "售后服务", url: "#" },
-                { name: "常见问题", url: "#" },
-                { name: "下载中心", url: "#" },
-                { name: "维修服务", url: "#" }
+                { name: "Contact Us", url: "#contact" },
+                { name: "Technical Support", url: "#support" },
+                { name: "After-Sales Service", url: "#aftersale" },
+                { name: "FAQ", url: "#faq" },
+                { name: "Download Center", url: "#download" },
+                { name: "Repair Service", url: "#repair" }
             ]
         },
         {
-            name: "培训与资源",
+            name: "Training & Resources",
             width: "wide",
             layout: "grid",
             items: [
-                { name: "操作培训", url: "#" },
-                { name: "维护保养", url: "#" },
-                { name: "视频教程", url: "#" },
-                { name: "用户手册", url: "#" },
-                { name: "技术文档", url: "#" },
-                { name: "软件更新", url: "#" }
+                { name: "Operation Training", url: "#training" },
+                { name: "Maintenance", url: "#maintenance" },
+                { name: "Video Tutorials", url: "#videos" },
+                { name: "User Manual", url: "#manuals" },
+                { name: "Technical Documentation", url: "#docs" },
+                { name: "Software Updates", url: "#updates" }
             ]
         },
         {
-            name: "联系方式",
+            name: "Contact",
             width: "wide",
             columnSpan: 4,
             contactInfo: [
                 {
                     icon: "fas fa-phone-alt",
-                    title: "客服热线",
-                    content: "400-888-9999（周一至周日 9:00-18:00）"
+                    title: "Customer Service Hotline",
+                    content: "400-888-9999 (Mon-Sun 9:00-18:00)"
                 },
                 {
                     icon: "fas fa-envelope",
-                    title: "技术支持邮箱",
+                    title: "Technical Support Email",
                     content: "support@techprint.com"
                 },
                 {
                     icon: "fas fa-map-marker-alt",
-                    title: "全国服务中心",
-                    content: "北京、上海、广州、深圳、成都、武汉、西安"
+                    title: "National Service Centers",
+                    content: "Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Wuhan, Xi'an"
                 },
                 {
                     icon: "fas fa-headset",
-                    title: "在线客服",
-                    content: "工作日 8:30-20:30，节假日 9:00-18:00"
+                    title: "Online Support",
+                    content: "Weekdays 8:30 AM - 8:30 PM, Holidays 9:00 AM - 6:00 PM"
                 }
             ]
         }
@@ -1018,7 +1004,7 @@
         let html = '';
         
         // Generate columns for each category
-        data.forEach(category => {
+        data.filter(category => category.name !== "").forEach(category => {
             html += `<div class="mega-menu-column ${category.width || ''}" ${category.columnSpan ? `style="grid-column: span ${category.columnSpan}"` : ''}>`;
             html += `<h3 class="text-lg font-medium text-white">${category.name}</h3>`;
             
@@ -1100,7 +1086,7 @@
         });
         
         // Generate preview HTML for each item
-        allItems.forEach((item, index) => {
+        allItems.filter(item => item.preview.title != "").forEach((item, index) => {
             html += `
             <div class="product-preview ${index === 0 ? 'active' : ''}" id="${item.id}">
                 <img src="${item.preview.image}" alt="${item.preview.title}" class="w-full h-auto rounded-lg mb-4 object-cover">
@@ -1110,6 +1096,29 @@
         });
         
         html += `</div>`;
+        return html;
+    }
+    
+    // Function to generate mobile support submenu
+    function generateMobileSupportSubmenu(data) {
+        let html = '';
+        let supportItems = [];
+        
+        // Collect all support menu items
+        data.forEach(category => {
+            if (category.items && !category.contactInfo) {
+                supportItems = [...supportItems, ...category.items];
+            }
+        });
+        
+        // Generate mobile submenu HTML for each item
+        supportItems.forEach(item => {
+            html += `
+            <div class="mobile-submenu-item">
+                <a href="${item.url || '#'}" class="mobile-submenu-link">${item.name}</a>
+            </div>`;
+        });
+        
         return html;
     }
 
@@ -1136,6 +1145,10 @@
         
         document.getElementById('support-mega-menu').innerHTML = 
             generateMegaMenu(supportData);
+            
+        // Populate mobile support submenu
+        document.getElementById('mobile-support-submenu').innerHTML = 
+            generateMobileSupportSubmenu(supportData);
 
         const fadeElements = document.querySelectorAll('.fade-in');
         if (typeof observer !== 'undefined') {

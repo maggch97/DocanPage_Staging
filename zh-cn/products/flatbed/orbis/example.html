@@ -522,22 +522,8 @@
 
         <div class="mobile-menu-item">
             <span class="mobile-menu-link">服务支持</span>
-            <div class="mobile-submenu">
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">联系我们</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">技术支持</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">售后服务</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">常见问题</a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link">下载中心</a>
-                </div>
+            <div class="mobile-submenu" id="mobile-support-submenu">
+                <!-- Will be populated by JavaScript -->
             </div>
         </div>
 
@@ -963,12 +949,12 @@
             width: "wide",
             layout: "grid",
             items: [
-                { name: "联系我们", url: "#" },
-                { name: "技术支持", url: "#" },
-                { name: "售后服务", url: "#" },
-                { name: "常见问题", url: "#" },
-                { name: "下载中心", url: "#" },
-                { name: "维修服务", url: "#" }
+                { name: "联系我们", url: "#contact" },
+                { name: "技术支持", url: "#support" },
+                { name: "售后服务", url: "#aftersale" },
+                { name: "常见问题", url: "#faq" },
+                { name: "下载中心", url: "#download" },
+                { name: "维修服务", url: "#repair" }
             ]
         },
         {
@@ -976,12 +962,12 @@
             width: "wide",
             layout: "grid",
             items: [
-                { name: "操作培训", url: "#" },
-                { name: "维护保养", url: "#" },
-                { name: "视频教程", url: "#" },
-                { name: "用户手册", url: "#" },
-                { name: "技术文档", url: "#" },
-                { name: "软件更新", url: "#" }
+                { name: "操作培训", url: "#training" },
+                { name: "维护保养", url: "#maintenance" },
+                { name: "视频教程", url: "#videos" },
+                { name: "用户手册", url: "#manuals" },
+                { name: "技术文档", url: "#docs" },
+                { name: "软件更新", url: "#updates" }
             ]
         },
         {
@@ -1018,7 +1004,7 @@
         let html = '';
         
         // Generate columns for each category
-        data.forEach(category => {
+        data.filter(category => category.name !== "").forEach(category => {
             html += `<div class="mega-menu-column ${category.width || ''}" ${category.columnSpan ? `style="grid-column: span ${category.columnSpan}"` : ''}>`;
             html += `<h3 class="text-lg font-medium text-white">${category.name}</h3>`;
             
@@ -1100,7 +1086,7 @@
         });
         
         // Generate preview HTML for each item
-        allItems.forEach((item, index) => {
+        allItems.filter(item => item.preview.title != "").forEach((item, index) => {
             html += `
             <div class="product-preview ${index === 0 ? 'active' : ''}" id="${item.id}">
                 <img src="${item.preview.image}" alt="${item.preview.title}" class="w-full h-auto rounded-lg mb-4 object-cover">
@@ -1110,6 +1096,29 @@
         });
         
         html += `</div>`;
+        return html;
+    }
+    
+    // Function to generate mobile support submenu
+    function generateMobileSupportSubmenu(data) {
+        let html = '';
+        let supportItems = [];
+        
+        // Collect all support menu items
+        data.forEach(category => {
+            if (category.items && !category.contactInfo) {
+                supportItems = [...supportItems, ...category.items];
+            }
+        });
+        
+        // Generate mobile submenu HTML for each item
+        supportItems.forEach(item => {
+            html += `
+            <div class="mobile-submenu-item">
+                <a href="${item.url || '#'}" class="mobile-submenu-link">${item.name}</a>
+            </div>`;
+        });
+        
         return html;
     }
 
@@ -1136,6 +1145,10 @@
         
         document.getElementById('support-mega-menu').innerHTML = 
             generateMegaMenu(supportData);
+            
+        // Populate mobile support submenu
+        document.getElementById('mobile-support-submenu').innerHTML = 
+            generateMobileSupportSubmenu(supportData);
 
         const fadeElements = document.querySelectorAll('.fade-in');
         if (typeof observer !== 'undefined') {
