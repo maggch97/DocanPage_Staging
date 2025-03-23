@@ -255,48 +255,754 @@
     </style>
 </head>
 
-<body></body></html><!-- Header/Navigation --><html><head></head><body><header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
+<body></body></html><html><head><style>
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background-color: #f5f5f7;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    /* Mega Menu Styles - Revised */
+    .mega-menu {
+        position: fixed;
+        top: 72px;
+        /* Height of the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 50;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .nav-item:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .mega-menu-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+    }
+
+    .mega-menu-column {
+        grid-column: span 2;
+    }
+
+    .mega-menu-column.wide {
+        grid-column: span 3;
+    }
+
+    .mega-menu-image {
+        grid-column: span 4;
+    }
+
+    .mega-menu-column h3 {
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .mega-menu-column h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 1px;
+        background-color: #0071e3;
+    }
+
+    .mega-menu-item {
+        display: block;
+        padding: 0.5rem 0;
+        color: rgba(245, 245, 247, 0.7);
+        transition: all 0.2s ease;
+    }
+
+    .mega-menu-item:hover {
+        color: #ffffff;
+        transform: translateX(5px);
+    }
+
+
+
+    .product-preview {
+        display: none;
+        transition: all 0.3s ease;
+    }
+
+    .product-preview.active {
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 0.3s ease;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(10, 10, 10, 0.98);
+        z-index: 100;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-close {
+        font-size: 1.5rem;
+        color: #f5f5f7;
+        background: none;
+        border: none;
+    }
+
+    .mobile-menu-item {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-link {
+        display: block;
+        font-size: 1.125rem;
+        color: #f5f5f7;
+    }
+
+    .mobile-submenu {
+        padding-left: 1rem;
+        margin-top: 1rem;
+    }
+
+    .mobile-submenu-item {
+        padding: 0.75rem 0;
+    }
+
+    .mobile-submenu-link {
+        color: rgba(245, 245, 247, 0.7);
+    }
+</style>
+<!-- Header/Navigation -->
+</head><body><header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
     <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
             <div class="flex items-center">
-                <a href="#" class="text-tech-light text-2xl font-bold">
+                <a href="index.html" class="text-tech-light text-2xl font-bold">
                     TechPrint
                 </a>
             </div>
 
+            <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-8">
-                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Accueil</a>
-                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Produits</a>
-                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Solutions</a>
-                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">Support</a>
-                <a href="#" class="nav-link text-tech-light hover:text-white transition-colors">À propos</a>
+                <a href="index.html" class="nav-link text-tech-light hover:text-white transition-colors">首页</a>
+
+                <!-- 打印机 Dropdown -->
+                <div class="nav-item relative group">
+                    <a href="products.html" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        打印机
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <!-- 平板打印机 -->
+                            <div class="mega-menu-column wide">
+                                <h3 class="text-lg font-medium text-white">平板打印机</h3>
+                                <div class="grid grid-cols-2 gap-x-6">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">Horizo 系列</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="horizo-x9000">Horizo X9000</a>
+                                        <a href="#" class="mega-menu-item" data-preview="horizo-x7000">Horizo X7000</a>
+                                        <a href="#" class="mega-menu-item" data-preview="horizo-x5000">Horizo X5000</a>
+                                        <a href="#" class="mega-menu-item" data-preview="horizo-x3000">Horizo X3000</a>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">Orbit 系列</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="orbit-pro">Orbit Pro</a>
+                                        <a href="#" class="mega-menu-item" data-preview="orbit-plus">Orbit Plus</a>
+                                        <a href="#" class="mega-menu-item" data-preview="orbit-standard">Orbit
+                                            Standard</a>
+                                        <a href="#" class="mega-menu-item" data-preview="orbit-lite">Orbit Lite</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 混合型打印机 -->
+                            <div class="mega-menu-column wide">
+                                <h3 class="text-lg font-medium text-white">混合型打印机</h3>
+                                <div class="grid grid-cols-2 gap-x-6">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">Fusion 系列</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="fusion-pro">Fusion Pro</a>
+                                        <a href="#" class="mega-menu-item" data-preview="fusion-plus">Fusion Plus</a>
+                                        <a href="#" class="mega-menu-item" data-preview="fusion-standard">Fusion
+                                            Standard</a>
+                                        <a href="#" class="mega-menu-item" data-preview="fusion-lite">Fusion Lite</a>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">Nexus 系列</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="nexus-x8">Nexus X8</a>
+                                        <a href="#" class="mega-menu-item" data-preview="nexus-x6">Nexus X6</a>
+                                        <a href="#" class="mega-menu-item" data-preview="nexus-x4">Nexus X4</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 卷材打印机 -->
+                            <div class="mega-menu-column wide">
+                                <h3 class="text-lg font-medium text-white">卷材打印机</h3>
+                                <div class="grid grid-cols-2 gap-x-6">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">Velocity 系列</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="velocity-r9000">Velocity
+                                            R9000</a>
+                                        <a href="#" class="mega-menu-item" data-preview="velocity-r7000">Velocity
+                                            R7000</a>
+                                        <a href="#" class="mega-menu-item" data-preview="velocity-r5000">Velocity
+                                            R5000</a>
+                                        <a href="#" class="mega-menu-item" data-preview="velocity-r3000">Velocity
+                                            R3000</a>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">Spectrum 系列</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="spectrum-ultra">Spectrum
+                                            Ultra</a>
+                                        <a href="#" class="mega-menu-item" data-preview="spectrum-pro">Spectrum Pro</a>
+                                        <a href="#" class="mega-menu-item" data-preview="spectrum-plus">Spectrum
+                                            Plus</a>
+                                        <a href="#" class="mega-menu-item" data-preview="spectrum-standard">Spectrum
+                                            Standard</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 产品预览图 -->
+                            <div class="mega-menu-image">
+                                <!-- Horizo Series -->
+                                <div class="product-preview active" id="horizo-x9000">
+                                    <img src="https://picsum.photos/600/400?random=20" alt="Horizo X9000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Horizo X9000</h3>
+                                    <p class="text-tech-light/70 text-center">旗舰级工业打印机，适用于高端广告、艺术品复制等领域</p>
+                                </div>
+
+                                <div class="product-preview" id="horizo-x7000">
+                                    <img src="https://picsum.photos/600/400?random=21" alt="Horizo X7000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Horizo X7000</h3>
+                                    <p class="text-tech-light/70 text-center">中高端工业打印机，兼顾性能与成本，适合中小型企业</p>
+                                </div>
+
+                                <div class="product-preview" id="horizo-x5000">
+                                    <img src="https://picsum.photos/600/400?random=22" alt="Horizo X5000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Horizo X5000</h3>
+                                    <p class="text-tech-light/70 text-center">经济型工业打印机，性价比高，适合初创企业和小型工作室</p>
+                                </div>
+
+                                <div class="product-preview" id="horizo-x3000">
+                                    <img src="https://picsum.photos/600/400?random=23" alt="Horizo X3000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Horizo X3000</h3>
+                                    <p class="text-tech-light/70 text-center">入门级桌面打印机，体积小巧，适合个人工作室和小型定制</p>
+                                </div>
+
+                                <!-- Orbit Series -->
+                                <div class="product-preview" id="orbit-pro">
+                                    <img src="https://picsum.photos/600/400?random=24" alt="Orbit Pro" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Orbit Pro</h3>
+                                    <p class="text-tech-light/70 text-center">大幅面工业打印机，适用于大型广告牌、展示板等大尺寸打印</p>
+                                </div>
+
+                                <div class="product-preview" id="orbit-plus">
+                                    <img src="https://picsum.photos/600/400?random=25" alt="Orbit Plus" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Orbit Plus</h3>
+                                    <p class="text-tech-light/70 text-center">中大型工业打印机，适用于广告公司和大型制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="orbit-standard">
+                                    <img src="https://picsum.photos/600/400?random=26" alt="Orbit Standard" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Orbit Standard</h3>
+                                    <p class="text-tech-light/70 text-center">标准型工业打印机，适合中小型广告公司和制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="orbit-lite">
+                                    <img src="https://picsum.photos/600/400?random=27" alt="Orbit Lite" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Orbit Lite</h3>
+                                    <p class="text-tech-light/70 text-center">经济型工业打印机，适合小型广告公司和初创企业</p>
+                                </div>
+
+                                <!-- Fusion Series -->
+                                <div class="product-preview" id="fusion-pro">
+                                    <img src="https://picsum.photos/600/400?random=28" alt="Fusion Pro" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Fusion Pro</h3>
+                                    <p class="text-tech-light/70 text-center">旗舰级混合型打印机，适用于高端广告公司和大型制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="fusion-plus">
+                                    <img src="https://picsum.photos/600/400?random=29" alt="Fusion Plus" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Fusion Plus</h3>
+                                    <p class="text-tech-light/70 text-center">高端混合型打印机，适用于中大型广告公司和制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="fusion-standard">
+                                    <img src="https://picsum.photos/600/400?random=30" alt="Fusion Standard" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Fusion Standard</h3>
+                                    <p class="text-tech-light/70 text-center">标准型混合打印机，适合中小型广告公司和制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="fusion-lite">
+                                    <img src="https://picsum.photos/600/400?random=31" alt="Fusion Lite" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Fusion Lite</h3>
+                                    <p class="text-tech-light/70 text-center">入门级混合打印机，适合小型广告公司和初创企业</p>
+                                </div>
+
+                                <!-- Nexus Series -->
+                                <div class="product-preview" id="nexus-x8">
+                                    <img src="https://picsum.photos/600/400?random=32" alt="Nexus X8" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Nexus X8</h3>
+                                    <p class="text-tech-light/70 text-center">大幅面混合型打印机，适用于大型广告牌和展示板制作</p>
+                                </div>
+
+                                <div class="product-preview" id="nexus-x6">
+                                    <img src="https://picsum.photos/600/400?random=33" alt="Nexus X6" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Nexus X6</h3>
+                                    <p class="text-tech-light/70 text-center">中大型混合打印机，适用于广告公司和大型制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="nexus-x4">
+                                    <img src="https://picsum.photos/600/400?random=34" alt="Nexus X4" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Nexus X4</h3>
+                                    <p class="text-tech-light/70 text-center">标准型混合打印机，适合中小型广告公司和制作工厂</p>
+                                </div>
+
+                                <!-- Velocity Series -->
+                                <div class="product-preview" id="velocity-r9000">
+                                    <img src="https://picsum.photos/600/400?random=35" alt="Velocity R9000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Velocity R9000</h3>
+                                    <p class="text-tech-light/70 text-center">旗舰级超宽幅卷材打印机，适用于大型广告布、墙纸等制作</p>
+                                </div>
+
+                                <div class="product-preview" id="velocity-r7000">
+                                    <img src="https://picsum.photos/600/400?random=36" alt="Velocity R7000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Velocity R7000</h3>
+                                    <p class="text-tech-light/70 text-center">高端宽幅卷材打印机，适用于广告布、墙纸等制作</p>
+                                </div>
+
+                                <div class="product-preview" id="velocity-r5000">
+                                    <img src="https://picsum.photos/600/400?random=37" alt="Velocity R5000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Velocity R5000</h3>
+                                    <p class="text-tech-light/70 text-center">标准型卷材打印机，适合中小型广告公司和制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="velocity-r3000">
+                                    <img src="https://picsum.photos/600/400?random=38" alt="Velocity R3000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Velocity R3000</h3>
+                                    <p class="text-tech-light/70 text-center">入门级卷材打印机，适合小型广告公司和初创企业</p>
+                                </div>
+
+                                <!-- Spectrum Series -->
+                                <div class="product-preview" id="spectrum-ultra">
+                                    <img src="https://picsum.photos/600/400?random=39" alt="Spectrum Ultra" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Spectrum Ultra</h3>
+                                    <p class="text-tech-light/70 text-center">超宽幅高精度卷材打印机，适用于高端广告布、墙纸等制作</p>
+                                </div>
+
+                                <div class="product-preview" id="spectrum-pro">
+                                    <img src="https://picsum.photos/600/400?random=40" alt="Spectrum Pro" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Spectrum Pro</h3>
+                                    <p class="text-tech-light/70 text-center">专业级宽幅卷材打印机，适用于广告布、墙纸等制作</p>
+                                </div>
+
+                                <div class="product-preview" id="spectrum-plus">
+                                    <img src="https://picsum.photos/600/400?random=41" alt="Spectrum Plus" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Spectrum Plus</h3>
+                                    <p class="text-tech-light/70 text-center">中高端卷材打印机，适用于中大型广告公司和制作工厂</p>
+                                </div>
+
+                                <div class="product-preview" id="spectrum-standard">
+                                    <img src="https://picsum.photos/600/400?random=42" alt="Spectrum Standard" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">Spectrum Standard</h3>
+                                    <p class="text-tech-light/70 text-center">标准型卷材打印机，适合中小型广告公司和制作工厂</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 墨水 Dropdown -->
+                <div class="nav-item relative group">
+                    <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        墨水
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <!-- UV墨水 -->
+                            <div class="mega-menu-column wide">
+                                <h3 class="text-lg font-medium text-white">UV墨水</h3>
+                                <div class="grid grid-cols-2 gap-x-6">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">标准墨水</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="uv-standard">标准UV墨水</a>
+                                        <a href="#" class="mega-menu-item" data-preview="uv-flexible">柔性UV墨水</a>
+                                        <a href="#" class="mega-menu-item" data-preview="uv-white">白色UV墨水</a>
+                                        <a href="#" class="mega-menu-item" data-preview="uv-varnish">UV光油</a>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-tech-accent mt-4">特殊墨水</h4>
+                                        <a href="#" class="mega-menu-item" data-preview="special-metallic">金属效果墨水</a>
+                                        <a href="#" class="mega-menu-item" data-preview="special-fluorescent">荧光墨水</a>
+                                        <a href="#" class="mega-menu-item" data-preview="special-security">防伪墨水</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 墨水套装 -->
+                            <div class="mega-menu-column wide">
+                                <h3 class="text-lg font-medium text-white">墨水套装</h3>
+                                <div class="space-y-1">
+                                    <a href="#" class="mega-menu-item" data-preview="set-cmyk">CMYK套装</a>
+                                    <a href="#" class="mega-menu-item" data-preview="set-cmyk-w">CMYK+白色套装</a>
+                                    <a href="#" class="mega-menu-item" data-preview="set-cmyk-wv">CMYK+白色+光油套装</a>
+                                    <a href="#" class="mega-menu-item" data-preview="set-full">全色套装</a>
+                                </div>
+
+                                <h3 class="text-lg font-medium text-white mt-8">清洁用品</h3>
+                                <div class="space-y-1">
+                                    <a href="#" class="mega-menu-item" data-preview="cleaning-solution">清洗液</a>
+                                    <a href="#" class="mega-menu-item" data-preview="cleaning-kit">清洁套件</a>
+                                </div>
+                            </div>
+
+                            <!-- 产品预览图 -->
+                            <div class="mega-menu-image">
+                                <!-- UV墨水 -->
+                                <div class="product-preview active" id="uv-standard">
+                                    <img src="https://picsum.photos/600/400?random=50" alt="标准UV墨水" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">标准UV墨水</h3>
+                                    <p class="text-tech-light/70 text-center">适用于各类刚性材料，色彩鲜艳，附着力强，耐候性好</p>
+                                </div>
+
+                                <div class="product-preview" id="uv-flexible">
+                                    <img src="https://picsum.photos/600/400?random=51" alt="柔性UV墨水" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">柔性UV墨水</h3>
+                                    <p class="text-tech-light/70 text-center">专为柔性材料设计，弹性好，不开裂，适合弯折和拉伸</p>
+                                </div>
+
+                                <div class="product-preview" id="uv-white">
+                                    <img src="https://picsum.photos/600/400?random=52" alt="白色UV墨水" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">白色UV墨水</h3>
+                                    <p class="text-tech-light/70 text-center">高遮盖力白墨，适用于透明和深色材料，提供鲜明底色</p>
+                                </div>
+
+                                <div class="product-preview" id="uv-varnish">
+                                    <img src="https://picsum.photos/600/400?random=53" alt="UV光油" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">UV光油</h3>
+                                    <p class="text-tech-light/70 text-center">提供亮光或哑光效果，增强打印品的质感和保护性</p>
+                                </div>
+
+                                <!-- 特殊墨水 -->
+                                <div class="product-preview" id="special-metallic">
+                                    <img src="https://picsum.photos/600/400?random=54" alt="金属效果墨水" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">金属效果墨水</h3>
+                                    <p class="text-tech-light/70 text-center">提供金、银、铜等金属质感，适用于高端包装和装饰</p>
+                                </div>
+
+                                <div class="product-preview" id="special-fluorescent">
+                                    <img src="https://picsum.photos/600/400?random=55" alt="荧光墨水" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">荧光墨水</h3>
+                                    <p class="text-tech-light/70 text-center">在紫外光下呈现荧光效果，适用于安全标识和特殊装饰</p>
+                                </div>
+
+                                <div class="product-preview" id="special-security">
+                                    <img src="https://picsum.photos/600/400?random=56" alt="防伪墨水" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">防伪墨水</h3>
+                                    <p class="text-tech-light/70 text-center">含有特殊标记物，可用于产品防伪和追踪</p>
+                                </div>
+
+                                <!-- 墨水套装 -->
+                                <div class="product-preview" id="set-cmyk">
+                                    <img src="https://picsum.photos/600/400?random=57" alt="CMYK套装" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">CMYK套装</h3>
+                                    <p class="text-tech-light/70 text-center">基础四色墨水套装，适用于大多数常规打印需求</p>
+                                </div>
+
+                                <div class="product-preview" id="set-cmyk-w">
+                                    <img src="https://picsum.photos/600/400?random=58" alt="CMYK+白色套装" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">CMYK+白色套装</h3>
+                                    <p class="text-tech-light/70 text-center">含白墨的五色套装，适用于透明和深色材料打印</p>
+                                </div>
+
+                                <div class="product-preview" id="set-cmyk-wv">
+                                    <img src="https://picsum.photos/600/400?random=59" alt="CMYK+白色+光油套装" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">CMYK+白色+光油套装</h3>
+                                    <p class="text-tech-light/70 text-center">高端六色套装，可实现丰富的视觉和触感效果</p>
+                                </div>
+
+                                <div class="product-preview" id="set-full">
+                                    <img src="https://picsum.photos/600/400?random=60" alt="全色套装" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">全色套装</h3>
+                                    <p class="text-tech-light/70 text-center">包含所有颜色的专业套装，满足高端印刷需求</p>
+                                </div>
+
+                                <!-- 清洁用品 -->
+                                <div class="product-preview" id="cleaning-solution">
+                                    <img src="https://picsum.photos/600/400?random=61" alt="清洗液" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">清洗液</h3>
+                                    <p class="text-tech-light/70 text-center">专业喷头清洗液，有效清除墨水残留，延长喷头寿命</p>
+                                </div>
+
+                                <div class="product-preview" id="cleaning-kit">
+                                    <img src="https://picsum.photos/600/400?random=62" alt="清洁套件" class="w-full h-auto rounded-lg mb-4 object-cover">
+                                    <h3 class="text-xl font-bold text-center">清洁套件</h3>
+                                    <p class="text-tech-light/70 text-center">全面的打印机维护清洁套件，包含所有必要的清洁工具</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 服务支持 Dropdown -->
+                <div class="nav-item relative group">
+                    <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        服务支持
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-menu-column wide">
+                                <h3 class="text-lg font-medium text-white">服务支持</h3>
+                                <div class="grid grid-cols-2 gap-x-6">
+                                    <div>
+                                        <a href="#" class="mega-menu-item">联系我们</a>
+                                        <a href="#" class="mega-menu-item">技术支持</a>
+                                        <a href="#" class="mega-menu-item">售后服务</a>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="mega-menu-item">常见问题</a>
+                                        <a href="#" class="mega-menu-item">下载中心</a>
+                                        <a href="#" class="mega-menu-item">维修服务</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mega-menu-column wide">
+                                <h3 class="text-lg font-medium text-white">培训与资源</h3>
+                                <div class="grid grid-cols-2 gap-x-6">
+                                    <div>
+                                        <a href="#" class="mega-menu-item">操作培训</a>
+                                        <a href="#" class="mega-menu-item">维护保养</a>
+                                        <a href="#" class="mega-menu-item">视频教程</a>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="mega-menu-item">用户手册</a>
+                                        <a href="#" class="mega-menu-item">技术文档</a>
+                                        <a href="#" class="mega-menu-item">软件更新</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mega-menu-column wide col-span-4">
+                                <h3 class="text-lg font-medium text-white">联系方式</h3>
+                                <div class="mt-4 grid grid-cols-2 gap-6">
+                                    <div class="flex items-start">
+                                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium mb-1">客服热线</h4>
+                                            <p class="text-tech-light/70">400-888-9999（周一至周日 9:00-18:00）</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium mb-1">技术支持邮箱</h4>
+                                            <p class="text-tech-light/70">support@techprint.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium mb-1">全国服务中心</h4>
+                                            <p class="text-tech-light/70">北京、上海、广州、深圳、成都、武汉、西安</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                                            <i class="fas fa-headset"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium mb-1">在线客服</h4>
+                                            <p class="text-tech-light/70">工作日 8:30-20:30，节假日 9:00-18:00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
 
             <div class="flex items-center space-x-4">
                 <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
-                    Demander un devis
+                    咨询报价
                 </a>
                 <button class="md:hidden text-tech-light text-xl" id="mobile-menu-button">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
+    </div>
+</header>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="flex flex-col space-y-4 mt-4 pb-4">
-                <a href="#" class="text-tech-light hover:text-white transition-colors">Accueil</a>
-                <a href="#" class="text-tech-light hover:text-white transition-colors">Produits</a>
-                <a href="#" class="text-tech-light hover:text-white transition-colors">Solutions</a>
-                <a href="#" class="text-tech-light hover:text-white transition-colors">Support</a>
-                <a href="#" class="text-tech-light hover:text-white transition-colors">À propos</a>
-                <a href="#contact" class="px-4 py-2 btn-primary rounded-full text-center">
-                    Demander un devis
-                </a>
+<!-- Mobile Menu (Hidden by default) -->
+<div class="mobile-menu md:hidden" id="mobile-menu-panel">
+    <div class="mobile-menu-header">
+        <a href="index.html" class="text-tech-light text-2xl font-bold">
+            TechPrint
+        </a>
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="mobile-menu-content">
+        <div class="mobile-menu-item">
+            <a href="index.html" class="mobile-menu-link">首页</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="products.html" class="mobile-menu-link">打印机</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="#" class="mobile-menu-link">墨水</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <span class="mobile-menu-link">服务支持</span>
+            <div class="mobile-submenu">
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link">联系我们</a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link">技术支持</a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link">售后服务</a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link">常见问题</a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link">下载中心</a>
+                </div>
             </div>
         </div>
+
+        <div class="mobile-menu-item">
+            <a href="#contact" class="mobile-menu-link text-tech-accent">咨询报价</a>
+        </div>
     </div>
-</header></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+</div>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu-panel');
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobile-menu-close').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu-panel');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Mega menu product preview
+        const menuItems = document.querySelectorAll('.mega-menu-item[data-preview]');
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                const previewId = this.getAttribute('data-preview');
+                const previewElement = document.getElementById(previewId);
+
+                // Hide all previews
+                document.querySelectorAll('.product-preview').forEach(preview => {
+                    preview.classList.remove('active');
+                });
+
+                // Show the selected preview
+                if (previewElement) {
+                    previewElement.classList.add('active');
+                }
+            });
+        });
+    });
+
+
+</script></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
     <div class="absolute inset-0 z-0">
         <img src="/img/20250322180656137_ef1hvv.jpg" alt="ProPrint X9000" class="w-full h-full object-cover object-center">
         <div class="absolute inset-0 bg-gradient-to-b from-tech-black/60 via-tech-black/70 to-tech-black"></div>
