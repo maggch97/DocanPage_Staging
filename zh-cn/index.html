@@ -420,6 +420,9 @@
     .mobile-submenu {
         padding-left: 1rem;
         margin-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
     }
 
     .mobile-submenu-item {
@@ -428,6 +431,21 @@
 
     .mobile-submenu-link {
         color: rgba(245, 245, 247, 0.7);
+        transition: color 0.2s ease;
+    }
+
+    .mobile-submenu-link:hover {
+        color: rgba(245, 245, 247, 1);
+    }
+
+    /* 语言切换按钮样式 */
+    .language-btn-active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* 箭头旋转效果 */
+    .menu-arrow.active {
+        transform: rotate(180deg);
     }
 </style>
 <!-- Header/Navigation -->
@@ -485,6 +503,27 @@
             </nav>
 
             <div class="flex items-center space-x-4">
+                <!-- 语言切换按钮 -->
+                <div class="relative group">
+                    <button class="hidden md:flex items-center space-x-1 px-3 py-1.5 rounded-full border border-tech-light/30 text-tech-light hover:bg-tech-light/10 transition-all">
+                        <span class="text-sm font-medium">中文 / EN</span>
+                        <i class="fas fa-language text-base ml-1"></i>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-36 bg-tech-dark border border-tech-light/20 rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="#" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">中</span>
+                            <span class="ml-2">简体中文</span>
+                        </a>
+                        <a href="#" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">繁</span>
+                            <span class="ml-2">繁體中文</span>
+                        </a>
+                        <a href="#" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm flex items-center">
+                            <span class="w-5 inline-block">EN</span>
+                            <span class="ml-2">English</span>
+                        </a>
+                    </div>
+                </div>
                 <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
                     咨询报价
                 </a>
@@ -521,7 +560,10 @@
         </div>
 
         <div class="mobile-menu-item">
-            <span class="mobile-menu-link">服务支持</span>
+            <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
+                <span>服务支持</span>
+                <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
+            </span>
             <div class="mobile-submenu" id="mobile-support-submenu">
                 <!-- Will be populated by JavaScript -->
             </div>
@@ -529,6 +571,38 @@
 
         <div class="mobile-menu-item">
             <a href="#contact" class="mobile-menu-link text-tech-accent">咨询报价</a>
+        </div>
+
+
+        <!-- 移动端语言切换 -->
+        <div class="mobile-menu-item">
+            <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
+                <span class="flex items-center">
+                    <i class="fas fa-language mr-2 text-tech-light/70 text-lg"></i>
+                    <span>中文 / EN</span>
+                </span>
+                <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
+            </span>
+            <div class="mobile-submenu">
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">中</span>
+                        <span class="ml-2">简体中文</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">繁</span>
+                        <span class="ml-2">繁體中文</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="#" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">EN</span>
+                        <span class="ml-2">English</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1000,7 +1074,7 @@
     ];
 
     function filterEmptyItems(data) {
-        return data.filter(item => item.name !== "" && item.preview.title !== "");
+        return data.filter(item => item.name !== "" && item.title !== "");
     }
 
     // Function to generate mega menu HTML
@@ -1179,6 +1253,28 @@
                     previewElement.classList.add('active');
                 }
             });
+        });
+    });
+
+
+    // 移动端子菜单的展开/收起
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item > span.mobile-menu-link');
+    mobileMenuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const subMenu = this.nextElementSibling;
+            const arrow = this.querySelector('.menu-arrow');
+
+            if (subMenu && subMenu.classList.contains('mobile-submenu')) {
+                if (subMenu.style.maxHeight) {
+                    subMenu.style.maxHeight = null;
+                    // 移除箭头激活状态
+                    if (arrow) arrow.classList.remove('active');
+                } else {
+                    subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+                    // 添加箭头激活状态
+                    if (arrow) arrow.classList.add('active');
+                }
+            }
         });
     });
 </script></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
