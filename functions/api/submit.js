@@ -52,7 +52,8 @@ export async function onRequest(context) {
     // TODO: 实现邮件发送功能
     // TODO: 实现KV存储功能
     // send message to get https://api.day.app/fRJPuzdAKSGEurGpquZp99/推送标题/这里改成你自己的推送内容
-    const response = await fetch('https://api.day.app/fRJPuzdAKSGEurGpquZp99/推送标题/这里改成你自己的推送内容');
+    const encodedMessage = encodeURIComponent(JSON.stringify(data));
+    const response = await fetch(`https://api.day.app/fRJPuzdAKSGEurGpquZp99/contact/${encodedMessage}`);
     const barkResponse = await response.json();
     console.log(barkResponse);
 
