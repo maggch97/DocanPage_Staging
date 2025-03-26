@@ -2100,20 +2100,23 @@
                     formStatus.classList.remove('hidden');
                     
                     if (result.success) {
-                        formStatus.classList.add('bg-green-100');
-                        formStatus.classList.remove('bg-red-100');
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = 'Votre message a bien été envoyé ! Nous vous contacterons dès que possible.';
                         contactForm.reset();
                     } else {
-                        formStatus.classList.add('bg-red-100');
-                        formStatus.classList.remove('bg-green-100');
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = `Échec de l'envoi: ${result.message}`;
                     }
                 } catch (error) {
                     // 处理错误
                     formStatus.classList.remove('hidden');
-                    formStatus.classList.add('bg-red-100');
-                    formStatus.classList.remove('bg-green-100');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                     formStatusMessage.textContent = 'Une erreur s'est produite lors de l'envoi. Veuillez réessayer plus tard ou nous contacter directement.';
                     console.error('Erreur lors de l'envoi du formulaire :', error);
                 } finally {

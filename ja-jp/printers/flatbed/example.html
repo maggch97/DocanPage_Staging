@@ -2100,20 +2100,23 @@
                     formStatus.classList.remove('hidden');
                     
                     if (result.success) {
-                        formStatus.classList.add('bg-green-100');
-                        formStatus.classList.remove('bg-red-100');
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = 'お問い合わせは正常に送信されました。折り返しご連絡いたします。';
                         contactForm.reset();
                     } else {
-                        formStatus.classList.add('bg-red-100');
-                        formStatus.classList.remove('bg-green-100');
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = `送信失敗: ${result.message}`;
                     }
                 } catch (error) {
                     // 处理错误
                     formStatus.classList.remove('hidden');
-                    formStatus.classList.add('bg-red-100');
-                    formStatus.classList.remove('bg-green-100');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                     formStatusMessage.textContent = '送信中にエラーが発生しました。しばらくしてから再度お試しいただくか、直接ご連絡ください。';
                     console.error('フォーム送信エラー:', error);
                 } finally {

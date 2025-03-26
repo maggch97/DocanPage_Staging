@@ -2022,20 +2022,23 @@
                     formStatus.classList.remove('hidden');
                     
                     if (result.success) {
-                        formStatus.classList.add('bg-green-100');
-                        formStatus.classList.remove('bg-red-100');
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = 'Your message has been successfully submitted! We will contact you soon.';
                         contactForm.reset();
                     } else {
-                        formStatus.classList.add('bg-red-100');
-                        formStatus.classList.remove('bg-green-100');
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = `Submission failed: ${result.message}`;
                     }
                 } catch (error) {
                     // 处理错误
                     formStatus.classList.remove('hidden');
-                    formStatus.classList.add('bg-red-100');
-                    formStatus.classList.remove('bg-green-100');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                     formStatusMessage.textContent = 'An error occurred during submission. Please try again later or contact us directly.';
                     console.error('Error submitting form:', error);
                 } finally {

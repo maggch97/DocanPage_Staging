@@ -2100,20 +2100,23 @@
                     formStatus.classList.remove('hidden');
                     
                     if (result.success) {
-                        formStatus.classList.add('bg-green-100');
-                        formStatus.classList.remove('bg-red-100');
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = 'Ihre Nachricht wurde erfolgreich übermittelt! Wir werden uns schnellstmöglich bei Ihnen melden.';
                         contactForm.reset();
                     } else {
-                        formStatus.classList.add('bg-red-100');
-                        formStatus.classList.remove('bg-green-100');
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                         formStatusMessage.textContent = `Übermittlung fehlgeschlagen: ${result.message}`;
                     }
                 } catch (error) {
                     // 处理错误
                     formStatus.classList.remove('hidden');
-                    formStatus.classList.add('bg-red-100');
-                    formStatus.classList.remove('bg-green-100');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
                     formStatusMessage.textContent = 'Bei der Übermittlung ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder kontaktieren Sie uns direkt.';
                     console.error('Fehler beim Übermitteln des Formulars:', error);
                 } finally {
