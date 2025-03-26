@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    textarea {
+      min-height: 150px;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .success, .error {
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 4px;
+      display: none;
+    }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <h1>联系我们</h1>
+  
+  <form id="contactForm">
+    <div class="form-group">
+      <label for="name">姓名</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">电子邮箱</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="subject">主题</label>
+      <input type="text" id="subject" name="subject" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="message">消息内容</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    
+    <button type="submit">提交</button>
+  </form>
+  
+  <div id="successMessage" class="success">
+    您的消息已成功发送！我们会尽快回复您。
+  </div>
+  
+  <div id="errorMessage" class="error">
+    发送消息时出错。请稍后再试。
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString()
+      };
+      
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById('successMessage').style.display = 'block';
+          document.getElementById('contactForm').reset();
+        } else {
+          document.getElementById('errorMessage').textContent = data.message || '发送消息时出错。请稍后再试。';
+          document.getElementById('errorMessage').style.display = 'block';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('errorMessage').textContent = '发送消息时出错。请稍后再试。';
+        document.getElementById('errorMessage').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html> 
