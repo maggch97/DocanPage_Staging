@@ -509,17 +509,33 @@
                         <i class="fas fa-language text-base ml-1"></i>
                     </button>
                     <div class="absolute right-0 mt-2 w-36 bg-tech-dark border border-tech-light/20 rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="#" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
-                            <span class="w-5 inline-block">中</span>
-                            <span class="ml-2">简体中文</span>
+                        <a href="/de-de/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">DE</span>
+                            <span class="ml-2">Deutsch</span>
                         </a>
-                        <a href="#" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
-                            <span class="w-5 inline-block">繁</span>
-                            <span class="ml-2">繁體中文</span>
-                        </a>
-                        <a href="#" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm flex items-center">
+                        <a href="/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
                             <span class="w-5 inline-block">EN</span>
                             <span class="ml-2">English</span>
+                        </a>
+                        <a href="/es-es/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">ES</span>
+                            <span class="ml-2">Español</span>
+                        </a>
+                        <a href="/fr-fr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">FR</span>
+                            <span class="ml-2">Français</span>
+                        </a>
+                        <a href="/ja-jp/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">日</span>
+                            <span class="ml-2">日本語</span>
+                        </a>
+                        <a href="/ko-kr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">한</span>
+                            <span class="ml-2">한국어</span>
+                        </a>
+                        <a href="/zh-cn/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm flex items-center">
+                            <span class="w-5 inline-block">中</span>
+                            <span class="ml-2">简体中文</span>
                         </a>
                     </div>
                 </div>
@@ -584,21 +600,45 @@
             </span>
             <div class="mobile-submenu">
                 <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link flex items-center">
-                        <span class="w-5 inline-block">中</span>
-                        <span class="ml-2">简体中文</span>
+                    <a href="/de-de/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">DE</span>
+                        <span class="ml-2">Deutsch</span>
                     </a>
                 </div>
                 <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link flex items-center">
-                        <span class="w-5 inline-block">繁</span>
-                        <span class="ml-2">繁體中文</span>
-                    </a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="#" class="mobile-submenu-link flex items-center">
+                    <a href="/" class="mobile-submenu-link flex items-center">
                         <span class="w-5 inline-block">EN</span>
                         <span class="ml-2">English</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/es-es/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">ES</span>
+                        <span class="ml-2">Español</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/fr-fr/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">FR</span>
+                        <span class="ml-2">Français</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/ja-jp/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">日</span>
+                        <span class="ml-2">日本語</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/ko-kr/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">한</span>
+                        <span class="ml-2">한국어</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/zh-cn/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">中</span>
+                        <span class="ml-2">简体中文</span>
                     </a>
                 </div>
             </div>
@@ -1318,32 +1358,33 @@
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Category navigation active state
+        const navItems = document.querySelectorAll('.category-nav-item');
+        const sections = document.querySelectorAll('section[id]');
 
-    // Category navigation active state
-    const navItems = document.querySelectorAll('.category-nav-item');
-    const sections = document.querySelectorAll('section[id]');
+        function setActiveNavItem() {
+            let scrollY = window.pageYOffset;
 
-    function setActiveNavItem() {
-        let scrollY = window.pageYOffset;
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
 
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute('id');
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navItems.forEach(item => {
+                        item.classList.remove('active');
+                        if (item.getAttribute('href') === `#${sectionId}`) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
 
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href') === `#${sectionId}`) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-
-    window.addEventListener('scroll', setActiveNavItem);
-    setActiveNavItem();
+        window.addEventListener('scroll', setActiveNavItem);
+        setActiveNavItem();
+    });
 
 </script></body></html><!-- Flatbed Printers Category --><html><head></head><body><section id="flatbed" class="pd-20 bg-tech-black product-category-section">
         <div class="container mx-auto px-4">
@@ -1357,7 +1398,53 @@
             <!-- 各个系列将被拆分为独立section -->
         </div>
     </section>
-</body></html><!-- Horizo Series - 从平板打印机中分离出来 --><html><head></head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
+</body></html><html><head><style>
+    .product-card {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .product-card img {
+        transition: all 0.5s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .series-header {
+        position: relative;
+    }
+
+    .series-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background-color: #0071e3;
+    }
+
+
+    .spec-badge {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+        border-radius: 20px;
+    }
+
+    .spec-badge:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+</style>
+<!-- Horizo Series - 从平板打印机中分离出来 -->
+</head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
         <h3 class="text-2xl font-bold mb-10 series-header fade-in">Horizo</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1428,7 +1515,53 @@
             
         </div>
     </div>
-</section></body></html><!-- Horizo Series - 从平板打印机中分离出来 --><html><head></head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
+</section></body></html><html><head><style>
+    .product-card {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .product-card img {
+        transition: all 0.5s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .series-header {
+        position: relative;
+    }
+
+    .series-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background-color: #0071e3;
+    }
+
+
+    .spec-badge {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+        border-radius: 20px;
+    }
+
+    .spec-badge:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+</style>
+<!-- Horizo Series - 从平板打印机中分离出来 -->
+</head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1511,7 +1644,53 @@
             <!-- 各个系列将被拆分为独立section -->
         </div>
     </section>
-</body></html><!-- Horizo Series - 从平板打印机中分离出来 --><html><head></head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
+</body></html><html><head><style>
+    .product-card {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .product-card img {
+        transition: all 0.5s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .series-header {
+        position: relative;
+    }
+
+    .series-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background-color: #0071e3;
+    }
+
+
+    .spec-badge {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+        border-radius: 20px;
+    }
+
+    .spec-badge:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+</style>
+<!-- Horizo Series - 从平板打印机中分离出来 -->
+</head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
         <h3 class="text-2xl font-bold mb-10 series-header fade-in">Horizo</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1600,7 +1779,53 @@
             </div>
         </div>
     </div>
-</section></body></html><!-- Horizo Series - 从平板打印机中分离出来 --><html><head></head><body><section id="" class="pb-10 bg-tech-black product-series-section">
+</section></body></html><html><head><style>
+    .product-card {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .product-card img {
+        transition: all 0.5s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .series-header {
+        position: relative;
+    }
+
+    .series-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background-color: #0071e3;
+    }
+
+
+    .spec-badge {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+        border-radius: 20px;
+    }
+
+    .spec-badge:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+</style>
+<!-- Horizo Series - 从平板打印机中分离出来 -->
+</head><body><section id="" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
