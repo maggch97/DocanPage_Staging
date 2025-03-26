@@ -51,9 +51,21 @@ export async function onRequest(context) {
     // 在这里我们将添加发送邮件和存储KV的逻辑
     // TODO: 实现邮件发送功能
     // TODO: 实现KV存储功能
-    // send message to get https://api.day.app/fRJPuzdAKSGEurGpquZp99/推送标题/这里改成你自己的推送内容
-    const encodedMessage = encodeURIComponent(JSON.stringify(data));
-    const response = await fetch(`https://api.day.app/fRJPuzdAKSGEurGpquZp99/contact/${encodedMessage}`);
+    
+    // 将数据转换为可读文本格式
+    const formattedMessage = `
+新联系表单提交:
+姓名: ${data.name || '未提供'}
+公司: ${data.company || '未提供'}
+邮箱: ${data.email || '未提供'}
+电话: ${data.phone || '未提供'}
+兴趣产品: ${data.interest || '未提供'}
+留言内容: ${data.message || '未提供'}
+    `;
+    
+    // 发送格式化后的消息到Bark
+    const encodedMessage = encodeURIComponent(formattedMessage);
+    const response = await fetch(`https://api.day.app/fRJPuzdAKSGEurGpquZp99/新联系表单/${encodedMessage}`);
     const barkResponse = await response.json();
     console.log(barkResponse);
 
