@@ -1367,49 +1367,43 @@
             }
         });
     }
-</script></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+</script></body></html><html><head><style>
+    .hero-badge {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+    .hero-badge:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+    }
+</style>
+<!-- Hero Section -->
+</head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
     <div class="absolute inset-0 z-0">
-        <img src="/img/20250322180656137_ef1hvv.jpg" alt="ProPrint X9000" class="w-full h-full object-cover object-center">
+        <video autoplay="" muted="" loop="" class="w-full h-full object-cover">
+            <source src="https://joy1.videvo.net/videvo_files/video/free/2019-09/large_watermarked/190828_27_SuperTrees_HD_17_preview.mp4" type="video/mp4">
+        </video>
         <div class="absolute inset-0 bg-gradient-to-b from-tech-black/60 via-tech-black/70 to-tech-black"></div>
     </div>
 
     <div class="container mx-auto px-4 z-10 py-12">
-        <div class="flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 mb-12 lg:mb-0">
-                <div class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium mb-6 hero-badge">
-                    新発売 | 産業用UVフラットベッドプリンター
-                </div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">ProPrint X9000</h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-2xl text-tech-light/90">
-                    次世代の産業用UVフラットベッドプリンターで、高精度、高速、多素材対応を実現し、あなたのクリエイティブを無限に広げます
-                </p>
-                <div class="flex flex-wrap gap-4 mb-10">
-                    <a href="/ja-jp/products/flatbed/orbis/example.html" class="px-8 py-3 btn-primary rounded-full text-lg">
-                        仕様とパラメータ
-                    </a>
-                    <a href="#contact" class="px-8 py-3 btn-secondary rounded-full text-lg">
-                        見積もりを依頼
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-3 gap-4 max-w-2xl">
-                    <div class="hero-stat text-center px-2">
-                        <div class="text-3xl font-bold text-white mb-1">1440</div>
-                        <div class="text-sm text-tech-light/70">最高解像度 (dpi)</div>
-                    </div>
-                    <div class="hero-stat text-center px-2">
-                        <div class="text-3xl font-bold text-white mb-1">60㎡</div>
-                        <div class="text-sm text-tech-light/70">最高印刷速度 (毎時)</div>
-                    </div>
-                    <div class="hero-stat text-center px-2">
-                        <div class="text-3xl font-bold text-white mb-1">150mm</div>
-                        <div class="text-sm text-tech-light/70">最大印刷高さ</div>
-                    </div>
-                </div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium mb-6 hero-badge">
+                革新技術 | 卓越した品質
             </div>
-
-            <div class="lg:w-1/2 flex justify-center">
-                <img src="/img/20250322180656137_ef1hvv.jpg" alt="ProPrint X9000" class="max-w-full max-h-[500px] object-contain rounded-lg clean-shadow">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">産業用プリントの<br>新基準を定義</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-tech-light/90">
+                TechPrintはフラットベッド、ロールtoロール、ハイブリッドタイプまで、あらゆるUVプリントソリューションを提供
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <a href="products.html" class="px-8 py-3 btn-primary rounded-full text-lg">
+                    製品を探す
+                </a>
+                <a href="#contact" class="px-8 py-3 btn-secondary rounded-full text-lg">
+                    お問い合わせ
+                </a>
             </div>
         </div>
     </div>
@@ -1417,344 +1411,381 @@
     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-tech-light/80 scroll-indicator">
         <i class="fas fa-chevron-down text-2xl"></i>
     </div>
-</section></body></html><!-- Introduction Section --><html><head></head><body><section class="py-20 bg-tech-black">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">産業印刷の基準を再定義</h2>
-            <p class="text-lg text-tech-light/80 mb-12 fade-in">
-                ProPrint X9000は、最新のUV印刷技術を採用し、精密なエンジニアリングとインテリジェント制御システムを組み合わせ、さまざまな業界に卓越した印刷ソリューションを提供します。ガラス、アクリル、木材、金属、プラスチックなど、高精度で高品質な直接印刷を実現します。
-            </p>
-        </div>
+</section></body></html><html><head><style>
+    .product-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div class="apple-card p-6 fade-in">
-                <div class="text-white text-4xl mb-4">
-                    <i class="fas fa-print"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">超高精度印刷</h3>
-                <p class="text-tech-light/70">
-                    産業用ヘッドを搭載し、最高1440dpiの超高精度印刷を実現し、繊細なテクスチャと正確な色を再現します。
-                </p>
-            </div>
+    .product-card:hover {
+        transform: scale(1.02);
+    }
 
-            <div class="apple-card p-6 fade-in" style="transition-delay: 0.2s;">
-                <div class="text-white text-4xl mb-4">
-                    <i class="fas fa-layer-group"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">多素材対応</h3>
-                <p class="text-tech-light/70">
-                    ガラス、アクリル、木材、金属、プラスチックなど、さまざまな素材の表面に対応し、多様な生産ニーズを満たします。
-                </p>
-            </div>
+    .product-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+        z-index: 1;
+    }
 
-            <div class="apple-card p-6 fade-in" style="transition-delay: 0.4s;">
-                <div class="text-white text-4xl mb-4">
-                    <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">高効率生産</h3>
-                <p class="text-tech-light/70">
-                    革新的なデュアルトラックシステムとインテリジェントワークフローにより、従来の設備に比べて生産効率を50％向上させ、運営コストを削減します。
-                </p>
-            </div>
-        </div>
-    </div>
-</section></body></html><!-- Scroll Feature Section --><html><head></head><body><section id="features" class="py-20 bg-tech-dark">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-20">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">コアテクノロジーのハイライト</h2>
-            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
-                ProPrint X9000の革新的なテクノロジーを探索し、これまでにないプリント体験を実感してください
-            </p>
-        </div>
-
-        <!-- Feature 1 - Left to Right -->
-        <div class="scroll-feature from-left mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">インテリジェントノズルシステム</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        8つの工業用ノズルを搭載し、CMYK+白+光沢+特色印刷をサポート。ノズル高さを自動調整し、異なる厚さの素材でも完璧な印刷効果を実現します。
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>ノズル高さ自動調整、0-150mmの厚さの素材に対応</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>インテリジェントノズル監視システム、ノズル状態をリアルタイムで検出</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>自動洗浄メンテナンスシステム、ノズルの寿命を延長</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="https://picsum.photos/800/600?random=3" alt="インテリジェントノズルシステム" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 2 - Right to Left -->
-        <div class="scroll-feature from-right mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://picsum.photos/800/600?random=4" alt="精密ガイドシステム" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">精密ガイドシステム</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        日本製リニアガイドとサーボモーターを採用し、高精度で安定したモーションコントロールを実現。印刷プロセス中の正確な位置決めとスムーズな動作を保証します。
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>位置決め精度±0.01mm、画像の正確な位置合わせを確保</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>高剛性鋼構造フレーム、振動の影響を低減</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>インテリジェント衝突防止システム、設備の安全な運転を保障</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 3 - Left to Right -->
-        <div class="scroll-feature from-left mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">UV LED硬化システム</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        最新世代のUV LED硬化技術を採用し、印刷後すぐに乾燥。待ち時間なしで生産効率を大幅に向上させ、エネルギー消費を削減し、より環境に優しいです。
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>デュアルゾーン独立制御により、異なる素材に応じて硬化強度を調整可能</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>低発熱設計で、熱に敏感な素材の印刷に最適</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>50,000時間の超長寿命で、メンテナンスコストを大幅に削減</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="https://picsum.photos/800/600?random=5" alt="UV LED硬化システム" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 4 - Right to Left -->
-        <div class="scroll-feature from-right">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://picsum.photos/800/600?random=6" alt="インテリジェント制御システム" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">インテリジェント制御システム</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        15.6インチの高精細タッチスクリーンと独自開発のインテリジェント制御ソフトウェアを搭載し、リモート操作、自動レイアウト、インテリジェントカラーマネジメントなどの機能をサポートし、操作をより簡単かつ効率的にします。
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>クラウド接続により、リモート監視と故障診断をサポート</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>インテリジェントレイアウトシステムで、材料の利用率を最適化</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>自動化されたワークフローで、ワンクリック操作を実現</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section></body></html><!-- Applications Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    .product-card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        z-index: 2;
+    }
+</style>
+<!-- Product Categories Section -->
+</head><body><section class="py-20 bg-tech-black">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">幅広い応用分野</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">製品ラインアップ</h2>
             <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
-                ProPrint X9000は、さまざまな業界の応用シーンに対応し、お客様の個別ニーズを満たし、ビジネスに無限の可能性を創造します。
+                様々な業界の専門的なニーズに対応するUVプリントソリューションを提供します
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Category 1 -->
+            <div class="product-card rounded-2xl overflow-hidden aspect-[4/5] fade-in">
+                <img src="https://picsum.photos/600/800?random=1" alt="フラットベッドプリンター" class="w-full h-full object-cover">
+                <div class="product-card-content">
+                    <h3 class="text-2xl font-bold mb-2">フラットベッドプリンター</h3>
+                    <p class="text-tech-light/90 mb-4">ガラス、アクリル、木材などの剛体材料に高精度で直接印刷可能</p>
+                    <a href="products.html#flatbed" class="inline-flex items-center text-tech-accent">
+                        詳細を見る <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="product-card rounded-2xl overflow-hidden aspect-[4/5] fade-in" style="transition-delay: 0.2s;">
+                <img src="https://picsum.photos/600/800?random=2" alt="ハイブリッドプリンター" class="w-full h-full object-cover">
+                <div class="product-card-content">
+                    <h3 class="text-2xl font-bold mb-2">ハイブリッドプリンター</h3>
+                    <p class="text-tech-light/90 mb-4">剛体材料と柔軟材料の両方に対応、多様なニーズに柔軟に対応</p>
+                    <a href="products.html#hybrid" class="inline-flex items-center text-tech-accent">
+                        詳細を見る <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="product-card rounded-2xl overflow-hidden aspect-[4/5] fade-in" style="transition-delay: 0.4s;">
+                <img src="https://picsum.photos/600/800?random=3" alt="ロールプリンター" class="w-full h-full object-cover">
+                <div class="product-card-content">
+                    <h3 class="text-2xl font-bold mb-2">ロールプリンター</h3>
+                    <p class="text-tech-light/90 mb-4">布地、フィルム、壁紙などの柔軟材料専用設計、高効率な連続印刷</p>
+                    <a href="products.html#roll" class="inline-flex items-center text-tech-accent">
+                        詳細を見る <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Featured Product Section --><html><head></head><body><section class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">人気製品</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                高性能プリンターのラインナップをご紹介
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1 fade-in">
+                <div class="inline-block px-3 py-1 rounded-full text-white text-sm font-medium mb-4 hero-badge">
+                    新発売
+                </div>
+                <h3 class="text-3xl font-bold mb-4">ProPrint X9000</h3>
+                <p class="text-lg text-tech-light/90 mb-6">
+                    フラッグシップフラットベッドプリンター。高精度・高速・多素材対応で、クリエイティブな可能性を無限に広げます。産業用ノズル8基搭載で最大1440dpiの超高精細印刷を実現。
+                </p>
+                <ul class="space-y-3 text-tech-light/80 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-2"></i>
+                        <span>印刷サイズ：1600mm × 1000mm</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-2"></i>
+                        <span>最高印刷速度：60㎡/h</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-2"></i>
+                        <span>最大印刷高：150mm</span>
+                    </li>
+                </ul>
+                <a href="products.html#x9000" class="px-6 py-3 btn-primary rounded-full">
+                    詳細を見る
+                </a>
+            </div>
+            <div class="order-1 lg:order-2 fade-in">
+                <img src="https://picsum.photos/800/600?random=4" alt="ProPrint X9000" class="w-full rounded-2xl clean-shadow">
+            </div>
+        </div>
+    </div>
+</section></body></html><html><head><style>
+    .feature-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to right, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 50%, rgba(10, 10, 10, 1) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .feature-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 2rem 0;
+    }
+
+    .feature-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-item {
+        flex: 0 0 auto;
+        width: 300px;
+        margin-right: 2rem;
+        scroll-snap-align: start;
+    }
+</style>
+<!-- Features Carousel Section -->
+</head><body><section class="py-20 bg-tech-black feature-section">
+    <div class="container mx-auto px-4 mb-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">コアテクノロジー</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                TechPrintプリンターの革新的な技術を探索
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-carousel relative z-10">
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-print"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">超高精細印刷</h3>
+            <p class="text-tech-light/70">
+                産業用ヘッドを搭載し、最大1440dpiの超高精細印刷を実現、繊細な質感と正確な色再現。
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-layer-group"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">多素材対応</h3>
+            <p class="text-tech-light/70">
+                ガラス、アクリル、木材、金属、プラスチックなど様々な素材表面に対応、多様な生産ニーズを満たします。
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">高効率生産</h3>
+            <p class="text-tech-light/70">
+                革新的なデュアルトラックシステムとインテリジェントワークフローで、従来機比50%の生産性向上と運用コスト削減を実現。
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">UV LED硬化技術</h3>
+            <p class="text-tech-light/70">
+                最新世代のUV LED硬化技術を採用し、印刷即乾燥を実現。待ち時間ゼロで生産効率を大幅に向上させ、エネルギー消費も削減。
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-desktop"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">インテリジェント制御システム</h3>
+            <p class="text-tech-light/70">
+                高精細タッチスクリーンと独自開発の制御ソフトを搭載。リモート操作、自動レイアウト、インテリジェントカラーマネジメントなどの機能をサポート。
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-tools"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">メンテナンス容易設計</h3>
+            <p class="text-tech-light/70">
+                モジュール設計でメンテナンスとアップグレードが容易。自動洗浄システムでノズル寿命を延長し、メンテナンスコストを削減。
+            </p>
+        </div>
+    </div>
+</section></body></html><!-- Applications Section --><html><head></head><body><section class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">アプリケーション</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                TechPrintプリンターは様々な業界で活用され、多様なカスタマーのニーズに対応しています
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="relative overflow-hidden rounded-2xl group fade-in">
-                <img src="https://picsum.photos/600/400?random=7" alt="広告看板应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=5" alt="広告看板アプリケーション" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">広告看板</h3>
-                    <p class="text-tech-light/90">高品質な屋内・屋外広告看板、展示パネル、案内標識など</p>
+                    <p class="text-tech-light/90">高品質な屋内・屋外用看板、ディスプレイ、サインなど</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.1s;">
-                <img src="https://picsum.photos/600/400?random=8" alt="ホームデコレーション应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=6" alt="ホームデコレーションアプリケーション" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">ホームデコレーション</h3>
-                    <p class="text-tech-light/90">個性的な壁面装飾、ガラスアート、家具のカスタマイズなど</p>
+                    <p class="text-tech-light/90">個性的な壁装飾、ガラスアート、家具カスタマイズなど</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.2s;">
-                <img src="https://picsum.photos/600/400?random=9" alt="工業カスタマイズ应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=7" alt="工業用カスタマイズアプリケーション" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 class="text-xl font-bold mb-2">工業カスタマイズ</h3>
-                    <p class="text-tech-light/90">コントロールパネル、計器盤、機械設備の識別表示など</p>
+                    <h3 class="text-xl font-bold mb-2">工業用カスタマイズ</h3>
+                    <p class="text-tech-light/90">制御パネル、計器盤、機械設備の表示など</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.3s;">
-                <img src="https://picsum.photos/600/400?random=10" alt="パッケージ印刷应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=8" alt="包装印刷アプリケーション" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 class="text-xl font-bold mb-2">パッケージ印刷</h3>
-                    <p class="text-tech-light/90">高級製品パッケージ、個性的なギフトボックス、小ロットカスタマイズなど</p>
+                    <h3 class="text-xl font-bold mb-2">包装印刷</h3>
+                    <p class="text-tech-light/90">高級製品パッケージ、個性化ギフトボックス、小ロットカスタマイズなど</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.4s;">
-                <img src="https://picsum.photos/600/400?random=11" alt="アート創作应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=9" alt="アートクリエーションアプリケーション" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 class="text-xl font-bold mb-2">アート創作</h3>
+                    <h3 class="text-xl font-bold mb-2">アートクリエーション</h3>
                     <p class="text-tech-light/90">アートレプリカ、限定版画、クリエイティブアート作品など</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.5s;">
-                <img src="https://picsum.photos/600/400?random=12" alt="電子製品应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=10" alt="電子製品アプリケーション" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">電子製品</h3>
-                    <p class="text-tech-light/90">スマートフォンケース、PCアクセサリー、消費電子製品の外装など</p>
+                    <p class="text-tech-light/90">スマホケース、PCアクセサリー、家電製品の外装など</p>
                 </div>
             </div>
         </div>
     </div>
-</section></body></html><!-- Parallax Showcase Section --><html><head></head><body><section class="parallax-section">
-    <div class="absolute inset-0 z-0">
-        <img src="https://picsum.photos/1920/1080?random=13" alt="" class="w-full h-full object-cover" id="parallax-bg">
-        <div class="absolute inset-0 bg-tech-black/50"></div>
-    </div>
+</section></body></html><html><head><style>
+    .news-card {
+        transition: all 0.3s ease;
+    }
 
-    <div class="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
-        <div class="max-w-2xl">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">性能の限界を突破</h2>
-            <p class="text-xl text-tech-light/90 mb-8">
-                ProPrint X9000は単なるプリンターではなく、ビジネス成長の強力なエンジンです。卓越した性能と信頼性で、新たな市場を開拓し、ビジネスチャンスを創出します。
-            </p>
-            <a href="#contact" class="inline-block px-8 py-3 btn-primary rounded-full text-lg">
-                今すぐ相談
-            </a>
-        </div>
-    </div>
-</section></body></html><!-- Specifications Section --><html><head></head><body><section id="specs" class="py-20 bg-tech-black">
+    .news-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .news-card img {
+        transition: all 0.5s ease;
+    }
+
+    .news-card:hover img {
+        transform: scale(1.05);
+    }
+</style>
+<!-- News & Events Section -->
+</head><body><section class="py-20 bg-tech-black">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">技術仕様</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">ニュース＆イベント</h2>
             <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
-                ProPrint X9000の詳細な技術仕様を確認し、専門的なニーズに対応します
+                TechPrintの最新情報と業界動向をご覧ください
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="apple-card p-8 fade-in">
-                <h3 class="text-2xl font-bold mb-6 text-white">基本仕様</h3>
-                <table class="w-full specs-table">
-                    <tbody>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">印刷サイズ</td>
-                            <td class="py-3 text-right font-medium">1600mm × 1000mm</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">印刷高さ</td>
-                            <td class="py-3 text-right font-medium">最大150mm</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">印刷解像度</td>
-                            <td class="py-3 text-right font-medium">最大1440 × 1440 dpi</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">印刷速度</td>
-                            <td class="py-3 text-right font-medium">ドラフトモード: 60㎡/h<br>標準モード: 30㎡/h<br>高品質モード: 15㎡/h</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">ヘッド構成</td>
-                            <td class="py-3 text-right font-medium">8つの工業用ピエゾヘッド</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">インクタイプ</td>
-                            <td class="py-3 text-right font-medium">UV LED硬化インク</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">インクカラー</td>
-                            <td class="py-3 text-right font-medium">CMYK + 白 + クリア + 2つの特色</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=11" alt="ニュース画像" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-tech-light/60 mb-2">2023年10月15日</div>
+                    <h3 class="text-xl font-bold mb-3">TechPrint、2023年度革新技術賞を受賞</h3>
+                    <p class="text-tech-light/70 mb-4">
+                        ProPrint Xシリーズが優れた性能と革新的な技術で、業界権威ある機関から年間革新技術賞を受賞しました...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-tech-accent">
+                        続きを読む <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
-                <h3 class="text-2xl font-bold mb-6 text-white">システムとインターフェース</h3>
-                <table class="w-full specs-table">
-                    <tbody>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">制御システム</td>
-                            <td class="py-3 text-right font-medium">15.6インチHDタッチスクリーン</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">対応フォーマット</td>
-                            <td class="py-3 text-right font-medium">PDF, TIFF, JPG, PNG, AI, PSD</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">接続インターフェース</td>
-                            <td class="py-3 text-right font-medium">USB 3.0, イーサネット, Wi-Fi</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">RIPソフトウェア</td>
-                            <td class="py-3 text-right font-medium">プロフェッショナル版RIPソフトウェア、カラーマネジメント対応</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">電源要件</td>
-                            <td class="py-3 text-right font-medium">AC 220V±10%, 50/60Hz</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">消費電力</td>
-                            <td class="py-3 text-right font-medium">稼働時: 3.5kW<br>待機時: 0.5kW</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">機器サイズ</td>
-                            <td class="py-3 text-right font-medium">2800mm × 1800mm × 1200mm</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">機器重量</td>
-                            <td class="py-3 text-right font-medium">約850kg</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=12" alt="ニュース画像" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-tech-light/60 mb-2">2023年9月28日</div>
+                    <h3 class="text-xl font-bold mb-3">TechPrint、2023上海国際広告印刷展に出展</h3>
+                    <p class="text-tech-light/70 mb-4">
+                        TechPrintブースで最新の印刷技術とソリューションをぜひご体験ください...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-tech-accent">
+                        続きを読む <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.4s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=13" alt="ニュース画像" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-tech-light/60 mb-2">2023年9月10日</div>
+                    <h3 class="text-xl font-bold mb-3">TechPrint、新環境対応UVインクシリーズを発表</h3>
+                    <p class="text-tech-light/70 mb-4">
+                        新開発の環境配慮型UVインクは、より鮮やかで耐久性のある発色を実現し、環境負荷も低減...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-tech-accent">
+                        続きを読む <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="mt-12 text-center">
-            <a href="#" class="inline-block px-6 py-3 btn-secondary rounded-full fade-in">
-                <i class="fas fa-download mr-2"></i> 完全な仕様書をダウンロード
+        <div class="text-center mt-12">
+            <a href="#" class="px-6 py-3 btn-secondary rounded-full">
+                もっと見る
             </a>
         </div>
     </div>

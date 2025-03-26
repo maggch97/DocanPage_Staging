@@ -1367,49 +1367,43 @@
             }
         });
     }
-</script></body></html><!-- Hero Section --><html><head></head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+</script></body></html><html><head><style>
+    .hero-badge {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+    .hero-badge:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+    }
+</style>
+<!-- Hero Section -->
+</head><body><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
     <div class="absolute inset-0 z-0">
-        <img src="/img/20250322180656137_ef1hvv.jpg" alt="ProPrint X9000" class="w-full h-full object-cover object-center">
+        <video autoplay="" muted="" loop="" class="w-full h-full object-cover">
+            <source src="https://joy1.videvo.net/videvo_files/video/free/2019-09/large_watermarked/190828_27_SuperTrees_HD_17_preview.mp4" type="video/mp4">
+        </video>
         <div class="absolute inset-0 bg-gradient-to-b from-tech-black/60 via-tech-black/70 to-tech-black"></div>
     </div>
 
     <div class="container mx-auto px-4 z-10 py-12">
-        <div class="flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 mb-12 lg:mb-0">
-                <div class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium mb-6 hero-badge">
-                    Nouveau lancement | Imprimante UV à plat industrielle
-                </div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">ProPrint X9000</h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-2xl text-tech-light/90">
-                    La prochaine génération d'imprimantes UV à plat industrielles, combinant haute précision, haute vitesse et multi-matériaux, offrant des possibilités infinies pour votre créativité
-                </p>
-                <div class="flex flex-wrap gap-4 mb-10">
-                    <a href="/fr-fr/products/flatbed/orbis/example.html" class="px-8 py-3 btn-primary rounded-full text-lg">
-                        Spécifications techniques
-                    </a>
-                    <a href="#contact" class="px-8 py-3 btn-secondary rounded-full text-lg">
-                        Demander un devis
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-3 gap-4 max-w-2xl">
-                    <div class="hero-stat text-center px-2">
-                        <div class="text-3xl font-bold text-white mb-1">1440</div>
-                        <div class="text-sm text-tech-light/70">Résolution maximale (dpi)</div>
-                    </div>
-                    <div class="hero-stat text-center px-2">
-                        <div class="text-3xl font-bold text-white mb-1">60㎡</div>
-                        <div class="text-sm text-tech-light/70">Vitesse d'impression maximale (par heure)</div>
-                    </div>
-                    <div class="hero-stat text-center px-2">
-                        <div class="text-3xl font-bold text-white mb-1">150mm</div>
-                        <div class="text-sm text-tech-light/70">Hauteur d'impression maximale</div>
-                    </div>
-                </div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium mb-6 hero-badge">
+                Innovation Technologique | Qualité Exceptionnelle
             </div>
-
-            <div class="lg:w-1/2 flex justify-center">
-                <img src="/img/20250322180656137_ef1hvv.jpg" alt="ProPrint X9000" class="max-w-full max-h-[500px] object-contain rounded-lg clean-shadow">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">Redéfinir<br>les standards de l'impression industrielle</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-tech-light/90">
+                TechPrint propose une gamme complète de solutions d'impression UV, répondant à tous vos besoins, des supports plats aux rouleaux et aux formats mixtes.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <a href="products.html" class="px-8 py-3 btn-primary rounded-full text-lg">
+                    Découvrir nos produits
+                </a>
+                <a href="#contact" class="px-8 py-3 btn-secondary rounded-full text-lg">
+                    Contactez-nous
+                </a>
             </div>
         </div>
     </div>
@@ -1417,193 +1411,257 @@
     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-tech-light/80 scroll-indicator">
         <i class="fas fa-chevron-down text-2xl"></i>
     </div>
-</section></body></html><!-- Introduction Section --><html><head></head><body><section class="py-20 bg-tech-black">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">Redéfinir les standards de l'impression industrielle</h2>
-            <p class="text-lg text-tech-light/80 mb-12 fade-in">
-                Le ProPrint X9000 utilise la dernière technologie d'impression UV, combinée à une ingénierie de précision et un système de contrôle intelligent, offrant des solutions d'impression exceptionnelles pour divers secteurs. Que ce soit sur du verre, de l'acrylique, du bois, du métal ou du plastique, il permet une impression directe de haute précision et qualité.
-            </p>
-        </div>
+</section></body></html><html><head><style>
+    .product-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div class="apple-card p-6 fade-in">
-                <div class="text-white text-4xl mb-4">
-                    <i class="fas fa-print"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Impression de très haute précision</h3>
-                <p class="text-tech-light/70">
-                    Équipé de têtes d'impression industrielles, il permet une impression de très haute précision jusqu'à 1440 dpi, offrant des textures fines et des couleurs précises.
-                </p>
-            </div>
+    .product-card:hover {
+        transform: scale(1.02);
+    }
 
-            <div class="apple-card p-6 fade-in" style="transition-delay: 0.2s;">
-                <div class="text-white text-4xl mb-4">
-                    <i class="fas fa-layer-group"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Compatibilité multi-matériaux</h3>
-                <p class="text-tech-light/70">
-                    Adapté à une variété de surfaces, y compris le verre, l'acrylique, le bois, le métal, le plastique, etc., répondant à des besoins de production diversifiés.
-                </p>
-            </div>
+    .product-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+        z-index: 1;
+    }
 
-            <div class="apple-card p-6 fade-in" style="transition-delay: 0.4s;">
-                <div class="text-white text-4xl mb-4">
-                    <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Production efficace</h3>
-                <p class="text-tech-light/70">
-                    Système de double rail innovant et flux de travail intelligent, augmentant l'efficacité de production de 50% par rapport aux équipements traditionnels, réduisant les coûts opérationnels.
-                </p>
-            </div>
-        </div>
-    </div>
-</section></body></html><!-- Scroll Feature Section --><html><head></head><body><section id="features" class="py-20 bg-tech-dark">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-20">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Points forts technologiques</h2>
-            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
-                Découvrez la technologie révolutionnaire du ProPrint X9000 et vivez une expérience d'impression inédite.
-            </p>
-        </div>
-
-        <!-- Feature 1 - Left to Right -->
-        <div class="scroll-feature from-left mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">Système de têtes d'impression intelligentes</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        Équipé de 8 têtes d'impression industrielles, supportant l'impression CMYK + blanc + vernis + couleurs spéciales, avec réglage automatique de la hauteur d'impression pour des résultats parfaits sur des matériaux de différentes épaisseurs.
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Réglage automatique de la hauteur des têtes, adapté aux matériaux de 0 à 150 mm d'épaisseur</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Système de surveillance intelligent des buses, détection en temps réel de l'état des buses</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Système de nettoyage et de maintenance automatique, prolongeant la durée de vie des têtes</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="https://picsum.photos/800/600?random=3" alt="Système de têtes d'impression intelligentes" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 2 - Right to Left -->
-        <div class="scroll-feature from-right mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://picsum.photos/800/600?random=4" alt="Système de guidage de précision" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">Système de guidage de précision</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        Utilisation de guides linéaires et de moteurs servo importés du Japon, assurant un contrôle de mouvement de haute précision et stabilité, garantissant un positionnement précis et un fonctionnement fluide pendant l'impression.
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Précision de positionnement de ±0,01 mm, assurant un alignement parfait des images</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Cadre en acier à haute rigidité, réduisant les effets des vibrations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Système anti-collision intelligent, garantissant la sécurité de l'équipement</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 3 - Left to Right -->
-        <div class="scroll-feature from-left mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">Système de séchage UV LED</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        Utilisation de la dernière technologie de séchage UV LED, permettant une impression instantanément sèche, sans temps d'attente, augmentant considérablement la productivité tout en réduisant la consommation d'énergie, pour une solution plus écologique.
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Contrôle indépendant double zone, ajustement de l'intensité de durcissement selon les matériaux</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Conception à faible chaleur, adaptée à l'impression sur matériaux sensibles à la chaleur</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Durée de vie ultra-longue de 50 000 heures, réduisant considérablement les coûts de maintenance</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="https://picsum.photos/800/600?random=5" alt="Système de séchage UV LED" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 4 - Right to Left -->
-        <div class="scroll-feature from-right">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://picsum.photos/800/600?random=6" alt="Système de contrôle intelligent" class="feature-image w-full rounded-2xl clean-shadow">
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-white feature-title">Système de contrôle intelligent</h3>
-                    <p class="text-lg text-tech-light/90 mb-6">
-                        Équipé d'un écran tactile HD de 15,6 pouces et d'un logiciel de contrôle intelligent développé en interne, prenant en charge la commande à distance, la mise en page automatique, la gestion intelligente des couleurs, rendant l'opération plus simple et efficace.
-                    </p>
-                    <ul class="space-y-3 text-tech-light/80">
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Connexion cloud, supporte la surveillance à distance et le diagnostic des pannes</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Système de mise en page intelligent, optimise l'utilisation des matériaux</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check feature-check mt-1 mr-2"></i>
-                            <span>Processus de travail automatisé, opération en un clic</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section></body></html><!-- Applications Section --><html><head></head><body><section class="py-20 bg-tech-black">
+    .product-card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        z-index: 2;
+    }
+</style>
+<!-- Product Categories Section -->
+</head><body><section class="py-20 bg-tech-black">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Domaines d'application variés</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Gammes de produits</h2>
             <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
-                Le ProPrint X9000 est adapté à de nombreux secteurs d'activité, répondant aux besoins personnalisés de différents clients, ouvrant des possibilités infinies pour votre entreprise.
+                Nous proposons des solutions d'impression UV complètes pour répondre aux besoins professionnels de divers secteurs
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Category 1 -->
+            <div class="product-card rounded-2xl overflow-hidden aspect-[4/5] fade-in">
+                <img src="https://picsum.photos/600/800?random=1" alt="Gamme d'imprimantes à plat" class="w-full h-full object-cover">
+                <div class="product-card-content">
+                    <h3 class="text-2xl font-bold mb-2">Imprimantes à plat</h3>
+                    <p class="text-tech-light/90 mb-4">Impression directe haute précision sur matériaux rigides comme le verre, l'acrylique, le bois, etc.</p>
+                    <a href="products.html#flatbed" class="inline-flex items-center text-tech-accent">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="product-card rounded-2xl overflow-hidden aspect-[4/5] fade-in" style="transition-delay: 0.2s;">
+                <img src="https://picsum.photos/600/800?random=2" alt="Gamme d'imprimantes hybrides" class="w-full h-full object-cover">
+                <div class="product-card-content">
+                    <h3 class="text-2xl font-bold mb-2">Imprimantes hybrides</h3>
+                    <p class="text-tech-light/90 mb-4">Compatibles avec matériaux rigides et souples, polyvalentes pour répondre à des besoins diversifiés</p>
+                    <a href="products.html#hybrid" class="inline-flex items-center text-tech-accent">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="product-card rounded-2xl overflow-hidden aspect-[4/5] fade-in" style="transition-delay: 0.4s;">
+                <img src="https://picsum.photos/600/800?random=3" alt="Gamme d'imprimantes pour rouleaux" class="w-full h-full object-cover">
+                <div class="product-card-content">
+                    <h3 class="text-2xl font-bold mb-2">Imprimantes pour rouleaux</h3>
+                    <p class="text-tech-light/90 mb-4">Conçues pour les matériaux souples comme les tissus, adhésifs, papiers peints, avec impression continue haute efficacité</p>
+                    <a href="products.html#roll" class="inline-flex items-center text-tech-accent">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></body></html><!-- Featured Product Section --><html><head></head><body><section class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Produits phares</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                Découvrez nos imprimantes haute performance les plus populaires
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1 fade-in">
+                <div class="inline-block px-3 py-1 rounded-full text-white text-sm font-medium mb-4 hero-badge">
+                    Nouveauté
+                </div>
+                <h3 class="text-3xl font-bold mb-4">ProPrint X9000</h3>
+                <p class="text-lg text-tech-light/90 mb-6">
+                    Notre imprimante à plat haut de gamme, alliant précision, vitesse et polyvalence pour tous types de matériaux. Dotée de 8 têtes d'impression industrielles, elle offre une résolution d'impression ultra-précise jusqu'à 1440 dpi.
+                </p>
+                <ul class="space-y-3 text-tech-light/80 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-2"></i>
+                        <span>Format d'impression : 1600mm × 1000mm</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-2"></i>
+                        <span>Vitesse max. d'impression : 60㎡/h</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-2"></i>
+                        <span>Hauteur max. d'impression : 150mm</span>
+                    </li>
+                </ul>
+                <a href="products.html#x9000" class="px-6 py-3 btn-primary rounded-full">
+                    Voir les détails
+                </a>
+            </div>
+            <div class="order-1 lg:order-2 fade-in">
+                <img src="https://picsum.photos/800/600?random=4" alt="ProPrint X9000" class="w-full rounded-2xl clean-shadow">
+            </div>
+        </div>
+    </div>
+</section></body></html><html><head><style>
+    .feature-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to right, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 50%, rgba(10, 10, 10, 1) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .feature-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 2rem 0;
+    }
+
+    .feature-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-item {
+        flex: 0 0 auto;
+        width: 300px;
+        margin-right: 2rem;
+        scroll-snap-align: start;
+    }
+</style>
+<!-- Features Carousel Section -->
+</head><body><section class="py-20 bg-tech-black feature-section">
+    <div class="container mx-auto px-4 mb-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Avantages technologiques clés</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                Découvrez les technologies révolutionnaires des imprimantes TechPrint
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-carousel relative z-10">
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-print"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Impression ultra-précise</h3>
+            <p class="text-tech-light/70">
+                Têtes d'impression industrielles permettant une résolution jusqu'à 1440 dpi pour des textures fines et des couleurs précises.
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-layer-group"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Compatibilité multi-matériaux</h3>
+            <p class="text-tech-light/70">
+                Adapté à divers matériaux : verre, acrylique, bois, métal, plastique, etc. pour répondre à des besoins de production variés.
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Production efficace</h3>
+            <p class="text-tech-light/70">
+                Système à double rail innovant et flux de travail intelligent augmentant la productivité de 50% par rapport aux équipements traditionnels.
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Technologie de séchage UV LED</h3>
+            <p class="text-tech-light/70">
+                Avec la dernière technologie de séchage UV LED, l'impression sèche instantanément, éliminant les temps d'attente et augmentant considérablement la productivité tout en réduisant la consommation d'énergie.
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-desktop"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Système de contrôle intelligent</h3>
+            <p class="text-tech-light/70">
+                Équipé d'un écran tactile haute définition et d'un logiciel de contrôle intelligent développé en interne, prenant en charge la commande à distance, la mise en page automatique et la gestion intelligente des couleurs.
+            </p>
+        </div>
+
+        <div class="feature-item apple-card p-6">
+            <div class="text-white text-4xl mb-4">
+                <i class="fas fa-tools"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Maintenance simplifiée</h3>
+            <p class="text-tech-light/70">
+                Conception modulaire pour une maintenance et des mises à niveau faciles, système de nettoyage automatique prolongeant la durée de vie des têtes d'impression et réduisant les coûts de maintenance.
+            </p>
+        </div>
+    </div>
+</section></body></html><!-- Applications Section --><html><head></head><body><section class="py-20 bg-tech-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Domaines d'application</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
+                Les imprimantes TechPrint sont largement utilisées dans divers secteurs pour répondre aux besoins personnalisés des clients
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="relative overflow-hidden rounded-2xl group fade-in">
-                <img src="https://picsum.photos/600/400?random=7" alt="Signalétique publicitaire应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=5" alt="Application pour panneaux publicitaires" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">Signalétique publicitaire</h3>
-                    <p class="text-tech-light/90">Panneaux publicitaires intérieurs et extérieurs de haute qualité, panneaux d'exposition, signalétique directionnelle, etc.</p>
+                    <p class="text-tech-light/90">Panneaux publicitaires intérieurs/extérieurs haute qualité, panneaux d'exposition, signalétique directionnelle, etc.</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.1s;">
-                <img src="https://picsum.photos/600/400?random=8" alt="Décoration intérieure应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=6" alt="Application pour décoration intérieure" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">Décoration intérieure</h3>
@@ -1612,34 +1670,34 @@
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.2s;">
-                <img src="https://picsum.photos/600/400?random=9" alt="Personnalisation industrielle应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=7" alt="Application pour personnalisation industrielle" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">Personnalisation industrielle</h3>
-                    <p class="text-tech-light/90">Panneaux de contrôle, tableaux de bord, identification de machines, etc.</p>
+                    <p class="text-tech-light/90">Panneaux de contrôle, tableaux de bord, identification d'équipements industriels, etc.</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.3s;">
-                <img src="https://picsum.photos/600/400?random=10" alt="Impression d'emballages应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=8" alt="Application pour impression d'emballages" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">Impression d'emballages</h3>
-                    <p class="text-tech-light/90">Emballages haut de gamme, boîtes cadeaux personnalisées, production en petites séries, etc.</p>
+                    <p class="text-tech-light/90">Emballages produits haut de gamme, coffrets cadeaux personnalisés, petites séries sur mesure, etc.</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.4s;">
-                <img src="https://picsum.photos/600/400?random=11" alt="Création artistique应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=9" alt="Application pour création artistique" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">Création artistique</h3>
-                    <p class="text-tech-light/90">Reproductions d'art, estampes en édition limitée, œuvres d'art créatives, etc.</p>
+                    <p class="text-tech-light/90">Reproductions d'art, gravures en édition limitée, œuvres créatives, etc.</p>
                 </div>
             </div>
 
             <div class="relative overflow-hidden rounded-2xl group fade-in" style="transition-delay: 0.5s;">
-                <img src="https://picsum.photos/600/400?random=12" alt="Produits électroniques应用" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://picsum.photos/600/400?random=10" alt="Application pour produits électroniques" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-tech-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <h3 class="text-xl font-bold mb-2">Produits électroniques</h3>
@@ -1648,113 +1706,86 @@
             </div>
         </div>
     </div>
-</section></body></html><!-- Parallax Showcase Section --><html><head></head><body><section class="parallax-section">
-    <div class="absolute inset-0 z-0">
-        <img src="https://picsum.photos/1920/1080?random=13" alt="" class="w-full h-full object-cover" id="parallax-bg">
-        <div class="absolute inset-0 bg-tech-black/50"></div>
-    </div>
+</section></body></html><html><head><style>
+    .news-card {
+        transition: all 0.3s ease;
+    }
 
-    <div class="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
-        <div class="max-w-2xl">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">Repoussez les limites de la performance</h2>
-            <p class="text-xl text-tech-light/90 mb-8">
-                Le ProPrint X9000 n'est pas seulement une imprimante, c'est un puissant moteur pour la croissance de votre entreprise. Avec des performances et une fiabilité exceptionnelles, il vous aide à explorer de nouveaux marchés et à créer plus d'opportunités commerciales.
-            </p>
-            <a href="#contact" class="inline-block px-8 py-3 btn-primary rounded-full text-lg">
-                Demander maintenant
-            </a>
-        </div>
-    </div>
-</section></body></html><!-- Specifications Section --><html><head></head><body><section id="specs" class="py-20 bg-tech-black">
+    .news-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .news-card img {
+        transition: all 0.5s ease;
+    }
+
+    .news-card:hover img {
+        transform: scale(1.05);
+    }
+</style>
+<!-- News & Events Section -->
+</head><body><section class="py-20 bg-tech-black">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Spécifications techniques</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Actualités &amp; Événements</h2>
             <p class="text-lg text-tech-light/80 max-w-3xl mx-auto fade-in">
-                Découvrez les détails techniques du ProPrint X9000 pour répondre à vos besoins professionnels
+                Restez informé des dernières nouveautés TechPrint et des actualités du secteur
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="apple-card p-8 fade-in">
-                <h3 class="text-2xl font-bold mb-6 text-white">Paramètres de base</h3>
-                <table class="w-full specs-table">
-                    <tbody>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Format d'impression</td>
-                            <td class="py-3 text-right font-medium">1600mm × 1000mm</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Hauteur d'impression</td>
-                            <td class="py-3 text-right font-medium">Max 150mm</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Résolution d'impression</td>
-                            <td class="py-3 text-right font-medium">Jusqu'à 1440 × 1440 dpi</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Vitesse d'impression</td>
-                            <td class="py-3 text-right font-medium">Mode brouillon: 60㎡/h<br>Mode standard: 30㎡/h<br>Mode haute qualité: 15㎡/h</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Configuration des têtes d'impression</td>
-                            <td class="py-3 text-right font-medium">8 têtes d'impression piézoélectriques industrielles</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Type d'encre</td>
-                            <td class="py-3 text-right font-medium">Encre UV LED</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Couleurs d'encre</td>
-                            <td class="py-3 text-right font-medium">CMYK + blanc + vernis + 2 couleurs spéciales</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=11" alt="Image d'actualité" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-tech-light/60 mb-2">15 octobre 2023</div>
+                    <h3 class="text-xl font-bold mb-3">TechPrint remporte le Prix de l'Innovation Technologique 2023</h3>
+                    <p class="text-tech-light/70 mb-4">
+                        Notre série ProPrint X a été récompensée par le Prix de l'Innovation Technologique 2023 pour ses performances exceptionnelles et ses innovations...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-tech-accent">
+                        Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="apple-card p-8 fade-in" style="transition-delay: 0.2s;">
-                <h3 class="text-2xl font-bold mb-6 text-white">Système et interfaces</h3>
-                <table class="w-full specs-table">
-                    <tbody>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Système de contrôle</td>
-                            <td class="py-3 text-right font-medium">Écran tactile HD 15,6 pouces</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Formats supportés</td>
-                            <td class="py-3 text-right font-medium">PDF, TIFF, JPG, PNG, AI, PSD</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Interfaces de connexion</td>
-                            <td class="py-3 text-right font-medium">USB 3.0, Ethernet, Wi-Fi</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Logiciel RIP</td>
-                            <td class="py-3 text-right font-medium">Logiciel RIP professionnel avec gestion des couleurs</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Exigences électriques</td>
-                            <td class="py-3 text-right font-medium">AC 220V±10%, 50/60Hz</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Consommation électrique</td>
-                            <td class="py-3 text-right font-medium">En fonctionnement: 3.5kW<br>En veille: 0.5kW</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Dimensions de l'appareil</td>
-                            <td class="py-3 text-right font-medium">2800mm × 1800mm × 1200mm</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-tech-light/70">Poids de l'appareil</td>
-                            <td class="py-3 text-right font-medium">Environ 850kg</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=12" alt="Image d'actualité" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-tech-light/60 mb-2">28 septembre 2023</div>
+                    <h3 class="text-xl font-bold mb-3">TechPrint participera au Salon International de l'Impression de Shanghai 2023</h3>
+                    <p class="text-tech-light/70 mb-4">
+                        Venez découvrir nos dernières technologies et solutions d'impression sur notre stand...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-tech-accent">
+                        Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.4s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=13" alt="Image d'actualité" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-tech-light/60 mb-2">10 septembre 2023</div>
+                    <h3 class="text-xl font-bold mb-3">TechPrint lance une nouvelle gamme d'encres écologiques</h3>
+                    <p class="text-tech-light/70 mb-4">
+                        Nos nouvelles encres UV écologiques offrent des couleurs plus vives et durables, tout en réduisant l'impact environnemental...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-tech-accent">
+                        Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="mt-12 text-center">
-            <a href="#" class="inline-block px-6 py-3 btn-secondary rounded-full fade-in">
-                <i class="fas fa-download mr-2"></i> Télécharger le manuel complet des spécifications
+        <div class="text-center mt-12">
+            <a href="#" class="px-6 py-3 btn-secondary rounded-full">
+                Voir plus d'actualités
             </a>
         </div>
     </div>
