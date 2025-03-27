@@ -1367,632 +1367,190 @@
             }
         });
     }
-</script></body></html><!-- Page Header --><html><head></head><body><section class="pt-32 pb-16 bg-tech-black">
+</script></body></html><!-- Contact Section --><html><head></head><body><section id="contact" class="py-20 bg-tech-black">
     <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Gamme de produits</h1>
-            <p class="text-xl text-tech-light/80">
-                Découvrez la gamme complète de solutions d'impression UV TechPrint pour répondre à tous vos besoins d'impression
-            </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Contactez-nous</h2>
+                <p class="text-lg text-tech-light/80 mb-8 fade-in">
+                    Que vous souhaitiez en savoir plus sur nos produits ou que vous ayez besoin d'une solution sur mesure, notre équipe d'experts est à votre disposition pour vous accompagner.
+                </p>
+
+                <div class="space-y-6 fade-in">
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Adresse de l'entreprise</h4>
+                            <p class="text-tech-light/70">88 Keyuan Road, Zhangjiang Hi-Tech Park, Pudong New Area, Shanghai</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Téléphone</h4>
+                            <p class="text-tech-light/70">400-888-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">E-mail</h4>
+                            <p class="text-tech-light/70">info@techprint.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 fade-in">
+                    <h4 class="font-medium mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">Demande de devis</h3>
+                <form id="contactForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Nom</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium">Nom de l'entreprise</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">E-mail</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interest" class="block mb-2 text-sm font-medium">Produit d'intérêt</label>
+                        <select id="interest" name="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                            <option value="">Veuillez choisir...</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
+                            <option value="custom">Solution sur mesure</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light"></textarea>
+                    </div>
+
+                    <div id="formStatus" class="mb-4 hidden">
+                        <p id="formStatusMessage" class="text-center py-2 rounded-md"></p>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 btn-primary rounded-full">
+                        Soumettre la demande
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
-</section></body></html><html><head><style>
-    .category-nav {
-        position: sticky;
-        top: 80px;
-        z-index: 10;
-    }
-
-    .category-nav-item {
-        transition: all 0.3s ease;
-    }
-
-    .category-nav-item.active {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-    }
-
-    .category-nav-item:hover:not(.active) {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-</style>
-<!-- Category Navigation -->
-</head><body><div class="bg-tech-dark category-nav">
-    <div class="container mx-auto px-4 mb-16">
-        <div class="flex overflow-x-auto py-4 space-x-4 no-scrollbar">
-            <a href="#flatbed" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Imprimante UV à plat</a>
-            <a href="#hybrid" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Imprimante hybride</a>
-            <a href="#roll" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Imprimante à rouleaux</a>
-            <a href="#accessories" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Accessoires et consommables</a>
-        </div>
-    </div>
-</div>
+</section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Category navigation active state
-        const navItems = document.querySelectorAll('.category-nav-item');
-        const sections = document.querySelectorAll('section[id]');
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const formStatusMessage = document.getElementById('formStatusMessage');
 
-        function setActiveNavItem() {
-            let scrollY = window.pageYOffset;
-            let activeCategory = null;
-
-            // 获取所有类别部分
-            const categoryElements = document.querySelectorAll('.product-category-section');
-            
-            categoryElements.forEach(categoryEl => {
-                const categoryId = categoryEl.getAttribute('id');
-                const categoryTop = categoryEl.offsetTop - 100;
-                let categoryBottom = categoryTop + categoryEl.offsetHeight;
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
                 
-                // 查找属于这个类别的所有系列部分
-                const seriesElements = document.querySelectorAll(`.product-series-section`);
+                // 显示加载状态
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Envoi en cours...';
+                submitButton.disabled = true;
                 
-                // 如果系列部分紧跟在当前类别之后，将其视为类别的一部分
-                seriesElements.forEach(seriesEl => {
-                    // 检查这个系列是否紧跟在当前类别之后
-                    // 注意：可以根据需要添加更明确的关联逻辑
-                    if (seriesEl.offsetTop > categoryEl.offsetTop && 
-                        (seriesEl.offsetTop < categoryBottom + 200)) { // 添加一定容差
-                        // 更新类别的底部边界以包含这个系列
-                        const seriesBottom = seriesEl.offsetTop + seriesEl.offsetHeight;
-                        if (seriesBottom > categoryBottom) {
-                            categoryBottom = seriesBottom;
-                        }
+                // 收集表单数据
+                const formData = {
+                    name: contactForm.elements['name'].value,
+                    company: contactForm.elements['company'].value,
+                    email: contactForm.elements['email'].value,
+                    phone: contactForm.elements['phone'].value,
+                    interest: contactForm.elements['interest'].value,
+                    message: contactForm.elements['message'].value
+                };
+                
+                try {
+                    // 发送请求到API
+                    const response = await fetch('/api/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    // 显示结果
+                    formStatus.classList.remove('hidden');
+                    
+                    if (result.success) {
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = 'Votre message a bien été envoyé ! Nous vous contacterons dès que possible.';
+                        contactForm.reset();
+                    } else {
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = `Échec de l'envoi: ${result.message}`;
                     }
-                });
-                
-                // 检查当前滚动位置是否在这个扩展的类别区域内
-                if (scrollY >= categoryTop && scrollY < categoryBottom) {
-                    activeCategory = categoryId;
+                } catch (error) {
+                    // 处理错误
+                    formStatus.classList.remove('hidden');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                    formStatusMessage.textContent = 'Une erreur s'est produite lors de l'envoi. Veuillez réessayer plus tard ou nous contacter directement.';
+                    console.error('Erreur lors de l'envoi du formulaire :', error);
+                } finally {
+                    // 恢复按钮状态
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
                 }
             });
-            
-            // 应用激活状态
-            if (activeCategory) {
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    const href = item.getAttribute('href');
-                    if (href === `#${activeCategory}`) {
-                        item.classList.add('active');
-                    }
-                });
-            }
         }
-
-        window.addEventListener('scroll', setActiveNavItem);
-        setActiveNavItem();
     });
-</script></body></html><!-- Flatbed Printers Category --><html><head></head><body><section id="flatbed" class="pd-20 bg-tech-black product-category-section">
-        <div class="container mx-auto px-4">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Imprimante UV à plat</h2>
-                <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
-                    Imprimante UV à plat de haute précision conçue pour les matériaux rigides, idéale pour l'impression directe sur verre, acrylique, bois, métal, etc.
-                </p>
-            </div>
-            
-            <!-- 各个系列将被拆分为独立section -->
-        </div>
-    </section>
-</body></html><html><head><style>
-    .product-card {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .product-card img {
-        transition: all 0.5s ease;
-    }
-
-    .product-card:hover img {
-        transform: scale(1.05);
-    }
-
-    .series-header {
-        position: relative;
-    }
-
-    .series-header::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background-color: #0071e3;
-    }
-
-
-    .spec-badge {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
-        border-radius: 20px;
-    }
-
-    .spec-badge:hover {
-        background: rgba(255, 255, 255, 0.15);
-    }
-</style>
-<!-- Horizo Series - 从平板打印机中分离出来 -->
-</head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
-    <div class="container mx-auto px-4">
-        <h3 class="text-2xl font-bold mb-10 series-header fade-in">Horizo</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=20" alt="Modèle phare" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Modèle phare</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1600×1000mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1440dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">8 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle haut de gamme, idéale pour la publicité haut de gamme et la reproduction d'œuvres d'art
-                    </p>
-                    <a href="/fr-fr/printers/flatbed/example.html" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=21" alt="Horizo X7000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X7000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1300×800mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1200dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">6 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle milieu de gamme, alliant performance et coût, adaptée aux petites et moyennes entreprises
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=22" alt="Horizo X5000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X5000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1000×600mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1080dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">4 couleurs + blanc</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle économique, offrant un excellent rapport qualité-prix, idéale pour les start-ups et les petits ateliers
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            
-        </div>
-    </div>
-</section></body></html><html><head><style>
-    .product-card {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .product-card img {
-        transition: all 0.5s ease;
-    }
-
-    .product-card:hover img {
-        transform: scale(1.05);
-    }
-
-    .series-header {
-        position: relative;
-    }
-
-    .series-header::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background-color: #0071e3;
-    }
-
-
-    .spec-badge {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
-        border-radius: 20px;
-    }
-
-    .spec-badge:hover {
-        background: rgba(255, 255, 255, 0.15);
-    }
-</style>
-<!-- Horizo Series - 从平板打印机中分离出来 -->
-</head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
-    <div class="container mx-auto px-4">
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=20" alt="Horizo X9000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X9000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1600×1000mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1440dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">8 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle haut de gamme, idéale pour la publicité haut de gamme et la reproduction d'œuvres d'art
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=21" alt="Horizo X7000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X7000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1300×800mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1200dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">6 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle milieu de gamme, alliant performance et coût, adaptée aux petites et moyennes entreprises
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=22" alt="Horizo X5000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X5000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1000×600mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1080dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">4 couleurs + blanc</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle économique, offrant un excellent rapport qualité-prix, idéale pour les start-ups et les petits ateliers
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            
-        </div>
-    </div>
-</section></body></html><!-- Flatbed Printers Category --><html><head></head><body><section id="hybrid" class="pd-20 bg-tech-black product-category-section">
-        <div class="container mx-auto px-4">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Imprimantes hybrides</h2>
-                <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
-                    Imprimantes hybrides
-                </p>
-            </div>
-            
-            <!-- 各个系列将被拆分为独立section -->
-        </div>
-    </section>
-</body></html><html><head><style>
-    .product-card {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .product-card img {
-        transition: all 0.5s ease;
-    }
-
-    .product-card:hover img {
-        transform: scale(1.05);
-    }
-
-    .series-header {
-        position: relative;
-    }
-
-    .series-header::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background-color: #0071e3;
-    }
-
-
-    .spec-badge {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
-        border-radius: 20px;
-    }
-
-    .spec-badge:hover {
-        background: rgba(255, 255, 255, 0.15);
-    }
-</style>
-<!-- Horizo Series - 从平板打印机中分离出来 -->
-</head><body><section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
-    <div class="container mx-auto px-4">
-        <h3 class="text-2xl font-bold mb-10 series-header fade-in">Horizo</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=20" alt="Horizo X9000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X9000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1600×1000mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1440dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">8 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle haut de gamme, idéale pour la publicité haut de gamme et la reproduction d'œuvres d'art
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=21" alt="Horizo X7000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X7000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1300×800mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1200dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">6 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle milieu de gamme, alliant performance et coût, adaptée aux petites et moyennes entreprises
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=22" alt="Horizo X5000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X5000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1000×600mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1080dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">4 couleurs + blanc</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle économique, offrant un excellent rapport qualité-prix, idéale pour les start-ups et les petits ateliers
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.3s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=23" alt="Horizo X3000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X3000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">600×400mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">720dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">4 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante de bureau d'entrée de gamme, compacte et adaptée aux ateliers individuels et aux petites personnalisations
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section></body></html><html><head><style>
-    .product-card {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .product-card img {
-        transition: all 0.5s ease;
-    }
-
-    .product-card:hover img {
-        transform: scale(1.05);
-    }
-
-    .series-header {
-        position: relative;
-    }
-
-    .series-header::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background-color: #0071e3;
-    }
-
-
-    .spec-badge {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
-        border-radius: 20px;
-    }
-
-    .spec-badge:hover {
-        background: rgba(255, 255, 255, 0.15);
-    }
-</style>
-<!-- Horizo Series - 从平板打印机中分离出来 -->
-</head><body><section id="" class="pb-10 bg-tech-black product-series-section">
-    <div class="container mx-auto px-4">
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=20" alt="Horizo X9000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X9000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1600×1000mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1440dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">8 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle haut de gamme, idéale pour la publicité haut de gamme et la reproduction d'œuvres d'art
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=21" alt="Horizo X7000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X7000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1300×800mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1200dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">6 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle milieu de gamme, alliant performance et coût, adaptée aux petites et moyennes entreprises
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=22" alt="Horizo X5000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X5000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">1000×600mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">1080dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">4 couleurs + blanc</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante industrielle économique, offrant un excellent rapport qualité-prix, idéale pour les start-ups et les petits ateliers
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.3s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=23" alt="Horizo X3000" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">Horizo X3000</h4>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="spec-badge text-xs px-3 py-1">600×400mm</span>
-                        <span class="spec-badge text-xs px-3 py-1">720dpi</span>
-                        <span class="spec-badge text-xs px-3 py-1">4 couleurs</span>
-                    </div>
-                    <p class="text-tech-light/70 mb-4">
-                        Imprimante de bureau d'entrée de gamme, compacte et adaptée aux ateliers individuels et aux petites personnalisations
-                    </p>
-                    <a href="#" class="inline-flex items-center text-tech-accent">
-                        Voir les détails <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section></body></html><!-- Footer --><html><head></head><body><footer class="bg-tech-dark py-12">
+</script></body></html><!-- Footer --><html><head></head><body><footer class="bg-tech-dark py-12">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
