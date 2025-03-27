@@ -77,7 +77,7 @@ export async function onRequest(context) {
           content: formattedMessage
         }
       })
-    });
+    }).then(res => res.json());
     console.log(dingtalkResponse);
 
     // 返回成功响应
