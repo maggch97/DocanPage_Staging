@@ -54,7 +54,7 @@ export async function onRequest(context) {
     
     // 将数据转换为可读文本格式
     const formattedMessage = `
-新联系表单提交:
+新的询盘: 新联系表单提交:
 姓名: ${data.name || '未提供'}
 公司: ${data.company || '未提供'}
 邮箱: ${data.email || '未提供'}
@@ -68,12 +68,24 @@ export async function onRequest(context) {
     const response = await fetch(`https://api.day.app/fRJPuzdAKSGEurGpquZp99/新联系表单/${encodedMessage}`);
     const barkResponse = await response.json();
     console.log(barkResponse);
+    // https://oapi.dingtalk.com/robot/send?access_token=306e33a088beff8b3311a957f4fec3720ef4f7a65c44ea8fef9c76a3c4a9acb7
+    const dingtalkResponse = await fetch(`https://oapi.dingtalk.com/robot/send?access_token=306e33a088beff8b3311a957f4fec3720ef4f7a65c44ea8fef9c76a3c4a9acb7`, {
+      method: 'POST',
+      body: JSON.stringify({
+        msgtype: 'text',
+        text: {
+          content: formattedMessage
+        }
+      })
+    });
+    console.log(dingtalkResponse);
 
     // 返回成功响应
     return new Response(JSON.stringify({
       success: true,
       message: '数据已成功接收',
-      barkResponse: barkResponse
+      barkResponse: barkResponse,
+      dingtalkResponse: dingtalkResponse
     }), {
       status: 200,
       headers: {
