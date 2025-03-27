@@ -69,6 +69,8 @@ export async function onRequest(context) {
     const barkResponse = await response.json();
     console.log(barkResponse);
     // https://oapi.dingtalk.com/robot/send?access_token=306e33a088beff8b3311a957f4fec3720ef4f7a65c44ea8fef9c76a3c4a9acb7
+
+
     const dingtalkResponse = await fetch(`https://oapi.dingtalk.com/robot/send?access_token=306e33a088beff8b3311a957f4fec3720ef4f7a65c44ea8fef9c76a3c4a9acb7`, {
       method: 'POST',
       body: JSON.stringify({
@@ -76,7 +78,10 @@ export async function onRequest(context) {
         text: {
           content: formattedMessage
         }
-      })
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     }).then(res => res.json());
     console.log(dingtalkResponse);
 
