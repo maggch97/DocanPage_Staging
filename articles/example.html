@@ -1297,8 +1297,6 @@
 
     });
 
-    // 根据当前URL更新语言显示
-    updateLanguageDisplay();
     // 移动端子菜单的展开/收起
     const mobileMenuItems = document.querySelectorAll('.mobile-menu-item > span.mobile-menu-link');
     mobileMenuItems.forEach(item => {
@@ -1319,55 +1317,9 @@
             }
         });
     });
+</script>
 
-    // 根据当前URL更新语言显示功能
-    function updateLanguageDisplay() {
-        const path = window.location.pathname;
-        const desktopButton = document.getElementById('desktop-language-button').querySelector('span');
-        const mobileButton = document.getElementById('mobile-language-button');
-        
-        // 默认显示
-        let displayText = '中文 / EN';
-        
-        // 根据URL路径判断当前语言
-        if (path.indexOf('/zh-cn/') === 0) {
-            displayText = '中文 / EN';
-        } else if (path === '/' || path.indexOf('/en-us/') === 0) {
-            displayText = 'EN / 中文';
-        } else if (path.indexOf('/de-de/') === 0) {
-            displayText = 'DE / EN';
-        } else if (path.indexOf('/es-es/') === 0) {
-            displayText = 'ES / EN';
-        } else if (path.indexOf('/fr-fr/') === 0) {
-            displayText = 'FR / EN';
-        } else if (path.indexOf('/ja-jp/') === 0) {
-            displayText = '日本語 / EN';
-        } else if (path.indexOf('/ko-kr/') === 0) {
-            displayText = '한국어 / EN';
-        }
-        
-        // 更新显示
-        if (desktopButton) {
-            desktopButton.textContent = displayText;
-        }
-        
-        if (mobileButton) {
-            mobileButton.textContent = displayText;
-        }
-        
-        // 为当前语言添加活跃样式
-        const languageLinks = document.querySelectorAll('.relative.group .absolute a, .mobile-submenu-item a');
-        languageLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if ((path === '/' && href === '/') || 
-                (path.indexOf(href) === 0 && href !== '/')) {
-                link.classList.add('language-btn-active');
-            } else {
-                link.classList.remove('language-btn-active');
-            }
-        });
-    }
-</script><style>
+<style>
     /* 文章内容样式 */
     .article-content h2 {
         font-size: 1.875rem;

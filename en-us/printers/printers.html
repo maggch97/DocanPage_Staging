@@ -505,7 +505,7 @@
                 <!-- 语言切换按钮 -->
                 <div class="relative group">
                     <button id="desktop-language-button" class="hidden md:flex items-center space-x-1 px-3 py-1.5 rounded-full border border-tech-light/30 text-tech-light hover:bg-tech-light/10 transition-all">
-                        <span class="text-sm font-medium">中文 / EN</span>
+                        <span class="text-sm font-medium">EN / 中文</span>
                         <i class="fas fa-language text-base ml-1"></i>
                     </button>
                     <div class="absolute right-0 mt-2 w-36 bg-tech-dark border border-tech-light/20 rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -594,7 +594,7 @@
             <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
                 <span class="flex items-center">
                     <i class="fas fa-language mr-2 text-tech-light/70 text-lg"></i>
-                    <span id="mobile-language-button">中文 / EN</span>
+                    <span id="mobile-language-button">EN / 中文</span>
                 </span>
                 <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
             </span>
@@ -1297,8 +1297,6 @@
 
     });
 
-    // 根据当前URL更新语言显示
-    updateLanguageDisplay();
     // 移动端子菜单的展开/收起
     const mobileMenuItems = document.querySelectorAll('.mobile-menu-item > span.mobile-menu-link');
     mobileMenuItems.forEach(item => {
@@ -1319,55 +1317,9 @@
             }
         });
     });
+</script>
 
-    // 根据当前URL更新语言显示功能
-    function updateLanguageDisplay() {
-        const path = window.location.pathname;
-        const desktopButton = document.getElementById('desktop-language-button').querySelector('span');
-        const mobileButton = document.getElementById('mobile-language-button');
-        
-        // 默认显示
-        let displayText = '中文 / EN';
-        
-        // 根据URL路径判断当前语言
-        if (path.indexOf('/zh-cn/') === 0) {
-            displayText = '中文 / EN';
-        } else if (path === '/' || path.indexOf('/en-us/') === 0) {
-            displayText = 'EN / 中文';
-        } else if (path.indexOf('/de-de/') === 0) {
-            displayText = 'DE / EN';
-        } else if (path.indexOf('/es-es/') === 0) {
-            displayText = 'ES / EN';
-        } else if (path.indexOf('/fr-fr/') === 0) {
-            displayText = 'FR / EN';
-        } else if (path.indexOf('/ja-jp/') === 0) {
-            displayText = '日本語 / EN';
-        } else if (path.indexOf('/ko-kr/') === 0) {
-            displayText = '한국어 / EN';
-        }
-        
-        // 更新显示
-        if (desktopButton) {
-            desktopButton.textContent = displayText;
-        }
-        
-        if (mobileButton) {
-            mobileButton.textContent = displayText;
-        }
-        
-        // 为当前语言添加活跃样式
-        const languageLinks = document.querySelectorAll('.relative.group .absolute a, .mobile-submenu-item a');
-        languageLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if ((path === '/' && href === '/') || 
-                (path.indexOf(href) === 0 && href !== '/')) {
-                link.classList.add('language-btn-active');
-            } else {
-                link.classList.remove('language-btn-active');
-            }
-        });
-    }
-</script><section class="pt-32 pb-16 bg-tech-black">
+<section class="pt-32 pb-16 bg-tech-black">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Products</h1>
