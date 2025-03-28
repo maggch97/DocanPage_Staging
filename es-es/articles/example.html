@@ -1,0 +1,1715 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrint X9000 - Impresora UV Plana Profesional | TechPrint</title>
+    <script src="https://staging.docanuv.com/statics/js/tailwindcss@3.4.16.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-black': '#0a0a0a',
+                        'tech-dark': '#1a1a1a',
+                        'tech-gray': '#2a2a2a',
+                        'tech-light': '#f5f5f7',
+                        'tech-accent': '#0071e3',
+                        'tech-accent-dark': '#0062c3'
+                    },
+                    fontFamily: {
+                        'sans': ['"Noto Sans SC"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .section-height {
+            min-height: 100vh;
+        }
+
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 80%, rgba(10, 10, 10, 1) 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f5f5f7;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+
+        /* Scroll Animation Styles */
+        .scroll-feature {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .scroll-feature.from-left {
+            transform: translateX(-100px);
+        }
+
+        .scroll-feature.from-right {
+            transform: translateX(100px);
+        }
+
+        .scroll-feature.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .hero-stat {
+            position: relative;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat:last-child::after {
+            display: none;
+        }
+
+        .feature-image {
+            transition: all 0.5s ease;
+            filter: brightness(0.9);
+        }
+
+        .feature-image:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .btn-primary {
+            background-color: #0071e3;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #0062c3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(245, 245, 247, 0.3);
+            color: #f5f5f7;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(245, 245, 247, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-check {
+            color: #f5f5f7;
+        }
+
+        .feature-highlight {
+            position: relative;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 70%;
+            background: #f5f5f7;
+            border-radius: 2px;
+        }
+
+        .apple-style-gradient {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .apple-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .apple-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .clean-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body><style>
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background-color: #f5f5f7;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    /* Mega Menu Styles - Revised */
+    .mega-menu {
+        position: fixed;
+        top: 72px;
+        /* Height of the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 50;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .nav-item:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .mega-menu-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+    }
+
+    .mega-menu-column {
+        grid-column: span 2;
+    }
+
+    .mega-menu-column.wide {
+        grid-column: span 3;
+    }
+
+    .mega-menu-image {
+        grid-column: span 4;
+    }
+
+    .mega-menu-column h3 {
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .mega-menu-column h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 1px;
+        background-color: #0071e3;
+    }
+
+    .mega-menu-item {
+        display: block;
+        padding: 0.5rem 0;
+        color: rgba(245, 245, 247, 0.7);
+        transition: all 0.2s ease;
+    }
+
+    .mega-menu-item:hover {
+        color: #ffffff;
+        transform: translateX(5px);
+    }
+
+
+
+    .product-preview {
+        display: none;
+        transition: all 0.3s ease;
+    }
+
+    .product-preview.active {
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 0.3s ease;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(10, 10, 10, 0.98);
+        z-index: 100;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-close {
+        font-size: 1.5rem;
+        color: #f5f5f7;
+        background: none;
+        border: none;
+    }
+
+    .mobile-menu-item {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-link {
+        font-size: 1.125rem;
+        color: #f5f5f7;
+    }
+
+    .mobile-submenu {
+        padding-left: 1rem;
+        margin-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .mobile-submenu-item {
+        padding: 0.75rem 0;
+    }
+
+    .mobile-submenu-link {
+        color: rgba(245, 245, 247, 0.7);
+        transition: color 0.2s ease;
+    }
+
+    .mobile-submenu-link:hover {
+        color: rgba(245, 245, 247, 1);
+    }
+
+    /* 语言切换按钮样式 */
+    .language-btn-active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* 箭头旋转效果 */
+    .menu-arrow.active {
+        transform: rotate(180deg);
+    }
+</style>
+<!-- Header/Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="/es-es/index.html" class="flex items-center">
+                    <img src="/img/20250325183859254_t7ufca.png" alt="DOCAN" class="h-10 w-auto">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="/es-es/index.html" class="nav-link text-tech-light hover:text-white transition-colors">Inicio</a>
+
+                <!-- 打印机 Dropdown -->
+                <div class="nav-item relative group">
+                    <a href="/es-es/printers/printers.html" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        Impresoras
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container" id="printer-mega-menu">
+                            <!-- Content will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 墨水 Dropdown -->
+                <div class="nav-item relative group">
+                    <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        Tintas
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container" id="ink-mega-menu">
+                            <!-- Content will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 服务支持 Dropdown -->
+                <div class="nav-item relative group">
+                    <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        Soporte
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container" id="support-mega-menu">
+                            <!-- Content will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <!-- 语言切换按钮 -->
+                <div class="relative group">
+                    <button id="desktop-language-button" class="hidden md:flex items-center space-x-1 px-3 py-1.5 rounded-full border border-tech-light/30 text-tech-light hover:bg-tech-light/10 transition-all">
+                        <span class="text-sm font-medium">中文 / EN</span>
+                        <i class="fas fa-language text-base ml-1"></i>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-36 bg-tech-dark border border-tech-light/20 rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="/de-de/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">DE</span>
+                            <span class="ml-2">Deutsch</span>
+                        </a>
+                        <a href="/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">EN</span>
+                            <span class="ml-2">English</span>
+                        </a>
+                        <a href="/es-es/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">ES</span>
+                            <span class="ml-2">Español</span>
+                        </a>
+                        <a href="/fr-fr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">FR</span>
+                            <span class="ml-2">Français</span>
+                        </a>
+                        <a href="/ja-jp/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">日</span>
+                            <span class="ml-2">日本語</span>
+                        </a>
+                        <a href="/ko-kr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
+                            <span class="w-5 inline-block">한</span>
+                            <span class="ml-2">한국어</span>
+                        </a>
+                        <a href="/zh-cn/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm flex items-center">
+                            <span class="w-5 inline-block">中</span>
+                            <span class="ml-2">简体中文</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
+                    Consultar Precio
+                </a>
+                <button class="md:hidden text-tech-light text-xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu (Hidden by default) -->
+<div class="mobile-menu md:hidden" id="mobile-menu-panel">
+    <div class="mobile-menu-header">
+        <a href="/es-es/index.html" class="flex items-center">
+            <img src="/img/20250325183859254_t7ufca.png" alt="DOCAN" class="h-8 w-auto">
+        </a>
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="mobile-menu-content">
+        <div class="mobile-menu-item">
+            <a href="/es-es/index.html" class="mobile-menu-link">Inicio</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="/es-es/printers/printers.html" class="mobile-menu-link">Impresoras</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="#" class="mobile-menu-link">Tintas</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
+                <span>Soporte</span>
+                <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
+            </span>
+            <div class="mobile-submenu" id="mobile-support-submenu">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="#contact" class="mobile-menu-link text-tech-accent">Consultar Precio</a>
+        </div>
+
+
+        <!-- 移动端语言切换 -->
+        <div class="mobile-menu-item">
+            <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
+                <span class="flex items-center">
+                    <i class="fas fa-language mr-2 text-tech-light/70 text-lg"></i>
+                    <span id="mobile-language-button">中文 / EN</span>
+                </span>
+                <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
+            </span>
+            <div class="mobile-submenu">
+                <div class="mobile-submenu-item">
+                    <a href="/de-de/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">DE</span>
+                        <span class="ml-2">Deutsch</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">EN</span>
+                        <span class="ml-2">English</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/es-es/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">ES</span>
+                        <span class="ml-2">Español</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/fr-fr/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">FR</span>
+                        <span class="ml-2">Français</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/ja-jp/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">日</span>
+                        <span class="ml-2">日本語</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/ko-kr/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">한</span>
+                        <span class="ml-2">한국어</span>
+                    </a>
+                </div>
+                <div class="mobile-submenu-item">
+                    <a href="/zh-cn/" class="mobile-submenu-link flex items-center">
+                        <span class="w-5 inline-block">中</span>
+                        <span class="ml-2">简体中文</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Navigation data for Printers
+    const printerData = [
+        {
+            name: "Impresoras de Mesa",
+            width: "wide",
+            subcategories: [
+                {
+                    name: "Horizo",
+                    items: [
+                        {
+                            name: "Horizo X9000",
+                            id: "horizo-x9000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=20",
+                                title: "Horizo X9000",
+                                description: "Impresora industrial de gama alta, ideal para publicidad de lujo y reproducción de obras de arte"
+                            }
+                        },
+                        {
+                            name: "Horizo X7000",
+                            id: "horizo-x7000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=21",
+                                title: "Horizo X7000",
+                                description: "Impresora industrial de gama media-alta, equilibrada en rendimiento y coste, perfecta para pequeñas y medianas empresas"
+                            }
+                        },
+                        {
+                            name: "Horizo X5000",
+                            id: "horizo-x5000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=22",
+                                title: "Horizo X5000",
+                                description: "Impresora industrial económica, de gran relación calidad-precio, ideal para startups y pequeños estudios"
+                            }
+                        },
+                        {
+                            name: "Horizo X3000",
+                            id: "horizo-x3000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=23",
+                                title: "Horizo X3000",
+                                description: "Impresora de escritorio de nivel básico, compacta y perfecta para estudios personales y pequeños proyectos personalizados"
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: "Orbit",
+                    items: [
+                        {
+                            name: "Orbit Pro",
+                            id: "orbit-pro",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=24",
+                                title: "Orbit Pro",
+                                description: "Impresora industrial de gran formato, ideal para carteles publicitarios y paneles de gran tamaño"
+                            }
+                        },
+                        {
+                            name: "Orbit Plus",
+                            id: "orbit-plus",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=25",
+                                title: "Orbit Plus",
+                                description: "Impresora industrial de tamaño mediano-grande, perfecta para agencias de publicidad y grandes fábricas de producción"
+                            }
+                        },
+                        {
+                            name: "Orbit Standard",
+                            id: "orbit-standard",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=26",
+                                title: "Orbit Standard",
+                                description: "Impresora industrial estándar, ideal para pequeñas y medianas agencias de publicidad y fábricas de producción"
+                            }
+                        },
+                        {
+                            name: "Orbit Lite",
+                            id: "orbit-lite",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=27",
+                                title: "Orbit Lite",
+                                description: "Impresora industrial económica, perfecta para pequeñas agencias de publicidad y startups"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Impresoras Híbridas",
+            width: "wide",
+            subcategories: [
+                {
+                    name: "Fusion",
+                    items: [
+                        {
+                            name: "Fusion Pro",
+                            id: "fusion-pro",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=28",
+                                title: "Fusion Pro",
+                                description: "Impresora híbrida de gama alta, ideal para agencias de publicidad de lujo y grandes fábricas de producción"
+                            }
+                        },
+                        {
+                            name: "Fusion Plus",
+                            id: "fusion-plus",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=29",
+                                title: "Fusion Plus",
+                                description: "Impresora híbrida de gama alta, perfecta para agencias de publicidad medianas y grandes y fábricas de producción"
+                            }
+                        },
+                        {
+                            name: "Fusion Standard",
+                            id: "fusion-standard",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=30",
+                                title: "Fusion Standard",
+                                description: "Impresora híbrida estándar, ideal para pequeñas y medianas agencias de publicidad y fábricas de producción"
+                            }
+                        },
+                        {
+                            name: "Fusion Lite",
+                            id: "fusion-lite",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=31",
+                                title: "Fusion Lite",
+                                description: "Impresora híbrida de nivel básico, perfecta para pequeñas agencias de publicidad y startups"
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: "Nexus",
+                    items: [
+                        {
+                            name: "Nexus X8",
+                            id: "nexus-x8",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=32",
+                                title: "Nexus X8",
+                                description: "Impresora de gran formato mixta, ideal para la creación de vallas publicitarias y paneles de exhibición"
+                            }
+                        },
+                        {
+                            name: "Nexus X6",
+                            id: "nexus-x6",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=33",
+                                title: "Nexus X6",
+                                description: "Impresora mixta de tamaño mediano-grande, perfecta para agencias de publicidad y fábricas de producción a gran escala"
+                            }
+                        },
+                        {
+                            name: "Nexus X4",
+                            id: "nexus-x4",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=34",
+                                title: "Nexus X4",
+                                description: "Impresora mixta estándar, adecuada para agencias de publicidad y fábricas de producción pequeñas y medianas"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Impresoras de rollo",
+            width: "wide",
+            subcategories: [
+                {
+                    name: "Velocity",
+                    items: [
+                        {
+                            name: "Velocity R9000",
+                            id: "velocity-r9000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=35",
+                                title: "Velocity R9000",
+                                description: "Impresora de rollo de gran formato de gama alta, ideal para la creación de lonas publicitarias y papel pintado"
+                            }
+                        },
+                        {
+                            name: "Velocity R7000",
+                            id: "velocity-r7000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=36",
+                                title: "Velocity R7000",
+                                description: "Impresora de rollo de gran formato de alta gama, perfecta para lonas publicitarias y papel pintado"
+                            }
+                        },
+                        {
+                            name: "Velocity R5000",
+                            id: "velocity-r5000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=37",
+                                title: "Velocity R5000",
+                                description: "Impresora de rollo estándar, adecuada para agencias de publicidad y fábricas de producción pequeñas y medianas"
+                            }
+                        },
+                        {
+                            name: "Velocity R3000",
+                            id: "velocity-r3000",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=38",
+                                title: "Velocity R3000",
+                                description: "Impresora de rollo de nivel básico, ideal para pequeñas agencias de publicidad y empresas emergentes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: "Spectrum",
+                    items: [
+                        {
+                            name: "Spectrum Ultra",
+                            id: "spectrum-ultra",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=39",
+                                title: "Spectrum Ultra",
+                                description: "Impresora de rollo de gran formato de alta precisión, ideal para lonas publicitarias y papel pintado de alta gama"
+                            }
+                        },
+                        {
+                            name: "Spectrum Pro",
+                            id: "spectrum-pro",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=40",
+                                title: "Spectrum Pro",
+                                description: "Impresora de rollo de gran formato profesional, perfecta para lonas publicitarias y papel pintado"
+                            }
+                        },
+                        {
+                            name: "Spectrum Plus",
+                            id: "spectrum-plus",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=41",
+                                title: "Spectrum Plus",
+                                description: "Impresora de rollo de gama media-alta, adecuada para agencias de publicidad y fábricas de producción medianas y grandes"
+                            }
+                        },
+                        {
+                            name: "Spectrum Standard",
+                            id: "spectrum-standard",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=42",
+                                title: "Spectrum Standard",
+                                description: "Impresora de rollo estándar, ideal para agencias de publicidad y fábricas de producción pequeñas y medianas"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    // Navigation data for Inks
+    const inkData = [
+        {
+            name: "Tinta UV",
+            width: "wide",
+            subcategories: [
+                {
+                    name: "Tinta estándar",
+                    items: [
+                        {
+                            name: "Tinta UV estándar",
+                            id: "uv-standard",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=50",
+                                title: "Tinta UV estándar",
+                                description: "Adecuada para diversos materiales rígidos, colores vibrantes, excelente adherencia y resistencia a la intemperie"
+                            }
+                        },
+                        {
+                            name: "Tinta UV flexible",
+                            id: "uv-flexible",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=51",
+                                title: "Tinta UV flexible",
+                                description: "Diseñada para materiales flexibles, excelente elasticidad, no se agrieta, ideal para doblar y estirar"
+                            }
+                        },
+                        {
+                            name: "Tinta UV blanca",
+                            id: "uv-white",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=52",
+                                title: "Tinta UV blanca",
+                                description: "Alta capacidad de cobertura, ideal para materiales transparentes y oscuros, proporciona una base blanca brillante"
+                            }
+                        },
+                        {
+                            name: "Barniz UV",
+                            id: "uv-varnish",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=53",
+                                title: "Barniz UV",
+                                description: "Proporciona acabado brillante o mate, mejora la textura y la protección de las impresiones"
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: "Tintas especiales",
+                    items: [
+                        {
+                            name: "Tinta efecto metálico",
+                            id: "special-metallic",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=54",
+                                title: "Tinta efecto metálico",
+                                description: "Ofrece acabados metálicos en oro, plata y cobre, ideal para envases de lujo y decoración"
+                            }
+                        },
+                        {
+                            name: "Tinta fluorescente",
+                            id: "special-fluorescent",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=55",
+                                title: "Tinta fluorescente",
+                                description: "Efecto fluorescente bajo luz UV, perfecta para señalización de seguridad y decoración especial"
+                            }
+                        },
+                        {
+                            name: "Tinta antifraude",
+                            id: "special-security",
+                            preview: {
+                                image: "https://picsum.photos/600/400?random=56",
+                                title: "Tinta antifraude",
+                                description: "Contiene marcadores especiales para la autenticación y seguimiento de productos"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Kits de tinta",
+            width: "wide",
+            items: [
+                {
+                    name: "Kit CMYK",
+                    id: "set-cmyk",
+                    preview: {
+                        image: "https://picsum.photos/600/400?random=57",
+                        title: "Kit CMYK",
+                        description: "Kit básico de cuatro colores, ideal para la mayoría de las necesidades de impresión"
+                    }
+                },
+                {
+                    name: "Kit CMYK + Blanco",
+                    id: "set-cmyk-w",
+                    preview: {
+                        image: "https://picsum.photos/600/400?random=58",
+                        title: "Kit CMYK + Blanco",
+                        description: "Kit de cinco colores con tinta blanca, perfecto para materiales transparentes y oscuros"
+                    }
+                },
+                {
+                    name: "Kit CMYK + Blanco + Barniz",
+                    id: "set-cmyk-wv",
+                    preview: {
+                        image: "https://picsum.photos/600/400?random=59",
+                        title: "Kit CMYK + Blanco + Barniz",
+                        description: "Kit de seis colores de alta gama para efectos visuales y táctiles avanzados"
+                    }
+                },
+                {
+                    name: "Kit de colores completos",
+                    id: "set-full",
+                    preview: {
+                        image: "https://picsum.photos/600/400?random=60",
+                        title: "Kit de colores completos",
+                        description: "Kit profesional con todos los colores, diseñado para impresión de alta gama"
+                    }
+                }
+            ]
+        },
+        {
+            name: "Productos de limpieza",
+            width: "wide",
+            items: [
+                {
+                    name: "Líquido de limpieza",
+                    id: "cleaning-solution",
+                    preview: {
+                        image: "https://picsum.photos/600/400?random=61",
+                        title: "Líquido de limpieza",
+                        description: "Líquido profesional para limpieza de cabezales, elimina residuos de tinta y prolonga la vida útil"
+                    }
+                },
+                {
+                    name: "Kit de limpieza",
+                    id: "cleaning-kit",
+                    preview: {
+                        image: "https://picsum.photos/600/400?random=62",
+                        title: "Kit de limpieza",
+                        description: "Kit completo de mantenimiento para impresoras, incluye todas las herramientas necesarias"
+                    }
+                }
+            ]
+        }
+    ];
+
+    // Navigation data for Support
+    const supportData = [
+        {
+            name: "Soporte y servicio",
+            width: "wide",
+            layout: "grid",
+            items: [
+                { name: "Contáctenos", url: "#contact" },
+                { name: "Soporte técnico", url: "#support" },
+                { name: "Servicio postventa", url: "#aftersale" },
+                { name: "Preguntas frecuentes", url: "#faq" },
+                { name: "Centro de descargas", url: "#download" },
+                { name: "Servicio de reparación", url: "#repair" }
+            ]
+        },
+        {
+            name: "Formación y recursos",
+            width: "wide",
+            layout: "grid",
+            items: [
+                { name: "Formación en operación", url: "#training" },
+                { name: "Mantenimiento", url: "#maintenance" },
+                { name: "Tutoriales en video", url: "#videos" },
+                { name: "Manual de usuario", url: "#manuals" },
+                { name: "Documentación técnica", url: "#docs" },
+                { name: "Actualizaciones de software", url: "#updates" }
+            ]
+        },
+        {
+            name: "Información de contacto",
+            width: "wide",
+            columnSpan: 4,
+            contactInfo: [
+                {
+                    icon: "fas fa-phone-alt",
+                    title: "Línea de atención al cliente",
+                    content: "400-888-9999 (Lunes a Domingo 9:00-18:00)"
+                },
+                {
+                    icon: "fas fa-envelope",
+                    title: "Correo de soporte técnico",
+                    content: "support@techprint.com"
+                },
+                {
+                    icon: "fas fa-map-marker-alt",
+                    title: "Centros de servicio nacionales",
+                    content: "Pekín, Shanghái, Cantón, Shenzhen, Chengdu, Wuhan, Xi'an"
+                },
+                {
+                    icon: "fas fa-headset",
+                    title: "Servicio de atención al cliente en línea",
+                    content: "Días laborables 8:30-20:30, festivos 9:00-18:00"
+                }
+            ]
+        }
+    ];
+
+    function filterEmptyItems(data) {
+        return data.filter(item => item.name !== "" && item.title !== "");
+    }
+
+    // Function to generate mega menu HTML
+    function generateMegaMenu(data) {
+        let html = '';
+
+        // Generate columns for each category
+        filterEmptyItems(data).forEach(category => {
+            html += `<div class="mega-menu-column ${category.width || ''}" ${category.columnSpan ? `style="grid-column: span ${category.columnSpan}"` : ''}>`;
+            html += `<h3 class="text-lg font-medium text-white">${category.name}</h3>`;
+
+            if (category.subcategories) {
+                html += `<div class="grid grid-cols-2 gap-x-6">`;
+                filterEmptyItems(category.subcategories).forEach(subcat => {
+                    html += `<div>`;
+                    html += `<h4 class="text-sm font-medium text-tech-accent mt-4">${subcat.name}</h4>`;
+                    filterEmptyItems(subcat.items).forEach(item => {
+                        html += `<a href="${item.url || '#'}" class="mega-menu-item" data-preview="${item.id}">${item.name}</a>`;
+                    });
+                    html += `</div>`;
+                });
+                html += `</div>`;
+            } else if (category.items) {
+                if (category.layout === 'grid') {
+                    html += `<div class="grid grid-cols-2 gap-x-6">`;
+                    const half = Math.ceil(category.items.length / 2);
+                    const firstHalf = category.items.slice(0, half);
+                    const secondHalf = category.items.slice(half);
+
+                    html += `<div>`;
+                    filterEmptyItems(firstHalf).forEach(item => {
+                        html += `<a href="${item.url || '#'}" class="mega-menu-item" ${item.id ? `data-preview="${item.id}"` : ''}>${item.name}</a>`;
+                    });
+                    html += `</div>`;
+
+                    html += `<div>`;
+                    filterEmptyItems(secondHalf).forEach(item => {
+                        html += `<a href="${item.url || '#'}" class="mega-menu-item" ${item.id ? `data-preview="${item.id}"` : ''}>${item.name}</a>`;
+                    });
+                    html += `</div>`;
+
+                    html += `</div>`;
+                } else {
+                    html += `<div class="space-y-1">`;
+                    filterEmptyItems(category.items).forEach(item => {
+                        html += `<a href="${item.url || '#'}" class="mega-menu-item" ${item.id ? `data-preview="${item.id}"` : ''}>${item.name}</a>`;
+                    });
+                    html += `</div>`;
+                }
+            } else if (category.contactInfo) {
+                html += `<div class="mt-4 grid grid-cols-2 gap-6">`;
+                filterEmptyItems(category.contactInfo).forEach(contact => {
+                    html += `
+                    <div class="flex items-start">
+                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                            <i class="${contact.icon}"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">${contact.title}</h4>
+                            <p class="text-tech-light/70">${contact.content}</p>
+                        </div>
+                    </div>`;
+                });
+                html += `</div>`;
+            }
+
+            html += `</div>`;
+        });
+
+        return html;
+    }
+
+    // Function to generate product preview section
+    function generateProductPreviews(data) {
+        let html = `<div class="mega-menu-image">`;
+        let allItems = [];
+
+        // Collect all preview items
+        data.forEach(category => {
+            if (category.subcategories) {
+                category.subcategories.forEach(subcat => {
+                    allItems = [...allItems, ...subcat.items.filter(item => item.preview)];
+                });
+            } else if (category.items) {
+                allItems = [...allItems, ...category.items.filter(item => item.preview)];
+            }
+        });
+
+        // Generate preview HTML for each item
+        allItems.filter(item => item.preview.title != "").forEach((item, index) => {
+            html += `
+            <div class="product-preview ${index === 0 ? 'active' : ''}" id="${item.id}">
+                <img src="${item.preview.image}" alt="${item.preview.title}" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">${item.preview.title}</h3>
+                <p class="text-tech-light/70 text-center">${item.preview.description}</p>
+            </div>`;
+        });
+
+        html += `</div>`;
+        return html;
+    }
+
+    // Function to generate mobile support submenu
+    function generateMobileSupportSubmenu(data) {
+        let html = '';
+        let supportItems = [];
+
+        // Collect all support menu items
+        data.forEach(category => {
+            if (category.items && !category.contactInfo) {
+                supportItems = [...supportItems, ...category.items];
+            }
+        });
+
+        // Generate mobile submenu HTML for each item
+        supportItems.forEach(item => {
+            html += `
+            <div class="mobile-submenu-item">
+                <a href="${item.url || '#'}" class="mobile-submenu-link">${item.name}</a>
+            </div>`;
+        });
+
+        return html;
+    }
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu-panel');
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobile-menu-close').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu-panel');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Populate mega menus with data from arrays
+        document.getElementById('printer-mega-menu').innerHTML =
+            generateMegaMenu(printerData) + generateProductPreviews(printerData);
+
+        document.getElementById('ink-mega-menu').innerHTML =
+            generateMegaMenu(inkData) + generateProductPreviews(inkData);
+
+        document.getElementById('support-mega-menu').innerHTML =
+            generateMegaMenu(supportData);
+
+        // Populate mobile support submenu
+        document.getElementById('mobile-support-submenu').innerHTML =
+            generateMobileSupportSubmenu(supportData);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        if (typeof observer !== 'undefined') {
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Mega menu product preview
+        const menuItems = document.querySelectorAll('.mega-menu-item[data-preview]');
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                const previewId = this.getAttribute('data-preview');
+                const previewElement = document.getElementById(previewId);
+
+                // Hide all previews
+                document.querySelectorAll('.product-preview').forEach(preview => {
+                    preview.classList.remove('active');
+                });
+
+                // Show the selected preview
+                if (previewElement) {
+                    previewElement.classList.add('active');
+                }
+            });
+        });
+
+
+    });
+
+    // 根据当前URL更新语言显示
+    updateLanguageDisplay();
+    // 移动端子菜单的展开/收起
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item > span.mobile-menu-link');
+    mobileMenuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const subMenu = this.nextElementSibling;
+            const arrow = this.querySelector('.menu-arrow');
+
+            if (subMenu && subMenu.classList.contains('mobile-submenu')) {
+                if (subMenu.style.maxHeight) {
+                    subMenu.style.maxHeight = null;
+                    // 移除箭头激活状态
+                    if (arrow) arrow.classList.remove('active');
+                } else {
+                    subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+                    // 添加箭头激活状态
+                    if (arrow) arrow.classList.add('active');
+                }
+            }
+        });
+    });
+
+    // 根据当前URL更新语言显示功能
+    function updateLanguageDisplay() {
+        const path = window.location.pathname;
+        const desktopButton = document.getElementById('desktop-language-button').querySelector('span');
+        const mobileButton = document.getElementById('mobile-language-button');
+        
+        // 默认显示
+        let displayText = '中文 / EN';
+        
+        // 根据URL路径判断当前语言
+        if (path.indexOf('/zh-cn/') === 0) {
+            displayText = '中文 / EN';
+        } else if (path === '/' || path.indexOf('/en-us/') === 0) {
+            displayText = 'EN / 中文';
+        } else if (path.indexOf('/de-de/') === 0) {
+            displayText = 'DE / EN';
+        } else if (path.indexOf('/es-es/') === 0) {
+            displayText = 'ES / EN';
+        } else if (path.indexOf('/fr-fr/') === 0) {
+            displayText = 'FR / EN';
+        } else if (path.indexOf('/ja-jp/') === 0) {
+            displayText = '日本語 / EN';
+        } else if (path.indexOf('/ko-kr/') === 0) {
+            displayText = '한국어 / EN';
+        }
+        
+        // 更新显示
+        if (desktopButton) {
+            desktopButton.textContent = displayText;
+        }
+        
+        if (mobileButton) {
+            mobileButton.textContent = displayText;
+        }
+        
+        // 为当前语言添加活跃样式
+        const languageLinks = document.querySelectorAll('.relative.group .absolute a, .mobile-submenu-item a');
+        languageLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if ((path === '/' && href === '/') || 
+                (path.indexOf(href) === 0 && href !== '/')) {
+                link.classList.add('language-btn-active');
+            } else {
+                link.classList.remove('language-btn-active');
+            }
+        });
+    }
+</script><style>
+    /* 文章内容样式 */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+    .article-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #f5f5f7;
+    }
+
+    .article-content p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul,
+    .article-content ol {
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul {
+        list-style-type: disc;
+    }
+
+    .article-content ol {
+        list-style-type: decimal;
+    }
+
+    .article-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .article-content a {
+        color: #0071e3;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    .article-content a:hover {
+        color: #0062c3;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #0071e3;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(245, 245, 247, 0.7);
+    }
+
+    .article-content code {
+        background-color: #2a2a2a;
+        color: #f5f5f7;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        border-radius: 3px;
+    }
+
+    .article-content pre {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content pre code {
+        background-color: transparent;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+    }
+
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<!-- 文章内容区域 -->
+<main class="pt-24 pb-16 bg-tech-black">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- 题图和标题融合区域 -->
+        <div class="relative mb-8 md:mb-12">
+            <!-- Image Container: Fixed height, relative pos, fallback bg -->
+            <div class="w-full h-[400px] overflow-hidden rounded-lg shadow-lg relative bg-tech-dark">
+                <img id="article-title-img" src="https://picsum.photos/1200/500?random=30" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-tech-black/50 to-tech-black/90">
+                </div>
+            </div>
+
+            <!-- Title Overlay: Positioned relative to the main wrapper -->
+            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <h1 id="article-title" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white drop-shadow-lg">
+                    ProPrint X9000: Liderando una nueva era en impresión industrial
+                </h1>
+
+                <div class="text-sm text-tech-light/80 drop-shadow-md">
+                    <span>发布日期: <span id="publish-date">26 de octubre de 2023</span></span>
+                    <!-- <span>作者: <span id="author-name">TechPrint 编辑部</span></span> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章内容容器 -->
+        <div id="article-content" class="article-content">
+            <!-- Markdown 内容将渲染在这里 -->
+        </div>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    // 文章数据和渲染逻辑 (保持不变)
+    document.addEventListener('DOMContentLoaded', function () {
+        const articleData = {
+            title: "ProPrint X9000: Liderando una nueva era en impresión industrial",
+            titleImg: "https://picsum.photos/1200/500?random=30",
+            publishDate: "26 de octubre de 2023",
+            markdownContent: `## 简介
+
+TechPrint 自豪地推出 **ProPrint X9000**，这是一款革命性的工业级 UV 平板打印机，旨在重新定义打印行业的标准。结合尖端技术和卓越性能，X9000 为各行各业提供了无与伦比的打印解决方案。
+
+![ProPrint X9000 打印样品](https://picsum.photos/800/400?random=31)
+
+## 核心优势
+
+ProPrint X9000 具备多项领先优势：
+
+### 1. 超高精度与速度
+配备最新的工业级喷头，X9000 可实现高达 **1440 dpi** 的物理分辨率。其创新的打印模式可在保证质量的同时，达到惊人的 **60㎡/小时** 打印速度。
+
+\`\`\`javascript
+// 示例代码：控制打印速度
+function setPrintSpeed(mode) {
+  if (mode === 'draft') {
+    return 60; // m²/hour
+  } else if (mode === 'standard') {
+    return 30;
+  } else {
+    return 15; // high quality
+  }
+}
+\`\`\`
+
+### 2. 广泛的材料兼容性
+无论是 **玻璃、亚克力、木材、金属** 还是 **塑料**，X9000 都能轻松应对。其先进的 UV LED 固化系统确保墨水在各种基材上都能快速固化，附着力强。
+
+*   玻璃
+*   亚克力
+*   木材
+*   金属 (需预处理)
+*   PVC 板
+*   皮革
+*   更多...
+
+### 3. 智能控制系统
+搭载 15.6 英寸高清触摸屏和自主研发的智能控制软件，操作直观便捷。支持远程监控、自动排版和智能色彩管理。
+
+> "ProPrint X9000 的智能系统大大简化了我们的工作流程，减少了人为错误。" - 客户反馈
+
+## 技术亮点
+
+| 特性             | 描述                                       |
+|------------------|-----------------------------------------|
+| 喷头技术         | 8-12 个工业级压电喷头                      |
+| 墨水配置         | CMYK + W + V + 特殊色 (可选)               |
+| 最大打印高度     | 150mm                                      |
+| UV 固化系统      | 双 LED 灯，功率可调，寿命长                |
+| 平台             | 真空吸附平台，分区控制                     |
+
+## 应用前景
+
+ProPrint X9000 的应用领域极其广泛，包括但不限于：
+
+1.  **广告标识**：高品质户外广告、室内标牌。
+2.  **家居装饰**：定制壁画、玻璃移门、家具面板。
+3.  **工业制造**：控制面板、设备外壳标识。
+4.  **个性化定制**：手机壳、礼品、艺术品复制。
+
+[了解更多关于 ProPrint X9000 的信息](https://example.com/proprint-x9000) 或 [联系我们获取报价](#contact)。
+
+---
+
+*TechPrint - 打印技术的未来*`
+        };
+
+        // 填充标题和元信息
+        document.getElementById('article-title').textContent = articleData.title;
+        document.getElementById('publish-date').textContent = articleData.publishDate;
+        document.getElementById('article-title-img').src = articleData.titleImg;
+
+        // 使用 Marked.js 渲染 Markdown 内容
+        const articleContentElement = document.getElementById('article-content');
+        if (articleContentElement && window.marked) {
+            articleContentElement.innerHTML = marked.parse(articleData.markdownContent);
+        } else {
+            console.error("Marked.js 未加载或文章内容元素未找到。");
+            articleContentElement.innerHTML = "<p>无法加载文章内容。</p>";
+        }
+    });
+</script><footer class="bg-tech-dark py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="#" class="text-tech-light text-2xl font-bold mb-6 inline-block">
+                    TechPrint
+                </a>
+                <p class="text-tech-light/70 mb-6">
+                    Especializados en soluciones de impresión UV industrial, ofrecemos equipos de impresión de alta calidad y eficiencia, junto con soporte técnico integral.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Series de Productos</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X9000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X7000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X5000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint R Series Impresoras de Rollo</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Accesorios y Consumibles</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Soluciones</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Industria de Señalización y Publicidad</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Industria de Decoración del Hogar</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Industria de Personalización Industrial</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Industria de Impresión de Embalajes</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Industria de Productos Electrónicos</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Servicios de Soporte</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Soporte Técnico</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Servicio Postventa</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Cursos de Formación</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Centro de Descargas</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-tech-gray/30 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-tech-light/50 text-sm mb-4 md:mb-0">
+                © 2023 TechPrint Tecnología Co., Ltd. Todos los derechos reservados.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Política de Privacidad</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Términos de Uso</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Mapa del Sitio</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fade-in animation for elements
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll Feature Animations
+        const scrollFeatures = document.querySelectorAll('.scroll-feature');
+
+        scrollFeatures.forEach((feature) => {
+            ScrollTrigger.create({
+                trigger: feature,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleClass: { targets: feature, className: "visible" },
+                once: true
+            });
+        });
+
+        // Parallax effect for background image
+        window.addEventListener('scroll', function () {
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                const scrollPosition = window.pageYOffset;
+                const parallaxSection = document.querySelector('.parallax-section');
+                const sectionTop = parallaxSection.offsetTop;
+                const sectionHeight = parallaxSection.offsetHeight;
+
+                if (scrollPosition > sectionTop - window.innerHeight &&
+                    scrollPosition < sectionTop + sectionHeight) {
+                    const yPos = (scrollPosition - sectionTop) * 0.3;
+                    parallaxBg.style.transform = `translateY(${yPos}px)`;
+                }
+            }
+        });
+    });
+</script>
+
+
+</body></html><!-- Footer -->
