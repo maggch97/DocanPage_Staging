@@ -984,8 +984,9 @@
 </section><style>
     .category-nav {
         position: sticky;
-        top: 80px;
+        top: 72px;
         z-index: 10;
+        margin-top: 0;
     }
 
     .category-nav-item {
@@ -1028,18 +1029,25 @@
             
             categoryElements.forEach(categoryEl => {
                 const categoryId = categoryEl.getAttribute('id');
-                const categoryTop = categoryEl.offsetTop - 100;
+                // 考虑 scroll-margin-top 的影响，增加偏移量到 200px
+                const categoryTop = categoryEl.offsetTop - 144;
                 let categoryBottom = categoryTop + categoryEl.offsetHeight;
                 
                 // 查找属于这个类别的所有系列部分
                 const seriesElements = document.querySelectorAll(`.product-series-section`);
                 
-                // 如果系列部分紧跟在当前类别之后，将其视为类别的一部分
+                // 查找下一个类别的位置（如果有的话）
+                let nextCategoryTop = Infinity;
+                const currentIndex = Array.from(categoryElements).indexOf(categoryEl);
+                if (currentIndex < categoryElements.length - 1) {
+                    const nextCategoryEl = categoryElements[currentIndex + 1];
+                    nextCategoryTop = nextCategoryEl.offsetTop;
+                }
+                
+                // 将当前类别和下一个类别之间的所有系列都归属于当前类别
                 seriesElements.forEach(seriesEl => {
-                    // 检查这个系列是否紧跟在当前类别之后
-                    // 注意：可以根据需要添加更明确的关联逻辑
-                    if (seriesEl.offsetTop > categoryEl.offsetTop && 
-                        (seriesEl.offsetTop < categoryBottom + 200)) { // 添加一定容差
+                    // 如果系列位于当前类别之后且在下一个类别之前，则属于当前类别
+                    if (seriesEl.offsetTop > categoryEl.offsetTop && seriesEl.offsetTop < nextCategoryTop) {
                         // 更新类别的底部边界以包含这个系列
                         const seriesBottom = seriesEl.offsetTop + seriesEl.offsetHeight;
                         if (seriesBottom > categoryBottom) {
@@ -1069,19 +1077,24 @@
         window.addEventListener('scroll', setActiveNavItem);
         setActiveNavItem();
     });
-</script><section id="flatbed" class="pd-20 bg-tech-black product-category-section">
-        <div class="container mx-auto px-4">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">平板打印机撒旦飞洒地方</h2>
-                <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
-                    专为刚性材料设计的高精度UV平板打印机，适用于玻璃、亚克力、木材、金属等材质的直接打印 撒旦飞洒地方
-                </p>
-            </div>
-            
-            <!-- 各个系列将被拆分为独立section -->
+</script><style>
+    .product-category-section {
+        scroll-margin-top: 144px;
+    }
+</style>
+<!-- Flatbed Printers Category -->
+<section id="flatbed" class="pd-20 bg-tech-black product-category-section">
+    <div class="container mx-auto px-4">
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">平板打印机撒旦飞洒地方</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
+                专为刚性材料设计的高精度UV平板打印机，适用于玻璃、亚克力、木材、金属等材质的直接打印 撒旦飞洒地方
+            </p>
         </div>
-    </section>
-<style>
+
+        <!-- 各个系列将被拆分为独立section -->
+    </div>
+</section><style>
     .product-card {
         transition: all 0.3s ease;
         position: relative;
@@ -1271,19 +1284,24 @@
             
         </div>
     </div>
-</section><section id="hybrid" class="pd-20 bg-tech-black product-category-section">
-        <div class="container mx-auto px-4">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">混合打印机</h2>
-                <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
-                    混合打印机
-                </p>
-            </div>
-            
-            <!-- 各个系列将被拆分为独立section -->
+</section><style>
+    .product-category-section {
+        scroll-margin-top: 144px;
+    }
+</style>
+<!-- Flatbed Printers Category -->
+<section id="hybrid" class="pd-20 bg-tech-black product-category-section">
+    <div class="container mx-auto px-4">
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">混合打印机</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
+                混合打印机
+            </p>
         </div>
-    </section>
 
+        <!-- 各个系列将被拆分为独立section -->
+    </div>
+</section>
 <!-- Horizo Series - 从平板打印机中分离出来 -->
 <section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
@@ -1593,4 +1611,4 @@
 </script>
 
 
-</body></html><!-- Page Header --><!-- Flatbed Printers Category --><!-- Flatbed Printers Category --><!-- Footer -->
+</body></html><!-- Page Header --><!-- Footer -->
