@@ -427,6 +427,65 @@
     .menu-arrow.active {
         transform: rotate(180deg);
     }
+
+    /* 语言切换提示栏样式 */
+    .language-suggestion-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        color: #f5f5f7;
+        padding: 8px 0;
+        z-index: 100;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+
+    .language-suggestion-bar.visible {
+        transform: translateY(0);
+    }
+
+    .language-suggestion-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .language-suggestion-btn {
+        background-color: #0071e3;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .language-suggestion-btn:hover {
+        background-color: #0077ed;
+    }
+
+    .language-suggestion-close {
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .language-suggestion-close:hover {
+        opacity: 1;
+    }
+
+    /* 调整顶部语言提示栏出现时的header位置 */
+    header.has-language-bar {
+        top: 40px;
+    }
 </style>
 <!-- Header/Navigation -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
@@ -883,6 +942,17 @@
     </div>
 </div>
 
+<!-- 语言切换提示栏 -->
+<div id="language-suggestion-bar" class="language-suggestion-bar">
+    <div class="language-suggestion-container">
+        <span id="language-suggestion-text"></span>
+        <button id="language-suggestion-btn" class="language-suggestion-btn"></button>
+        <span id="language-suggestion-close" class="language-suggestion-close">
+            <i class="fas fa-times"></i>
+        </span>
+    </div>
+</div>
+
 
 <script>
 
@@ -953,7 +1023,92 @@
     });
 </script>
 
-<section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+<script id="script-get-current-language">
+        const currentLanguage = 'ko-kr';
+        const languageMap = {"zh-cn":{"displayText":"中文 / EN","fullName":"简体中文","shortName":"简","href":"/zh-cn/","ask":"检测到您的浏览器语言为简体中文, 是否切换?","switchButton":"切换到简体中文"},"en-us":{"displayText":"EN / 中文","fullName":"English","shortName":"EN","href":"/","ask":"Detected your browser language is English, do you want to switch?","switchButton":"Switch to English"},"ja-jp":{"displayText":"日本語 / EN","fullName":"日本語","shortName":"日","href":"/ja-jp/","ask":"検出されたブラウザーの言語は日本語です。切り替えますか？","switchButton":"日本語に切り替える"},"ko-kr":{"displayText":"한국어 / EN","fullName":"한국어","shortName":"한","href":"/ko-kr/","ask":"검색된 브라우저 언어가 한국어입니다. 전환하시겠습니까?","switchButton":"한국어로 전환"},"de-de":{"displayText":"DE / EN","fullName":"Deutsch","shortName":"DE","href":"/de-de/","ask":"Erkannte, dass die Browser-Sprache Deutsch ist. Möchten Sie sie ändern?","switchButton":"Zu Deutsch wechseln"},"fr-fr":{"displayText":"FR / EN","fullName":"Français","shortName":"FR","href":"/fr-fr/","ask":"Détecté que le langage du navigateur est français. Voulez-vous le changer?","switchButton":"Changer en français"},"es-es":{"displayText":"ES / EN","fullName":"Spanish","shortName":"ES","href":"/es-es/","ask":"Detectado que el idioma del navegador es español. ¿Quieres cambiar?","switchButton":"Cambiar a español"}};
+    </script>
+
+
+
+<script>
+
+    // 检查浏览器语言并显示语言切换提示
+    document.addEventListener('DOMContentLoaded', function () {
+        // 获取浏览器语言
+        const getBrowserLanguage = () => {
+            const browserLang = navigator.language || navigator.userLanguage;
+            // 简化语言代码（例如zh-CN变为zh-cn）
+            return browserLang.toLowerCase().replace('_', '-');
+        };
+
+        const matchLanguage = (browserLang) => {
+            // 先尝试完全匹配
+            if (languageMap[browserLang]) {
+                return browserLang;
+            }
+
+            // 然后尝试匹配主要语言部分
+            const mainLang = browserLang.split('-')[0];
+            for (const key of Object.keys(languageMap)) {
+                if (key.startsWith(mainLang + '-')) {
+                    return key;
+                }
+            }
+
+            // 如果都没有匹配到，返回默认语言
+            return currentLanguage;
+        };
+
+        const showLanguageSuggestion = () => {
+            const browserLang = getBrowserLanguage();
+            const matchedLang = matchLanguage(browserLang);
+
+            // 如果浏览器语言与当前站点语言不同
+            if (matchedLang !== currentLanguage) {
+                const suggestedLang = languageMap[matchedLang];
+
+                if (!suggestedLang) return; // 安全检查
+
+                // 设置语言名称和切换按钮文本
+                document.getElementById('language-suggestion-text').textContent = suggestedLang.ask;
+                document.getElementById('language-suggestion-btn').textContent = suggestedLang.switchButton;
+
+                // 显示提示栏
+                const suggestionBar = document.getElementById('language-suggestion-bar');
+                suggestionBar.classList.add('visible');
+
+                // 调整header位置
+                document.querySelector('header').classList.add('has-language-bar');
+
+                // 设置切换按钮点击事件
+                document.getElementById('language-suggestion-btn').onclick = function () {
+                    window.location.href = suggestedLang.href;
+                };
+
+                // 设置关闭按钮点击事件
+                document.getElementById('language-suggestion-close').onclick = function () {
+                    closeLanguageSuggestion();
+                    // 保存用户关闭的状态到localStorage，避免重复提示
+                    localStorage.setItem('language-suggestion-dismissed-time', new Date().getTime());
+                };
+            }
+        };
+
+        const closeLanguageSuggestion = () => {
+            const suggestionBar = document.getElementById('language-suggestion-bar');
+            suggestionBar.classList.remove('visible');
+            document.querySelector('header').classList.remove('has-language-bar');
+        };
+
+        // 检查一天内是否关闭过
+        const hasBeenDismissed = localStorage.getItem('language-suggestion-dismissed-time') && new Date().getTime() - localStorage.getItem('language-suggestion-dismissed-time') < 1000 * 60 * 60 * 24;
+
+        // 如果没有关闭过，显示语言切换提示
+        if (!hasBeenDismissed) {
+            showLanguageSuggestion();
+        }
+    });
+</script><section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
     <div class="absolute inset-0 z-0">
         <img src="https://picsum.photos/1920/1080?random=1" alt="FR2010 2.1M 하이브리드 UV 프린터" class="w-full h-full object-cover object-center">
         <div class="absolute inset-0 bg-gradient-to-b from-tech-black/60 via-tech-black/70 to-tech-black"></div>
