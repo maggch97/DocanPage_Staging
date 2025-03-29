@@ -718,36 +718,42 @@
                         <span class="text-sm font-medium">DE / EN</span>
                         <i class="fas fa-language text-base ml-1"></i>
                     </button>
-                    <div class="absolute right-0 mt-2 w-36 bg-tech-dark border border-tech-light/20 rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="/de-de/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center language-btn-active">
-                            <span class="w-5 inline-block">DE</span>
-                            <span class="ml-2">Deutsch</span>
-                        </a>
-                        <a href="/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
-                            <span class="w-5 inline-block">EN</span>
-                            <span class="ml-2">English</span>
-                        </a>
-                        <a href="/es-es/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
-                            <span class="w-5 inline-block">ES</span>
-                            <span class="ml-2">Español</span>
-                        </a>
-                        <a href="/fr-fr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
-                            <span class="w-5 inline-block">FR</span>
-                            <span class="ml-2">Français</span>
-                        </a>
-                        <a href="/ja-jp/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
-                            <span class="w-5 inline-block">日</span>
-                            <span class="ml-2">日本語</span>
-                        </a>
-                        <a href="/ko-kr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center">
-                            <span class="w-5 inline-block">한</span>
-                            <span class="ml-2">한국어</span>
-                        </a>
-                        <a href="/zh-cn/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm flex items-center">
-                            <span class="w-5 inline-block">中</span>
-                            <span class="ml-2">简体中文</span>
-                        </a>
-                    </div>
+                    <div id="desktop-language-menu" class="absolute right-0 mt-2 w-36 bg-tech-dark border border-tech-light/20 rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <a href="/zh-cn/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">简</span>
+                    <span class="ml-2">简体中文</span>
+                </a>
+            
+                <a href="/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">EN</span>
+                    <span class="ml-2">English</span>
+                </a>
+            
+                <a href="/ja-jp/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">日</span>
+                    <span class="ml-2">日本語</span>
+                </a>
+            
+                <a href="/ko-kr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">한</span>
+                    <span class="ml-2">한국어</span>
+                </a>
+            
+                <a href="/de-de/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item language-btn-active">
+                    <span class="w-5 inline-block">DE</span>
+                    <span class="ml-2">Deutsch</span>
+                </a>
+            
+                <a href="/fr-fr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">FR</span>
+                    <span class="ml-2">Français</span>
+                </a>
+            
+                <a href="/es-es/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">ES</span>
+                    <span class="ml-2">Spanish</span>
+                </a>
+            </div>
                 </div>
                 <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
                     Angebot anfordern
@@ -842,47 +848,53 @@
                 </span>
                 <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
             </span>
-            <div class="mobile-submenu">
+            <div class="mobile-submenu" id="mobile-language-menu">
                 <div class="mobile-submenu-item">
-                    <a href="/de-de/" class="mobile-submenu-link flex items-center language-btn-active">
-                        <span class="w-5 inline-block">DE</span>
-                        <span class="ml-2">Deutsch</span>
+                    <a href="/zh-cn/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">简</span>
+                        <span class="ml-2">简体中文</span>
                     </a>
                 </div>
+            
                 <div class="mobile-submenu-item">
-                    <a href="/" class="mobile-submenu-link flex items-center">
+                    <a href="/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
                         <span class="w-5 inline-block">EN</span>
                         <span class="ml-2">English</span>
                     </a>
                 </div>
+            
                 <div class="mobile-submenu-item">
-                    <a href="/es-es/" class="mobile-submenu-link flex items-center">
-                        <span class="w-5 inline-block">ES</span>
-                        <span class="ml-2">Español</span>
-                    </a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="/fr-fr/" class="mobile-submenu-link flex items-center">
-                        <span class="w-5 inline-block">FR</span>
-                        <span class="ml-2">Français</span>
-                    </a>
-                </div>
-                <div class="mobile-submenu-item">
-                    <a href="/ja-jp/" class="mobile-submenu-link flex items-center">
+                    <a href="/ja-jp/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
                         <span class="w-5 inline-block">日</span>
                         <span class="ml-2">日本語</span>
                     </a>
                 </div>
+            
                 <div class="mobile-submenu-item">
-                    <a href="/ko-kr/" class="mobile-submenu-link flex items-center">
+                    <a href="/ko-kr/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
                         <span class="w-5 inline-block">한</span>
                         <span class="ml-2">한국어</span>
                     </a>
                 </div>
+            
                 <div class="mobile-submenu-item">
-                    <a href="/zh-cn/" class="mobile-submenu-link flex items-center">
-                        <span class="w-5 inline-block">中</span>
-                        <span class="ml-2">简体中文</span>
+                    <a href="/de-de/" class="mobile-submenu-link flex items-center mobile-language-menu-item language-btn-active">
+                        <span class="w-5 inline-block">DE</span>
+                        <span class="ml-2">Deutsch</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/fr-fr/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">FR</span>
+                        <span class="ml-2">Français</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/es-es/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">ES</span>
+                        <span class="ml-2">Spanish</span>
                     </a>
                 </div>
             </div>
