@@ -1321,6 +1321,7 @@
 </section><style>
     .news-card {
         transition: all 0.3s ease;
+        cursor: pointer;
     }
 
     .news-card:hover {
@@ -1346,53 +1347,59 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=11" alt="뉴스 이미지" class="w-full h-full object-cover">
+            <a href="/ko-kr/articles/example.html" class="block">
+                <div class="news-card apple-card overflow-hidden rounded-2xl fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=11" alt="뉴스 이미지" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-tech-light/60 mb-2">2023년 10월 15일</div>
+                        <h3 class="text-xl font-bold mb-3">TechPrint, 2023년 혁신 기술상 수상</h3>
+                        <p class="text-tech-light/70 mb-4">
+                            ProPrint X 시리즈가 뛰어난 성능과 혁신적인 기술로 업계 권위 있는 기관으로부터 올해의 혁신 기술상을 수상했습니다...
+                        </p>
+                        <span class="inline-flex items-center text-tech-accent">
+                            더보기 <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="text-sm text-tech-light/60 mb-2">2023년 10월 15일</div>
-                    <h3 class="text-xl font-bold mb-3">TechPrint, 2023년 혁신 기술상 수상</h3>
-                    <p class="text-tech-light/70 mb-4">
-                        ProPrint X 시리즈가 뛰어난 성능과 혁신적인 기술로 업계 권위 있는 기관으로부터 올해의 혁신 기술상을 수상했습니다...
-                    </p>
-                    <a href="/ko-kr/articles/example.html" class="inline-flex items-center text-tech-accent">
-                        더보기 <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
+            </a>
 
-            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=12" alt="뉴스 이미지" class="w-full h-full object-cover">
+            <a href="/ko-kr/articles/example.html" class="block">
+                <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=12" alt="뉴스 이미지" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-tech-light/60 mb-2">2023년 9월 28일</div>
+                        <h3 class="text-xl font-bold mb-3">TechPrint, 2023 상하이 국제 인쇄전 참가</h3>
+                        <p class="text-tech-light/70 mb-4">
+                            TechPrint 부스에서 최신 인쇄 기술과 솔루션을 경험해 보실 수 있도록 초대합니다...
+                        </p>
+                        <span class="inline-flex items-center text-tech-accent">
+                            더보기 <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="text-sm text-tech-light/60 mb-2">2023년 9월 28일</div>
-                    <h3 class="text-xl font-bold mb-3">TechPrint, 2023 상하이 국제 인쇄전 참가</h3>
-                    <p class="text-tech-light/70 mb-4">
-                        TechPrint 부스에서 최신 인쇄 기술과 솔루션을 경험해 보실 수 있도록 초대합니다...
-                    </p>
-                    <a href="/ko-kr/articles/example.html" class="inline-flex items-center text-tech-accent">
-                        더보기 <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
+            </a>
 
-            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.4s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=13" alt="뉴스 이미지" class="w-full h-full object-cover">
+            <a href="/ko-kr/articles/example.html" class="block">
+                <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.4s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=13" alt="뉴스 이미지" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-tech-light/60 mb-2">2023년 9월 10일</div>
+                        <h3 class="text-xl font-bold mb-3">TechPrint, 새 친환경 UV 잉크 시리즈 출시</h3>
+                        <p class="text-tech-light/70 mb-4">
+                            새로 출시된 친환경 UV 잉크는 더 선명하고 오래가는 색상 표현은 물론 환경 영향을 최소화했습니다...
+                        </p>
+                        <span class="inline-flex items-center text-tech-accent">
+                            더보기 <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="text-sm text-tech-light/60 mb-2">2023년 9월 10일</div>
-                    <h3 class="text-xl font-bold mb-3">TechPrint, 새 친환경 UV 잉크 시리즈 출시</h3>
-                    <p class="text-tech-light/70 mb-4">
-                        새로 출시된 친환경 UV 잉크는 더 선명하고 오래가는 색상 표현은 물론 환경 영향을 최소화했습니다...
-                    </p>
-                    <a href="/ko-kr/articles/example.html" class="inline-flex items-center text-tech-accent">
-                        더보기 <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
+            </a>
         </div>
 
         <div class="text-center mt-12">

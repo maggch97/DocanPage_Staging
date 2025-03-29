@@ -1321,6 +1321,7 @@
 </section><style>
     .news-card {
         transition: all 0.3s ease;
+        cursor: pointer;
     }
 
     .news-card:hover {
@@ -1346,53 +1347,59 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=11" alt="新闻图片" class="w-full h-full object-cover">
+            <a href="/zh-cn/articles/example.html" class="block">
+                <div class="news-card apple-card overflow-hidden rounded-2xl fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=11" alt="新闻图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-tech-light/60 mb-2">2023年10月15日</div>
+                        <h3 class="text-xl font-bold mb-3">TechPrint荣获2023年度创新技术奖</h3>
+                        <p class="text-tech-light/70 mb-4">
+                            我们的ProPrint X系列凭借卓越的性能和创新的技术，荣获行业权威机构颁发的年度创新技术奖...
+                        </p>
+                        <span class="inline-flex items-center text-tech-accent">
+                            阅读更多 <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="text-sm text-tech-light/60 mb-2">2023年10月15日</div>
-                    <h3 class="text-xl font-bold mb-3">TechPrint荣获2023年度创新技术奖</h3>
-                    <p class="text-tech-light/70 mb-4">
-                        我们的ProPrint X系列凭借卓越的性能和创新的技术，荣获行业权威机构颁发的年度创新技术奖...
-                    </p>
-                    <a href="/zh-cn/articles/example.html" class="inline-flex items-center text-tech-accent">
-                        阅读更多 <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
+            </a>
 
-            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=12" alt="新闻图片" class="w-full h-full object-cover">
+            <a href="/zh-cn/articles/example.html" class="block">
+                <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=12" alt="新闻图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-tech-light/60 mb-2">2023年9月28日</div>
+                        <h3 class="text-xl font-bold mb-3">TechPrint将参加2023上海国际广印展</h3>
+                        <p class="text-tech-light/70 mb-4">
+                            我们诚挚邀请您莅临TechPrint展位，体验我们最新的打印技术和解决方案...
+                        </p>
+                        <span class="inline-flex items-center text-tech-accent">
+                            阅读更多 <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="text-sm text-tech-light/60 mb-2">2023年9月28日</div>
-                    <h3 class="text-xl font-bold mb-3">TechPrint将参加2023上海国际广印展</h3>
-                    <p class="text-tech-light/70 mb-4">
-                        我们诚挚邀请您莅临TechPrint展位，体验我们最新的打印技术和解决方案...
-                    </p>
-                    <a href="/zh-cn/articles/example.html" class="inline-flex items-center text-tech-accent">
-                        阅读更多 <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
+            </a>
 
-            <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.4s;">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://picsum.photos/600/400?random=13" alt="新闻图片" class="w-full h-full object-cover">
+            <a href="/zh-cn/articles/example.html" class="block">
+                <div class="news-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.4s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=13" alt="新闻图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-tech-light/60 mb-2">2023年9月10日</div>
+                        <h3 class="text-xl font-bold mb-3">TechPrint发布全新环保墨水系列</h3>
+                        <p class="text-tech-light/70 mb-4">
+                            我们推出的新型环保UV墨水，不仅色彩更加鲜艳持久，而且更加环保，减少对环境的影响...
+                        </p>
+                        <span class="inline-flex items-center text-tech-accent">
+                            阅读更多 <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="text-sm text-tech-light/60 mb-2">2023年9月10日</div>
-                    <h3 class="text-xl font-bold mb-3">TechPrint发布全新环保墨水系列</h3>
-                    <p class="text-tech-light/70 mb-4">
-                        我们推出的新型环保UV墨水，不仅色彩更加鲜艳持久，而且更加环保，减少对环境的影响...
-                    </p>
-                    <a href="/zh-cn/articles/example.html" class="inline-flex items-center text-tech-accent">
-                        阅读更多 <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
+            </a>
         </div>
 
         <div class="text-center mt-12">
