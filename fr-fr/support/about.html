@@ -1229,6 +1229,379 @@
     </div>
 </main>
 
+<section id="contact" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Contactez-nous</h2>
+                <p class="text-lg text-tech-light/80 mb-8 fade-in">
+                    Que vous souhaitiez en savoir plus sur nos produits ou que vous ayez besoin d'une solution sur mesure, notre équipe d'experts est à votre disposition pour vous accompagner.
+                </p>
+
+                <div class="space-y-6 fade-in">
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Adresse de l'entreprise</h4>
+                            <p class="text-tech-light/70">88 Keyuan Road, Zhangjiang Hi-Tech Park, Pudong New Area, Shanghai</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Téléphone</h4>
+                            <p class="text-tech-light/70">400-888-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">E-mail</h4>
+                            <p class="text-tech-light/70">info@techprint.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 fade-in">
+                    <h4 class="font-medium mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">Demande de devis</h3>
+                <form id="contactForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Nom</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium">Nom de l'entreprise</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">E-mail</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interest" class="block mb-2 text-sm font-medium">Produit d'intérêt</label>
+                        <select id="interest" name="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                            <option value="">Veuillez choisir...</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
+                            <option value="custom">Solution sur mesure</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light"></textarea>
+                    </div>
+
+                    <div id="formStatus" class="mb-4 hidden">
+                        <p id="formStatusMessage" class="text-center py-2 rounded-md"></p>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 btn-primary rounded-full">
+                        Soumettre la demande
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const formStatusMessage = document.getElementById('formStatusMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // 显示加载状态
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Envoi en cours...';
+                submitButton.disabled = true;
+                
+                // 收集表单数据
+                const formData = {
+                    name: contactForm.elements['name'].value,
+                    company: contactForm.elements['company'].value,
+                    email: contactForm.elements['email'].value,
+                    phone: contactForm.elements['phone'].value,
+                    interest: contactForm.elements['interest'].value,
+                    message: contactForm.elements['message'].value
+                };
+                
+                try {
+                    // 发送请求到API
+                    const response = await fetch('/api/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    // 显示结果
+                    formStatus.classList.remove('hidden');
+                    
+                    if (result.success) {
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = 'Votre message a bien été envoyé ! Nous vous contacterons dès que possible.';
+                        contactForm.reset();
+                    } else {
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = `Échec de l'envoi: ${result.message}`;
+                    }
+                } catch (error) {
+                    // 处理错误
+                    formStatus.classList.remove('hidden');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                    formStatusMessage.textContent = 'Une erreur s'est produite lors de l'envoi. Veuillez réessayer plus tard ou nous contacter directement.';
+                    console.error('Erreur lors de l'envoi du formulaire :', error);
+                } finally {
+                    // 恢复按钮状态
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            });
+        }
+    });
+</script><style>
+    .article-content h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+    /* 文章内容样式 */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+    .article-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #f5f5f7;
+    }
+
+    .article-content p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul,
+    .article-content ol {
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul {
+        list-style-type: disc;
+    }
+
+    .article-content ol {
+        list-style-type: decimal;
+    }
+
+    .article-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .article-content a {
+        color: #0071e3;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    .article-content a:hover {
+        color: #0062c3;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #0071e3;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(245, 245, 247, 0.7);
+    }
+
+    .article-content code {
+        background-color: #2a2a2a;
+        color: #f5f5f7;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        border-radius: 3px;
+    }
+
+    .article-content pre {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content pre code {
+        background-color: transparent;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+    }
+
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<!-- 文章内容区域 -->
+<main class="pt-24 pb-16 bg-tech-black">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- 题图和标题融合区域 -->
+        
+
+        <!-- 文章内容容器 -->
+        <div id="article-content" class="article-content"><h2>Introduction</h2>
+<p>TechPrint est fier de présenter le <strong>ProPrint X9000</strong>, une imprimante UV industrielle révolutionnaire conçue pour redéfinir les standards de l'impression. Alliant technologie de pointe et performances exceptionnelles, le X9000 offre une solution d'impression inégalée pour divers secteurs.</p>
+<p><img src="https://picsum.photos/800/400?random=31" alt="Échantillon d'impression ProPrint X9000"></p>
+<h2>Avantages clés</h2>
+<p>Le ProPrint X9000 présente plusieurs atouts majeurs :</p>
+<h3>1. Précision et vitesse exceptionnelles</h3>
+<p>Équipé des dernières têtes d'impression industrielles, le X9000 atteint une résolution physique allant jusqu'à <strong>1440 dpi</strong>. Son mode d'impression innovant permet une vitesse impressionnante de <strong>60 m²/h</strong> tout en maintenant une qualité optimale.</p>
+<p>```javascript
+// Exemple de code : contrôle de la vitesse d'impression
+function setPrintSpeed(mode) {
+  if (mode === 'draft') {
+    return 60; // m²/h
+  } else if (mode === 'standard') {
+    return 30;
+  } else {
+    return 15; // haute qualité
+  }
+}
+```</p>
+<h3>2. Compatibilité avec divers matériaux</h3>
+<p>Que ce soit le <strong>verre, l'acrylique, le bois, le métal</strong> ou le <strong>plastique</strong>, le X9000 s'adapte parfaitement. Son système de séchage UV LED avancé assure un durcissement rapide et une excellente adhérence sur tous les substrats.</p>
+<ul>
+<li>Verre</li>
+<li>Acrylique</li>
+<li>Bois</li>
+<li>Métal (prétraitement nécessaire)</li>
+<li>PVC</li>
+<li>Cuir</li>
+<li>Et plus encore...</li>
+</ul>
+<h3>3. Système de contrôle intelligent</h3>
+<p>Doté d'un écran tactile HD de 15,6 pouces et d'un logiciel de contrôle intelligent développé en interne, son utilisation est intuitive et facile. Prend en charge la surveillance à distance, la mise en page automatique et la gestion intelligente des couleurs.</p>
+<p>&gt; "Le système intelligent du ProPrint X9000 a grandement simplifié notre flux de travail et réduit les erreurs humaines." - Retour client</p>
+<h2>Points techniques</h2>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Technologie des têtes</td>
+<td>8-12 têtes piézoélectriques industrielles</td>
+</tr>
+<tr>
+<td>Configuration d'encre</td>
+<td>CMYK + W + V + couleurs spéciales (option)</td>
+</tr>
+<tr>
+<td>Hauteur max d'impression</td>
+<td>150mm</td>
+</tr>
+<tr>
+<td>Système de séchage UV</td>
+<td>Double LED, puissance réglable, longue durée de vie</td>
+</tr>
+<tr>
+<td>Plateforme</td>
+<td>Plateforme à aspiration, contrôle par zone</td>
+</tr>
+</tbody></table>
+<h2>Applications</h2>
+<p>Le ProPrint X9000 trouve des applications dans de nombreux domaines, notamment :</p>
+<ol>
+<li><strong>Signalétique</strong> : Publicités extérieures haute qualité, enseignes intérieures.</li>
+<li><strong>Décoration d'intérieur</strong> : Peintures murales personnalisées, portes en verre, panneaux de meubles.</li>
+<li><strong>Fabrication industrielle</strong> : Panneaux de contrôle, marquage de boîtiers.</li>
+<li><strong>Personnalisation</strong> : Coques de téléphone, cadeaux, reproduction d'œuvres d'art.</li>
+</ol>
+<p><a href="https://example.com/proprint-x9000">En savoir plus sur le ProPrint X9000</a> ou <a href="#contact">nous contacter pour un devis</a>.</p>
+<hr>
+<p><em>TechPrint - L'avenir de l'impression</em></p>
+</div>
+    </div>
+</main>
+
 <footer class="bg-tech-dark py-12">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -1340,4 +1713,4 @@
 </script>
 
 
-</body></html><!-- Footer -->
+</body></html><!-- Contact Section --><!-- Footer -->

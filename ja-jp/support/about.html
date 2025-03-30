@@ -1229,6 +1229,379 @@
     </div>
 </main>
 
+<section id="contact" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">お問い合わせ</h2>
+                <p class="text-lg text-tech-light/80 mb-8 fade-in">
+                    製品情報の詳細を知りたい方や、カスタムソリューションが必要な方に、専門チームがいつでもサポートいたします。
+                </p>
+
+                <div class="space-y-6 fade-in">
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">会社住所</h4>
+                            <p class="text-tech-light/70">上海市浦東新区張江ハイテクパーク科苑路88号</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">電話番号</h4>
+                            <p class="text-tech-light/70">400-888-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">メールアドレス</h4>
+                            <p class="text-tech-light/70">info@techprint.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 fade-in">
+                    <h4 class="font-medium mb-4">フォローする</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">見積もり依頼</h3>
+                <form id="contactForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">名前</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium">会社名</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">メールアドレス</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium">電話番号</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interest" class="block mb-2 text-sm font-medium">興味のある製品</label>
+                        <select id="interest" name="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                            <option value="">選択してください...</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
+                            <option value="custom">カスタムソリューション</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium">メッセージ</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light"></textarea>
+                    </div>
+
+                    <div id="formStatus" class="mb-4 hidden">
+                        <p id="formStatusMessage" class="text-center py-2 rounded-md"></p>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 btn-primary rounded-full">
+                        問い合わせを送信
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const formStatusMessage = document.getElementById('formStatusMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // 显示加载状态
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = '送信中...';
+                submitButton.disabled = true;
+                
+                // 收集表单数据
+                const formData = {
+                    name: contactForm.elements['name'].value,
+                    company: contactForm.elements['company'].value,
+                    email: contactForm.elements['email'].value,
+                    phone: contactForm.elements['phone'].value,
+                    interest: contactForm.elements['interest'].value,
+                    message: contactForm.elements['message'].value
+                };
+                
+                try {
+                    // 发送请求到API
+                    const response = await fetch('/api/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    // 显示结果
+                    formStatus.classList.remove('hidden');
+                    
+                    if (result.success) {
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = 'お問い合わせは正常に送信されました。折り返しご連絡いたします。';
+                        contactForm.reset();
+                    } else {
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = `送信失敗: ${result.message}`;
+                    }
+                } catch (error) {
+                    // 处理错误
+                    formStatus.classList.remove('hidden');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                    formStatusMessage.textContent = '送信中にエラーが発生しました。しばらくしてから再度お試しいただくか、直接ご連絡ください。';
+                    console.error('フォーム送信エラー:', error);
+                } finally {
+                    // 恢复按钮状态
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            });
+        }
+    });
+</script><style>
+    .article-content h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+    /* 文章内容样式 */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+    .article-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #f5f5f7;
+    }
+
+    .article-content p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul,
+    .article-content ol {
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul {
+        list-style-type: disc;
+    }
+
+    .article-content ol {
+        list-style-type: decimal;
+    }
+
+    .article-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .article-content a {
+        color: #0071e3;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    .article-content a:hover {
+        color: #0062c3;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #0071e3;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(245, 245, 247, 0.7);
+    }
+
+    .article-content code {
+        background-color: #2a2a2a;
+        color: #f5f5f7;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        border-radius: 3px;
+    }
+
+    .article-content pre {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content pre code {
+        background-color: transparent;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+    }
+
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<!-- 文章内容区域 -->
+<main class="pt-24 pb-16 bg-tech-black">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- 题图和标题融合区域 -->
+        
+
+        <!-- 文章内容容器 -->
+        <div id="article-content" class="article-content"><h2>概要</h2>
+<p>TechPrintは業界を再定義する革新的な産業用UVフラットベッドプリンター<strong>ProPrint X9000</strong>を誇らしくご紹介します。最先端技術と卓越した性能を融合したX9000は、あらゆる業界に比類のない印刷ソリューションを提供します。</p>
+<p><img src="https://picsum.photos/800/400?random=31" alt="ProPrint X9000 プリントサンプル"></p>
+<h2>コアメリット</h2>
+<p>ProPrint X9000の主な優位性：</p>
+<h3>1. 超高精度＆高速印刷</h3>
+<p>最新の産業用プリントヘッドを搭載し、<strong>1440 dpi</strong>の物理解像度を実現。革新的な印刷モードにより、品質を保ちながら驚異的な<strong>60㎡/h</strong>の印刷速度を達成。</p>
+<p>```javascript
+// 印刷速度制御サンプルコード
+function setPrintSpeed(mode) {
+  if (mode === 'draft') {
+    return 60; // m²/hour
+  } else if (mode === 'standard') {
+    return 30;
+  } else {
+    return 15; // high quality
+  }
+}
+```</p>
+<h3>2. 幅広い素材対応</h3>
+<p><strong>ガラス、アクリル、木材、金属</strong>から<strong>プラスチック</strong>まで、X9000はあらゆる素材に対応。先進のUV LED硬化システムにより、各種基材上でインクの迅速な硬化と強力な密着性を確保。</p>
+<ul>
+<li>ガラス</li>
+<li>アクリル</li>
+<li>木材</li>
+<li>金属（前処理必要）</li>
+<li>PVC板</li>
+<li>皮革</li>
+<li>その他多数</li>
+</ul>
+<h3>3. インテリジェント制御システム</h3>
+<p>15.6インチHDタッチスクリーンと独自開発の制御ソフトを搭載し、直感的な操作を実現。リモート監視、自動レイアウト、インテリジェントカラーマネジメントをサポート。</p>
+<p>&gt; 「ProPrint X9000の智能システムはワークフローを大幅に簡素化し、人的ミスを削減」- 顧客フィードバック</p>
+<h2>技術ハイライト</h2>
+<table>
+<thead>
+<tr>
+<th>特徴</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>プリントヘッド技術</td>
+<td>産業用圧電式ヘッド8-12基</td>
+</tr>
+<tr>
+<td>インク構成</td>
+<td>CMYK + W + V + スペシャルカラー（オプション）</td>
+</tr>
+<tr>
+<td>最大印刷厚</td>
+<td>150mm</td>
+</tr>
+<tr>
+<td>UV硬化システム</td>
+<td>デュアルLED、出力調整可能、長寿命設計</td>
+</tr>
+<tr>
+<td>プラットフォーム</td>
+<td>真空吸着式、ゾーン制御対応</td>
+</tr>
+</tbody></table>
+<h2>応用分野</h2>
+<p>ProPrint X9000の適用分野は極めて広範：</p>
+<ol>
+<li><strong>広告看板</strong>：高品質屋外広告、屋内サイン</li>
+<li><strong>住宅装飾</strong>：カスタム壁画、ガラスドア、家具パネル</li>
+<li><strong>産業製造</strong>：制御パネル、機器外装マーキング</li>
+<li><strong>パーソナライズ製品</strong>：スマホケース、ギフト、美術品複製</li>
+</ol>
+<p><a href="https://example.com/proprint-x9000">ProPrint X9000の詳細はこちら</a> または <a href="#contact">見積り依頼</a></p>
+<hr>
+<p><em>TechPrint - 印刷技術の未来</em></p>
+</div>
+    </div>
+</main>
+
 <footer class="bg-tech-dark py-12">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -1340,4 +1713,4 @@
 </script>
 
 
-</body></html><!-- Footer -->
+</body></html><!-- Contact Section --><!-- Footer -->
