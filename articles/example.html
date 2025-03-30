@@ -1109,6 +1109,16 @@
         }
     });
 </script><style>
+    .article-content h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
     /* 文章内容样式 */
     .article-content h2 {
         font-size: 1.875rem;
@@ -1218,7 +1228,9 @@
 
             <!-- Title Overlay: Positioned relative to the main wrapper -->
             <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <h1 id="article-title" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white drop-shadow-lg">ProPrint X9000: Pioneering a New Era in Industrial Printing</h1>
+                <h1 id="article-title" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white drop-shadow-lg">
+                    ProPrint X9000: Pioneering a New Era in Industrial Printing
+                </h1>
 
                 <div class="text-sm text-tech-light/80 drop-shadow-md">
                     <span><span id="publish-date">October 26, 2023</span></span>
@@ -1242,7 +1254,8 @@
 <p>The ProPrint X9000 offers several leading-edge features:</p>
 <h3>1. Ultra-High Precision &amp; Speed</h3>
 <p>Equipped with the latest industrial-grade printheads, the X9000 achieves up to <strong>1440 dpi</strong> physical resolution. Its innovative printing mode delivers impressive speeds of <strong>60㎡/hour</strong> while maintaining quality.</p>
-<pre><code class="language-javascript">// Sample code: Print speed control
+<p>```javascript
+// Sample code: Print speed control
 function setPrintSpeed(mode) {
   if (mode === 'draft') {
     return 60; // m²/hour
@@ -1252,7 +1265,7 @@ function setPrintSpeed(mode) {
     return 15; // high quality
   }
 }
-</code></pre>
+```</p>
 <h3>2. Extensive Material Compatibility</h3>
 <p>Whether it's <strong>glass, acrylic, wood, metal</strong> or <strong>plastic</strong>, the X9000 handles them all effortlessly. Its advanced UV LED curing system ensures instant ink adhesion on various substrates.</p>
 <ul>
@@ -1266,9 +1279,7 @@ function setPrintSpeed(mode) {
 </ul>
 <h3>3. Intelligent Control System</h3>
 <p>Features a 15.6" HD touchscreen with proprietary control software for intuitive operation. Supports remote monitoring, automatic nesting, and intelligent color management.</p>
-<blockquote>
-<p>"The ProPrint X9000's smart system has significantly streamlined our workflow and reduced human errors." - Customer feedback</p>
-</blockquote>
+<p>&gt; "The ProPrint X9000's smart system has significantly streamlined our workflow and reduced human errors." - Customer feedback</p>
 <h2>Technical Highlights</h2>
 <table>
 <thead>
