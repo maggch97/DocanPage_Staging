@@ -368,10 +368,13 @@
 
     .mobile-submenu {
         padding-left: 1rem;
-        margin-top: 1rem;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
+        transition: max-height 0.3s ease-out, margin-top 0.3s ease;
+    }
+    
+        .mobile-submenu.show {
+        margin-top: 1rem;
     }
 
     .mobile-submenu-item {
@@ -978,10 +981,14 @@
                     subMenu.style.maxHeight = null;
                     
                     if (arrow) arrow.classList.remove('active');
+                    
+                    subMenu.classList.remove('show');
                 } else {
                     subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
                     
                     if (arrow) arrow.classList.add('active');
+                    
+                    subMenu.classList.add('show');
                 }
             }
         });
