@@ -1648,6 +1648,17 @@ function setPrintSpeed(mode) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
+
+                
+                if (entry.target.style.transitionDelay) {
+                    
+                    const delayMs = entry.target.style.transitionDelay.endsWith('ms') ?
+                        parseFloat(entry.target.style.transitionDelay) :
+                        parseFloat(entry.target.style.transitionDelay) * 1000;
+                    setTimeout(() => {
+                        entry.target.style.transitionDelay = '0s';
+                    }, delayMs + 1000);
+                }
             }
         });
     }
@@ -1660,11 +1671,12 @@ function setPrintSpeed(mode) {
 
     document.addEventListener('DOMContentLoaded', function () {
         const fadeElements = document.querySelectorAll('.fade-in');
-        fadeElements.forEach(element => {
-            observer.observe(element);
-        });
+
         const fadeElementsOpacity = document.querySelectorAll('.fade-in-opacity');
-        fadeElementsOpacity.forEach(element => {
+        
+        const allFadeElements = [...fadeElementsOpacity, ...fadeElements];
+
+        allFadeElements.forEach(element => {
             observer.observe(element);
         });
     });
