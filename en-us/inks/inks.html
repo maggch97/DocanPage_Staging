@@ -213,8 +213,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        /* fade in without moving */
-        .fade-in-opacity {
+                .fade-in-opacity {
             opacity: 0;
             transition: opacity 0.8s ease;
         }
@@ -343,8 +342,7 @@
         }
     }
 
-    /* Mobile Menu Styles */
-    .mobile-menu {
+        .mobile-menu {
         position: fixed;
         top: 0;
         left: 0;
@@ -407,18 +405,15 @@
         color: rgba(245, 245, 247, 1);
     }
 
-    /* 语言切换按钮样式 */
-    .language-btn-active {
+        .language-btn-active {
         background-color: rgba(255, 255, 255, 0.1);
     }
 
-    /* 箭头旋转效果 */
-    .menu-arrow.active {
+        .menu-arrow.active {
         transform: rotate(180deg);
     }
 
-    /* 语言切换提示栏样式 */
-    .language-suggestion-bar {
+        .language-suggestion-bar {
         position: fixed;
         top: 0;
         left: 0;
@@ -471,12 +466,11 @@
         opacity: 1;
     }
 
-    /* 调整顶部语言提示栏出现时的header位置 */
-    header.has-language-bar {
+        header.has-language-bar {
         top: 40px;
     }
 </style>
-<!-- Header/Navigation -->
+
 <header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
     <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
@@ -486,11 +480,11 @@
                 </a>
             </div>
 
-            <!-- Desktop Navigation -->
+            
             <nav class="hidden md:flex space-x-8">
                 <a href="/index.html" class="nav-link text-tech-light hover:text-white transition-colors">Home</a>
 
-                <!-- 打印机 Dropdown -->
+                
                 <div class="nav-item relative group">
                     <a href="/printers/printers.html" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
                         Printers
@@ -616,7 +610,7 @@
                     </div>
                 </div>
 
-                <!-- 墨水 Dropdown -->
+                
                 <div class="nav-item relative group">
                     <a href="/inks/inks.html" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
                         Inks
@@ -692,7 +686,7 @@
                     </div>
                 </div>
 
-                <!-- 服务支持 Dropdown -->
+                
                 <div class="nav-item relative group">
                     <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
                         Support
@@ -741,7 +735,7 @@
             </nav>
 
             <div class="flex items-center space-x-4">
-                <!-- 语言切换按钮 -->
+                
                 <div class="relative group">
                     <button id="desktop-language-button" class="hidden md:flex items-center space-x-1 px-3 py-1.5 rounded-full border border-tech-light/30 text-tech-light hover:bg-tech-light/10 transition-all">
                         <span class="text-sm font-medium">EN / 中文</span>
@@ -795,7 +789,7 @@
     </div>
 </header>
 
-<!-- Mobile Menu (Hidden by default) -->
+
 <div class="mobile-menu md:hidden" id="mobile-menu-panel">
     <div class="mobile-menu-header">
         <a href="/index.html" class="flex items-center">
@@ -868,7 +862,7 @@
         </div>
 
 
-        <!-- 移动端语言切换 -->
+        
         <div class="mobile-menu-item">
             <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
                 <span class="flex items-center">
@@ -931,7 +925,7 @@
     </div>
 </div>
 
-<!-- 语言切换提示栏 -->
+
 <div id="language-suggestion-bar" class="language-suggestion-bar">
     <div class="language-suggestion-container">
         <span id="language-suggestion-text"></span>
@@ -946,7 +940,7 @@
 <script>
 
 
-    // Mobile menu toggle
+    
     document.getElementById('mobile-menu-button').addEventListener('click', function () {
         const mobileMenu = document.getElementById('mobile-menu-panel');
         mobileMenu.classList.add('open');
@@ -967,7 +961,7 @@
             });
         }
 
-        // Mega menu product preview
+        
         const menuItems = document.querySelectorAll('.mega-menu-item[data-preview]');
 
         menuItems.forEach(item => {
@@ -975,12 +969,12 @@
                 const previewId = this.getAttribute('data-preview');
                 const previewElement = document.getElementById(previewId);
 
-                // Hide all previews
+                
                 document.querySelectorAll('.product-preview').forEach(preview => {
                     preview.classList.remove('active');
                 });
 
-                // Show the selected preview
+                
                 if (previewElement) {
                     previewElement.classList.add('active');
                 }
@@ -990,7 +984,7 @@
 
     });
 
-    // 移动端子菜单的展开/收起
+    
     const mobileMenuItems = document.querySelectorAll('.mobile-menu-item > span.mobile-menu-link');
     mobileMenuItems.forEach(item => {
         item.addEventListener('click', function () {
@@ -1000,11 +994,11 @@
             if (subMenu && subMenu.classList.contains('mobile-submenu')) {
                 if (subMenu.style.maxHeight) {
                     subMenu.style.maxHeight = null;
-                    // 移除箭头激活状态
+                    
                     if (arrow) arrow.classList.remove('active');
                 } else {
                     subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
-                    // 添加箭头激活状态
+                    
                     if (arrow) arrow.classList.add('active');
                 }
             }
@@ -1021,22 +1015,22 @@
 
 <script>
 
-    // 检查浏览器语言并显示语言切换提示
+    
     document.addEventListener('DOMContentLoaded', function () {
-        // 获取浏览器语言
+        
         const getBrowserLanguage = () => {
             const browserLang = navigator.language || navigator.userLanguage;
-            // 简化语言代码（例如zh-CN变为zh-cn）
+            
             return browserLang.toLowerCase().replace('_', '-');
         };
 
         const matchLanguage = (browserLang) => {
-            // 先尝试完全匹配
+            
             if (languageMap[browserLang]) {
                 return browserLang;
             }
 
-            // 然后尝试匹配主要语言部分
+            
             const mainLang = browserLang.split('-')[0];
             for (const key of Object.keys(languageMap)) {
                 if (key.startsWith(mainLang + '-')) {
@@ -1044,7 +1038,7 @@
                 }
             }
 
-            // 如果都没有匹配到，返回默认语言
+            
             return currentLanguage;
         };
 
@@ -1052,32 +1046,32 @@
             const browserLang = getBrowserLanguage();
             const matchedLang = matchLanguage(browserLang);
 
-            // 如果浏览器语言与当前站点语言不同
+            
             if (matchedLang !== currentLanguage) {
                 const suggestedLang = languageMap[matchedLang];
 
-                if (!suggestedLang) return; // 安全检查
+                if (!suggestedLang) return; 
 
-                // 设置语言名称和切换按钮文本
+                
                 document.getElementById('language-suggestion-text').textContent = suggestedLang.ask;
                 document.getElementById('language-suggestion-btn').textContent = suggestedLang.switchButton;
 
-                // 显示提示栏
+                
                 const suggestionBar = document.getElementById('language-suggestion-bar');
                 suggestionBar.classList.add('visible');
 
-                // 调整header位置
+                
                 document.querySelector('header').classList.add('has-language-bar');
 
-                // 设置切换按钮点击事件
+                
                 document.getElementById('language-suggestion-btn').onclick = function () {
                     window.location.href = suggestedLang.href;
                 };
 
-                // 设置关闭按钮点击事件
+                
                 document.getElementById('language-suggestion-close').onclick = function () {
                     closeLanguageSuggestion();
-                    // 保存用户关闭的状态到localStorage，避免重复提示
+                    
                     localStorage.setItem('language-suggestion-dismissed-time', new Date().getTime());
                 };
             }
@@ -1089,10 +1083,10 @@
             document.querySelector('header').classList.remove('has-language-bar');
         };
 
-        // 检查一天内是否关闭过
+        
         const hasBeenDismissed = localStorage.getItem('language-suggestion-dismissed-time') && new Date().getTime() - localStorage.getItem('language-suggestion-dismissed-time') < 1000 * 60 * 60 * 24;
 
-        // 如果没有关闭过，显示语言切换提示
+        
         if (!hasBeenDismissed) {
             showLanguageSuggestion();
         }
@@ -1127,7 +1121,7 @@
         background-color: rgba(255, 255, 255, 0.05);
     }
 </style>
-<!-- Category Navigation -->
+
 <div class="bg-tech-dark category-nav">
     <div class="container mx-auto px-4 mb-16">
         <div class="flex overflow-x-auto py-4 space-x-4 no-scrollbar">
@@ -1141,7 +1135,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Category navigation active state
+        
         const navItems = document.querySelectorAll('.category-nav-item');
         const sections = document.querySelectorAll('section[id]');
 
@@ -1149,19 +1143,19 @@
             let scrollY = window.pageYOffset;
             let activeCategory = null;
 
-            // 获取所有类别部分
+            
             const categoryElements = document.querySelectorAll('.product-category-section');
             
             categoryElements.forEach(categoryEl => {
                 const categoryId = categoryEl.getAttribute('id');
-                // 考虑 scroll-margin-top 的影响，增加偏移量到 200px
+                
                 const categoryTop = categoryEl.offsetTop - 144;
                 let categoryBottom = categoryTop + categoryEl.offsetHeight;
                 
-                // 查找属于这个类别的所有系列部分
+                
                 const seriesElements = document.querySelectorAll(`.product-series-section`);
                 
-                // 查找下一个类别的位置（如果有的话）
+                
                 let nextCategoryTop = Infinity;
                 const currentIndex = Array.from(categoryElements).indexOf(categoryEl);
                 if (currentIndex < categoryElements.length - 1) {
@@ -1169,11 +1163,11 @@
                     nextCategoryTop = nextCategoryEl.offsetTop;
                 }
                 
-                // 将当前类别和下一个类别之间的所有系列都归属于当前类别
+                
                 seriesElements.forEach(seriesEl => {
-                    // 如果系列位于当前类别之后且在下一个类别之前，则属于当前类别
+                    
                     if (seriesEl.offsetTop > categoryEl.offsetTop && seriesEl.offsetTop < nextCategoryTop) {
-                        // 更新类别的底部边界以包含这个系列
+                        
                         const seriesBottom = seriesEl.offsetTop + seriesEl.offsetHeight;
                         if (seriesBottom > categoryBottom) {
                             categoryBottom = seriesBottom;
@@ -1181,13 +1175,13 @@
                     }
                 });
                 
-                // 检查当前滚动位置是否在这个扩展的类别区域内
+                
                 if (scrollY >= categoryTop && scrollY < categoryBottom) {
                     activeCategory = categoryId;
                 }
             });
             
-            // 应用激活状态
+            
             if (activeCategory) {
                 navItems.forEach(item => {
                     item.classList.remove('active');
@@ -1207,7 +1201,7 @@
         scroll-margin-top: 144px;
     }
 </style>
-<!-- Flatbed Printers Category -->
+
 <section id="flatbed" class="pd-20 bg-tech-black product-category-section">
     <div class="container mx-auto px-4">
         <div class="mb-16">
@@ -1217,7 +1211,7 @@
             </p>
         </div>
 
-        <!-- 各个系列将被拆分为独立section -->
+        
     </div>
 </section><style>
     .product-card {
@@ -1255,8 +1249,7 @@
 
     .spec-badge {
         background: rgba(255, 255, 255, 0.1);
-        /* backdrop-filter: blur(5px); */
-        transition: all 0.3s ease;
+                transition: all 0.3s ease;
         border-radius: 20px;
     }
 
@@ -1264,12 +1257,12 @@
         background: rgba(255, 255, 255, 0.15);
     }
 </style>
-<!-- Horizo Series - 从平板打印机中分离出来 -->
+
 <section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
+            
             <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
                 <div class="h-48 overflow-hidden">
                     <img src="https://picsum.photos/600/400?random=20" alt="V46" class="w-full h-full object-cover">
@@ -1290,7 +1283,7 @@
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            
             <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
                 <div class="h-48 overflow-hidden">
                     <img src="https://picsum.photos/600/400?random=21" alt="TK68" class="w-full h-full object-cover">
@@ -1311,7 +1304,7 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            
             <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
                 <div class="h-48 overflow-hidden">
                     <img src="https://picsum.photos/600/400?random=22" alt="V84" class="w-full h-full object-cover">
@@ -1332,7 +1325,7 @@
                 </div>
             </div>
 
-            <!-- Product 4 -->
+            
             
         </div>
     </div>
@@ -1341,7 +1334,7 @@
         scroll-margin-top: 144px;
     }
 </style>
-<!-- Flatbed Printers Category -->
+
 <section id="flatbed" class="pd-20 bg-tech-black product-category-section">
     <div class="container mx-auto px-4">
         <div class="mb-16">
@@ -1351,15 +1344,15 @@
             </p>
         </div>
 
-        <!-- 各个系列将被拆分为独立section -->
+        
     </div>
 </section>
-<!-- Horizo Series - 从平板打印机中分离出来 -->
+
 <section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
+            
             <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
                 <div class="h-48 overflow-hidden">
                     <img src="https://picsum.photos/600/400?random=20" alt="V71" class="w-full h-full object-cover">
@@ -1380,7 +1373,7 @@
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            
             <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
                 <div class="h-48 overflow-hidden">
                     <img src="https://picsum.photos/600/400?random=21" alt="V77" class="w-full h-full object-cover">
@@ -1401,10 +1394,10 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            
             
 
-            <!-- Product 4 -->
+            
             
         </div>
     </div>
@@ -1413,7 +1406,7 @@
         scroll-margin-top: 144px;
     }
 </style>
-<!-- Flatbed Printers Category -->
+
 <section id="flatbed" class="pd-20 bg-tech-black product-category-section">
     <div class="container mx-auto px-4">
         <div class="mb-16">
@@ -1423,15 +1416,15 @@
             </p>
         </div>
 
-        <!-- 各个系列将被拆分为独立section -->
+        
     </div>
 </section>
-<!-- Horizo Series - 从平板打印机中分离出来 -->
+
 <section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
     <div class="container mx-auto px-4">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
+            
             <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
                 <div class="h-48 overflow-hidden">
                     <img src="https://picsum.photos/600/400?random=20" alt="V81" class="w-full h-full object-cover">
@@ -1452,7 +1445,7 @@
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            
             <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
                 <div class="h-48 overflow-hidden">
                     <img src="https://picsum.photos/600/400?random=21" alt="XTI RL3" class="w-full h-full object-cover">
@@ -1473,10 +1466,10 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            
             
 
-            <!-- Product 4 -->
+            
             
         </div>
     </div>
@@ -1544,13 +1537,13 @@
 </footer>
 
 <script>
-    // Mobile menu toggle
+    
     document.getElementById('mobile-menu-button').addEventListener('click', function () {
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Fade-in animation for elements
+    
     function handleIntersection(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1579,4 +1572,4 @@
 </script>
 
 
-</body></html><!-- Page Header --><!-- Footer -->
+</body></html>
