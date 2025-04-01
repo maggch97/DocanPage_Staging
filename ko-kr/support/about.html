@@ -1646,6 +1646,12 @@ function setPrintSpeed(mode) {
     function handleIntersection(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+
+                
+                if (window.innerWidth < 768 && entry.target.style.transitionDelay) {
+                    entry.target.style.transitionDelay = '0s';
+                }
+
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
 
