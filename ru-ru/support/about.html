@@ -1,0 +1,1655 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrint X9000 - Профессиональный UV-принтер | TechPrint</title>
+    <link href="/statics/css/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .section-height {
+            min-height: 100vh;
+        }
+
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 80%, rgba(10, 10, 10, 1) 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .hero-stat {
+            position: relative;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat:last-child::after {
+            display: none;
+        }
+
+        .feature-image {
+            transition: all 0.5s ease;
+            filter: brightness(0.9);
+        }
+
+        .feature-image:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .btn-primary {
+            background-color: #0071e3;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #0062c3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(245, 245, 247, 0.3);
+            color: #f5f5f7;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(245, 245, 247, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-check {
+            color: #f5f5f7;
+        }
+
+        .feature-highlight {
+            position: relative;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 70%;
+            background: #f5f5f7;
+            border-radius: 2px;
+        }
+
+        .apple-style-gradient {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .apple-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .apple-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .clean-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+                .fade-in-opacity {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .fade-in-opacity.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body><style>
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background-color: #f5f5f7;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    /* Mega Menu Styles - Revised */
+    .mega-menu {
+        position: fixed;
+        top: 72px;
+        /* Height of the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 50;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .nav-item:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .mega-menu-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+    }
+
+    .mega-menu-column {
+        grid-column: span 2;
+    }
+
+    .mega-menu-column.wide {
+        grid-column: span 3;
+    }
+
+    .mega-menu-image {
+        grid-column: span 4;
+    }
+
+    .mega-menu-column h3 {
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .mega-menu-column h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 1px;
+        background-color: #0071e3;
+    }
+
+    .mega-menu-item {
+        display: block;
+        padding: 0.5rem 0;
+        color: rgba(245, 245, 247, 0.7);
+        transition: all 0.2s ease;
+    }
+
+    .mega-menu-item:hover {
+        color: #ffffff;
+        transform: translateX(5px);
+    }
+
+
+
+    .product-preview {
+        display: none;
+        transition: all 0.3s ease;
+    }
+
+    .product-preview.active {
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 0.3s ease;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+        .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(10, 10, 10, 0.98);
+        z-index: 100;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-close {
+        font-size: 1.5rem;
+        color: #f5f5f7;
+        background: none;
+        border: none;
+    }
+
+    .mobile-menu-item {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-link {
+        font-size: 1.125rem;
+        color: #f5f5f7;
+    }
+
+    .mobile-submenu {
+        padding-left: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, margin-top 0.3s ease;
+    }
+    
+        .mobile-submenu.show {
+        margin-top: 1rem;
+    }
+
+    .mobile-submenu-item {
+        padding: 0.75rem 0;
+    }
+
+    .mobile-submenu-link {
+        color: rgba(245, 245, 247, 0.7);
+        transition: color 0.2s ease;
+    }
+
+    .mobile-submenu-link:hover {
+        color: rgba(245, 245, 247, 1);
+    }
+
+        .language-btn-active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+        .menu-arrow.active {
+        transform: rotate(180deg);
+    }
+
+        .language-suggestion-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        color: #f5f5f7;
+        padding: 8px 0;
+        z-index: 100;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+
+    .language-suggestion-bar.visible {
+        transform: translateY(0);
+    }
+
+    .language-suggestion-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .language-suggestion-btn {
+        background-color: #0071e3;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .language-suggestion-btn:hover {
+        background-color: #0077ed;
+    }
+
+    .language-suggestion-close {
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .language-suggestion-close:hover {
+        opacity: 1;
+    }
+
+        header.has-language-bar {
+        top: 40px;
+    }
+</style>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-tech-black bg-opacity-80 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="/ru-ru/index.html" class="flex items-center">
+                    <img src="/img/20250325183859254_t7ufca.png" alt="DOCAN" class="h-10 w-auto">
+                </a>
+            </div>
+
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="/ru-ru/index.html" class="nav-link text-tech-light hover:text-white transition-colors">Главная</a>
+
+                
+                <div class="nav-item relative group">
+                    <a href="/ru-ru/printers/printers.html" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        Принтеры
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container" id="printer-mega-menu"><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">Планшетные принтеры</h3><div class="grid grid-cols-1 gap-x-6"><div><a href="{defaultItemLink}" class="mega-menu-item" data-preview="W1216">W1216<img src="/img/20250402185137384_1rr0ad.webp" alt="W1216" class="w-8 h-8 inline-block ml-1"></a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="W2525">W2525<img src="/img/20250402185137384_1rr0ad.webp" alt="W2525" class="w-8 h-8 inline-block ml-1"></a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="horizo-x5000">Horizo X5000</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="horizo-x3000">Horizo X3000</a></div></div></div><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">Гибридные принтеры</h3><div class="grid grid-cols-1 gap-x-6"><div><a href="{defaultItemLink}" class="mega-menu-item" data-preview="C3200">C3200<img src="/img/20250402185137384_1rr0ad.webp" alt="C3200" class="w-8 h-8 inline-block ml-1"></a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="fusion-plus">Fusion Plus</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="fusion-standard">Fusion Standard</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="fusion-lite">Fusion Lite</a></div></div></div><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">Рулонные принтеры</h3><div class="grid grid-cols-1 gap-x-6"><div><a href="{defaultItemLink}" class="mega-menu-item" data-preview="velocity-r9000">Velocity R9000</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="velocity-r7000">Velocity R7000</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="velocity-r5000">Velocity R5000</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="velocity-r3000">Velocity R3000</a></div></div></div><div class="mega-menu-image">
+            <div class="product-preview active" id="W1216">
+                <img src="https://picsum.photos/600/400?random=20" alt="Horizo X9000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Horizo X9000</h3>
+                <p class="text-tech-light/70 text-center">Флагманский промышленный принтер для премиального рекламного производства и репродукции произведений искусства</p>
+            </div>
+            <div class="product-preview " id="W2525">
+                <img src="https://picsum.photos/600/400?random=21" alt="Horizo X7000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Horizo X7000</h3>
+                <p class="text-tech-light/70 text-center">Принтер бизнес-класса с оптимальным соотношением производительности и стоимости для малого и среднего бизнеса</p>
+            </div>
+            <div class="product-preview " id="horizo-x5000">
+                <img src="https://picsum.photos/600/400?random=22" alt="Horizo X5000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Horizo X5000</h3>
+                <p class="text-tech-light/70 text-center">Экономичное промышленное решение с высокой производительностью для стартапов и небольших мастерских</p>
+            </div>
+            <div class="product-preview " id="horizo-x3000">
+                <img src="https://picsum.photos/600/400?random=23" alt="Horizo X3000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Horizo X3000</h3>
+                <p class="text-tech-light/70 text-center">Компактный настольный принтер начального уровня для индивидуальных мастерских и кастомизации</p>
+            </div>
+            <div class="product-preview " id="C3200">
+                <img src="https://picsum.photos/600/400?random=28" alt="Fusion Pro" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Fusion Pro</h3>
+                <p class="text-tech-light/70 text-center">Флагманский гибридный принтер для премиальных рекламных агентств и крупных производств</p>
+            </div>
+            <div class="product-preview " id="fusion-plus">
+                <img src="https://picsum.photos/600/400?random=29" alt="Fusion Plus" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Fusion Plus</h3>
+                <p class="text-tech-light/70 text-center">Гибридный принтер бизнес-класса для средних и крупных рекламных агентств</p>
+            </div>
+            <div class="product-preview " id="fusion-standard">
+                <img src="https://picsum.photos/600/400?random=30" alt="Fusion Standard" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Fusion Standard</h3>
+                <p class="text-tech-light/70 text-center">Стандартное гибридное решение для малых и средних рекламных производств</p>
+            </div>
+            <div class="product-preview " id="fusion-lite">
+                <img src="https://picsum.photos/600/400?random=31" alt="Fusion Lite" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Fusion Lite</h3>
+                <p class="text-tech-light/70 text-center">Гибридный принтер начального уровня для небольших агентств и стартапов</p>
+            </div>
+            <div class="product-preview " id="velocity-r9000">
+                <img src="https://picsum.photos/600/400?random=35" alt="Velocity R9000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Velocity R9000</h3>
+                <p class="text-tech-light/70 text-center">Флагманский широкоформатный рулонный принтер для производства рекламных баннеров и обоев</p>
+            </div>
+            <div class="product-preview " id="velocity-r7000">
+                <img src="https://picsum.photos/600/400?random=36" alt="Velocity R7000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Velocity R7000</h3>
+                <p class="text-tech-light/70 text-center">Профессиональный рулонный принтер для производства рекламных материалов и обоев</p>
+            </div>
+            <div class="product-preview " id="velocity-r5000">
+                <img src="https://picsum.photos/600/400?random=37" alt="Velocity R5000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Velocity R5000</h3>
+                <p class="text-tech-light/70 text-center">Стандартное рулонное решение для малых и средних рекламных производств</p>
+            </div>
+            <div class="product-preview " id="velocity-r3000">
+                <img src="https://picsum.photos/600/400?random=38" alt="Velocity R3000" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Velocity R3000</h3>
+                <p class="text-tech-light/70 text-center">Рулонный принтер начального уровня для небольших агентств и стартапов</p>
+            </div></div></div>
+                    </div>
+                </div>
+
+                
+                <div class="nav-item relative group">
+                    <a href="/ru-ru/inks/inks.html" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        Чернила
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container" id="ink-mega-menu"><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">UV чернила</h3><div class="grid grid-cols-2 gap-x-6"><div><h4 class="text-sm font-medium text-tech-accent mt-4">Стандартные чернила</h4><a href="{defaultItemLink}" class="mega-menu-item" data-preview="uv-standard">Стандартные UV чернила</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="uv-flexible">Гибкие UV чернила</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="uv-white">Белые UV чернила</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="uv-varnish">UV лак</a></div><div><h4 class="text-sm font-medium text-tech-accent mt-4">Специальные чернила</h4><a href="{defaultItemLink}" class="mega-menu-item" data-preview="special-metallic">Металлические чернила</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="special-fluorescent">Флуоресцентные чернила</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="special-security">Защитные чернила</a></div></div></div><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">Наборы чернил</h3><div class="space-y-1"><a href="{defaultItemLink}" class="mega-menu-item" data-preview="set-cmyk">Набор CMYK</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="set-cmyk-w">Набор CMYK + белый</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="set-cmyk-wv">Набор CMYK + белый + лак</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="set-full">Полный набор цветов</a></div></div><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">Средства для очистки</h3><div class="space-y-1"><a href="{defaultItemLink}" class="mega-menu-item" data-preview="cleaning-solution">Очищающая жидкость</a><a href="{defaultItemLink}" class="mega-menu-item" data-preview="cleaning-kit">Набор для очистки</a></div></div><div class="mega-menu-image">
+            <div class="product-preview active" id="uv-standard">
+                <img src="https://picsum.photos/600/400?random=50" alt="Стандартные UV чернила" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Стандартные UV чернила</h3>
+                <p class="text-tech-light/70 text-center">Подходят для всех видов жестких материалов, яркие цвета, отличная адгезия и устойчивость к внешним воздействиям</p>
+            </div>
+            <div class="product-preview " id="uv-flexible">
+                <img src="https://picsum.photos/600/400?random=51" alt="Гибкие UV чернила" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Гибкие UV чернила</h3>
+                <p class="text-tech-light/70 text-center">Специально разработаны для гибких материалов, обладают эластичностью, не трескаются, идеальны для изгиба и растяжения</p>
+            </div>
+            <div class="product-preview " id="uv-white">
+                <img src="https://picsum.photos/600/400?random=52" alt="Белые UV чернила" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Белые UV чернила</h3>
+                <p class="text-tech-light/70 text-center">Чернила с высокой укрывистостью, подходят для прозрачных и темных материалов, обеспечивают яркую подложку</p>
+            </div>
+            <div class="product-preview " id="uv-varnish">
+                <img src="https://picsum.photos/600/400?random=53" alt="UV лак" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">UV лак</h3>
+                <p class="text-tech-light/70 text-center">Обеспечивает глянцевый или матовый эффект, улучшает текстуру и защиту отпечатков</p>
+            </div>
+            <div class="product-preview " id="special-metallic">
+                <img src="https://picsum.photos/600/400?random=54" alt="Металлические чернила" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Металлические чернила</h3>
+                <p class="text-tech-light/70 text-center">Создают эффект золота, серебра, меди и других металлов, идеальны для премиальной упаковки и декора</p>
+            </div>
+            <div class="product-preview " id="special-fluorescent">
+                <img src="https://picsum.photos/600/400?random=55" alt="Флуоресцентные чернила" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Флуоресцентные чернила</h3>
+                <p class="text-tech-light/70 text-center">Светятся под ультрафиолетом, подходят для защитных маркировок и специального декора</p>
+            </div>
+            <div class="product-preview " id="special-security">
+                <img src="https://picsum.photos/600/400?random=56" alt="Защитные чернила" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Защитные чернила</h3>
+                <p class="text-tech-light/70 text-center">Содержат специальные маркеры, могут использоваться для защиты продукции и отслеживания</p>
+            </div>
+            <div class="product-preview " id="set-cmyk">
+                <img src="https://picsum.photos/600/400?random=57" alt="Набор CMYK" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Набор CMYK</h3>
+                <p class="text-tech-light/70 text-center">Базовый набор из четырех цветов, подходит для большинства стандартных задач печати</p>
+            </div>
+            <div class="product-preview " id="set-cmyk-w">
+                <img src="https://picsum.photos/600/400?random=58" alt="Набор CMYK + белый" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Набор CMYK + белый</h3>
+                <p class="text-tech-light/70 text-center">Набор из пяти цветов с белыми чернилами, идеален для печати на прозрачных и темных материалах</p>
+            </div>
+            <div class="product-preview " id="set-cmyk-wv">
+                <img src="https://picsum.photos/600/400?random=59" alt="Набор CMYK + белый + лак" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Набор CMYK + белый + лак</h3>
+                <p class="text-tech-light/70 text-center">Премиальный набор из шести цветов, обеспечивает богатые визуальные и тактильные эффекты</p>
+            </div>
+            <div class="product-preview " id="set-full">
+                <img src="https://picsum.photos/600/400?random=60" alt="Полный набор цветов" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Полный набор цветов</h3>
+                <p class="text-tech-light/70 text-center">Профессиональный набор, включающий все цвета, для премиальных задач печати</p>
+            </div>
+            <div class="product-preview " id="cleaning-solution">
+                <img src="https://picsum.photos/600/400?random=61" alt="Очищающая жидкость" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Очищающая жидкость</h3>
+                <p class="text-tech-light/70 text-center">Профессиональная жидкость для очистки печатающих головок, эффективно удаляет остатки чернил, продлевает срок службы</p>
+            </div>
+            <div class="product-preview " id="cleaning-kit">
+                <img src="https://picsum.photos/600/400?random=62" alt="Набор для очистки" class="w-full h-auto rounded-lg mb-4 object-cover">
+                <h3 class="text-xl font-bold text-center">Набор для очистки</h3>
+                <p class="text-tech-light/70 text-center">Комплексный набор для обслуживания принтера, включает все необходимые инструменты для очистки</p>
+            </div></div></div>
+                    </div>
+                </div>
+
+                
+                <div class="nav-item relative group">
+                    <a href="#" class="nav-link text-tech-light hover:text-white transition-colors flex items-center">
+                        Поддержка
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container" id="support-mega-menu"><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">Служба поддержки</h3><div class="grid grid-cols-2 gap-x-6"><div><a href="#contact" class="mega-menu-item">Связаться с нами</a><a href="/ru-ru/support/about.html" class="mega-menu-item">О компании</a><a href="#aftersale" class="mega-menu-item">Послепродажное обслуживание</a></div><div><a href="#faq" class="mega-menu-item">Частые вопросы</a><a href="#download" class="mega-menu-item">Центр загрузок</a><a href="#repair" class="mega-menu-item">Ремонтные услуги</a></div></div></div><div class="mega-menu-column wide"><h3 class="text-lg font-medium text-white">Обучение и ресурсы</h3><div class="grid grid-cols-2 gap-x-6"><div><a href="#training" class="mega-menu-item">Обучение работе</a><a href="#maintenance" class="mega-menu-item">Техническое обслуживание</a><a href="#videos" class="mega-menu-item">Видеоуроки</a></div><div><a href="#manuals" class="mega-menu-item">Руководство пользователя</a><a href="#docs" class="mega-menu-item">Техническая документация</a><a href="#updates" class="mega-menu-item">Обновление ПО</a></div></div></div><div class="mega-menu-column wide" style="grid-column: span 4"><h3 class="text-lg font-medium text-white">Контакты</h3><div class="mt-4 grid grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Горячая линия</h4>
+                            <p class="text-tech-light/70">400-888-9999 (с понедельника по воскресенье с 9:00 до 18:00)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Техподдержка по email</h4>
+                            <p class="text-tech-light/70">support@techprint.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Сервисные центры</h4>
+                            <p class="text-tech-light/70">Пекин, Шанхай, Гуанчжоу, Шэньчжэнь, Чэнду, Ухань, Сиань</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-tech-accent text-xl mt-1 mr-4">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Онлайн-поддержка</h4>
+                            <p class="text-tech-light/70">Рабочие дни 8:30-20:30, выходные 9:00-18:00</p>
+                        </div>
+                    </div></div></div></div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                
+                <div class="relative group">
+                    <button id="desktop-language-button" class="hidden md:flex items-center space-x-1 px-3 py-1.5 rounded-full border border-tech-light/30 text-tech-light hover:bg-tech-light/10 transition-all">
+                        <span class="text-sm font-medium">RU / EN</span>
+                        <i class="fas fa-language text-base ml-1"></i>
+                    </button>
+                    <div id="desktop-language-menu" class="absolute right-0 mt-2 w-36 bg-tech-dark border border-tech-light/20 rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <a href="/de-de/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">DE</span>
+                    <span class="ml-2">Deutsch</span>
+                </a>
+            
+                <a href="/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">EN</span>
+                    <span class="ml-2">English</span>
+                </a>
+            
+                <a href="/es-es/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">ES</span>
+                    <span class="ml-2">Español</span>
+                </a>
+            
+                <a href="/fr-fr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">FR</span>
+                    <span class="ml-2">Français</span>
+                </a>
+            
+                <a href="/ja-jp/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">日</span>
+                    <span class="ml-2">日本語</span>
+                </a>
+            
+                <a href="/ko-kr/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">한</span>
+                    <span class="ml-2">한국어</span>
+                </a>
+            
+                <a href="/ru-ru/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm border-b border-tech-light/10 flex items-center desktop-language-menu-item language-btn-active">
+                    <span class="w-5 inline-block">RU</span>
+                    <span class="ml-2">Русский</span>
+                </a>
+            
+                <a href="/zh-cn/" class="block px-4 py-2 text-tech-light hover:bg-tech-light/10 transition-colors text-sm flex items-center desktop-language-menu-item">
+                    <span class="w-5 inline-block">简</span>
+                    <span class="ml-2">简体中文</span>
+                </a>
+            </div>
+                </div>
+                <a href="/ru-ru/contact.html" class="hidden md:inline-block px-4 py-2 btn-primary rounded-full">
+                    Запросить цену
+                </a>
+                <button class="md:hidden text-tech-light text-xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="mobile-menu md:hidden" id="mobile-menu-panel">
+    <div class="mobile-menu-header">
+        <a href="/ru-ru/index.html" class="flex items-center">
+            <img src="/img/20250325183859254_t7ufca.png" alt="DOCAN" class="h-8 w-auto">
+        </a>
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="mobile-menu-content">
+        <div class="mobile-menu-item">
+            <a href="/ru-ru/index.html" class="mobile-menu-link">Главная</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="/ru-ru/printers/printers.html" class="mobile-menu-link">Принтеры</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="/ru-ru/inks/inks.html" class="mobile-menu-link">Чернила</a>
+        </div>
+
+        <div class="mobile-menu-item">
+            <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
+                <span>Поддержка</span>
+                <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
+            </span>
+            <div class="mobile-submenu" id="mobile-support-submenu">
+            <div class="mobile-submenu-item">
+                <a href="#contact" class="mobile-submenu-link">Связаться с нами</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="/ru-ru/support/about.html" class="mobile-submenu-link">О компании</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#aftersale" class="mobile-submenu-link">Послепродажное обслуживание</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#faq" class="mobile-submenu-link">Частые вопросы</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#download" class="mobile-submenu-link">Центр загрузок</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#repair" class="mobile-submenu-link">Ремонтные услуги</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#training" class="mobile-submenu-link">Обучение работе</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#maintenance" class="mobile-submenu-link">Техническое обслуживание</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#videos" class="mobile-submenu-link">Видеоуроки</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#manuals" class="mobile-submenu-link">Руководство пользователя</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#docs" class="mobile-submenu-link">Техническая документация</a>
+            </div>
+            <div class="mobile-submenu-item">
+                <a href="#updates" class="mobile-submenu-link">Обновление ПО</a>
+            </div></div>
+        </div>
+
+        <div class="mobile-menu-item">
+            <a href="/ru-ru/contact.html" class="mobile-menu-link text-tech-accent">Запросить цену</a>
+        </div>
+
+
+        
+        <div class="mobile-menu-item">
+            <span class="mobile-menu-link flex items-center justify-between cursor-pointer">
+                <span class="flex items-center">
+                    <i class="fas fa-language mr-2 text-tech-light/70 text-lg"></i>
+                    <span id="mobile-language-button">RU / EN</span>
+                </span>
+                <i class="fas fa-chevron-down text-xs transition-transform duration-300 menu-arrow"></i>
+            </span>
+            <div class="mobile-submenu" id="mobile-language-menu">
+                <div class="mobile-submenu-item">
+                    <a href="/de-de/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">DE</span>
+                        <span class="ml-2">Deutsch</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">EN</span>
+                        <span class="ml-2">English</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/es-es/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">ES</span>
+                        <span class="ml-2">Español</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/fr-fr/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">FR</span>
+                        <span class="ml-2">Français</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/ja-jp/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">日</span>
+                        <span class="ml-2">日本語</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/ko-kr/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">한</span>
+                        <span class="ml-2">한국어</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/ru-ru/" class="mobile-submenu-link flex items-center mobile-language-menu-item language-btn-active">
+                        <span class="w-5 inline-block">RU</span>
+                        <span class="ml-2">Русский</span>
+                    </a>
+                </div>
+            
+                <div class="mobile-submenu-item">
+                    <a href="/zh-cn/" class="mobile-submenu-link flex items-center mobile-language-menu-item">
+                        <span class="w-5 inline-block">简</span>
+                        <span class="ml-2">简体中文</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="language-suggestion-bar" class="language-suggestion-bar">
+    <div class="language-suggestion-container">
+        <span id="language-suggestion-text"></span>
+        <button id="language-suggestion-btn" class="language-suggestion-btn"></button>
+        <span id="language-suggestion-close" class="language-suggestion-close">
+            <i class="fas fa-times"></i>
+        </span>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+    
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu-panel');
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobile-menu-close').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu-panel');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        if (typeof observer !== 'undefined') {
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        
+        const menuItems = document.querySelectorAll('.mega-menu-item[data-preview]');
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                const previewId = this.getAttribute('data-preview');
+                const previewElement = document.getElementById(previewId);
+
+                
+                document.querySelectorAll('.product-preview').forEach(preview => {
+                    preview.classList.remove('active');
+                });
+
+                
+                if (previewElement) {
+                    previewElement.classList.add('active');
+                }
+            });
+        });
+
+
+    });
+
+    
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item > span.mobile-menu-link');
+    mobileMenuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const subMenu = this.nextElementSibling;
+            const arrow = this.querySelector('.menu-arrow');
+
+            if (subMenu && subMenu.classList.contains('mobile-submenu')) {
+                if (subMenu.style.maxHeight) {
+                    subMenu.style.maxHeight = null;
+                    
+                    if (arrow) arrow.classList.remove('active');
+                    
+                    subMenu.classList.remove('show');
+                } else {
+                    subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+                    
+                    if (arrow) arrow.classList.add('active');
+                    
+                    subMenu.classList.add('show');
+                }
+            }
+        });
+    });
+</script>
+
+<script id="script-get-current-language">
+        const currentLanguage = 'ru-ru';
+        const languageMap = {"zh-cn":{"displayText":"中文 / EN","fullName":"简体中文","shortName":"简","href":"/zh-cn/","ask":"检测到您的浏览器语言为简体中文，是否切换？","switchButton":"切换到简体中文"},"en-us":{"displayText":"EN / 中文","fullName":"English","shortName":"EN","href":"/","ask":"We detected that your browser language is English. Would you like to switch?","switchButton":"Switch to English"},"ja-jp":{"displayText":"日本語 / EN","fullName":"日本語","shortName":"日","href":"/ja-jp/","ask":"ブラウザーの言語が日本語に設定されています。切り替えますか？","switchButton":"日本語に切り替える"},"ko-kr":{"displayText":"한국어 / EN","fullName":"한국어","shortName":"한","href":"/ko-kr/","ask":"브라우저 언어가 한국어로 설정되어 있습니다. 전환하시겠습니까?","switchButton":"한국어로 전환"},"de-de":{"displayText":"DE / EN","fullName":"Deutsch","shortName":"DE","href":"/de-de/","ask":"Ihre Browsersprache ist Deutsch. Möchten Sie wechseln?","switchButton":"Zu Deutsch wechseln"},"fr-fr":{"displayText":"FR / EN","fullName":"Français","shortName":"FR","href":"/fr-fr/","ask":"La langue de votre navigateur est le français. Voulez-vous passer en français ?","switchButton":"Passer en français"},"es-es":{"displayText":"ES / EN","fullName":"Español","shortName":"ES","href":"/es-es/","ask":"El idioma de tu navegador es español. ¿Quieres cambiarlo?","switchButton":"Cambiar a español"},"ru-ru":{"displayText":"RU / EN","fullName":"Русский","shortName":"RU","href":"/ru-ru/","ask":"Язык вашего браузера - русский. Хотите изменить его?","switchButton":"Изменить на русский"}};
+    </script>
+
+
+
+<script>
+
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const getBrowserLanguage = () => {
+            const browserLang = navigator.language || navigator.userLanguage;
+            
+            return browserLang.toLowerCase().replace('_', '-');
+        };
+
+        const matchLanguage = (browserLang) => {
+            
+            if (languageMap[browserLang]) {
+                return browserLang;
+            }
+
+            
+            const mainLang = browserLang.split('-')[0];
+            for (const key of Object.keys(languageMap)) {
+                if (key.startsWith(mainLang + '-')) {
+                    return key;
+                }
+            }
+
+            
+            return currentLanguage;
+        };
+
+        const showLanguageSuggestion = () => {
+            const browserLang = getBrowserLanguage();
+            const matchedLang = matchLanguage(browserLang);
+
+            
+            if (matchedLang !== currentLanguage) {
+                const suggestedLang = languageMap[matchedLang];
+
+                if (!suggestedLang) return; 
+
+                
+                document.getElementById('language-suggestion-text').textContent = suggestedLang.ask;
+                document.getElementById('language-suggestion-btn').textContent = suggestedLang.switchButton;
+
+                
+                const suggestionBar = document.getElementById('language-suggestion-bar');
+                suggestionBar.classList.add('visible');
+
+                
+                document.querySelector('header').classList.add('has-language-bar');
+
+                
+                document.getElementById('language-suggestion-btn').onclick = function () {
+                    window.location.href = suggestedLang.href;
+                };
+
+                
+                document.getElementById('language-suggestion-close').onclick = function () {
+                    closeLanguageSuggestion();
+                    
+                    localStorage.setItem('language-suggestion-dismissed-time', new Date().getTime());
+                };
+            }
+        };
+
+        const closeLanguageSuggestion = () => {
+            const suggestionBar = document.getElementById('language-suggestion-bar');
+            suggestionBar.classList.remove('visible');
+            document.querySelector('header').classList.remove('has-language-bar');
+        };
+
+        
+        const hasBeenDismissed = localStorage.getItem('language-suggestion-dismissed-time') && new Date().getTime() - localStorage.getItem('language-suggestion-dismissed-time') < 1000 * 60 * 60 * 24;
+
+        
+        if (!hasBeenDismissed) {
+            showLanguageSuggestion();
+        }
+    });
+</script><style>
+    .article-content h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+        .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+    .article-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #f5f5f7;
+    }
+
+    .article-content p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul,
+    .article-content ol {
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul {
+        list-style-type: disc;
+    }
+
+    .article-content ol {
+        list-style-type: decimal;
+    }
+
+    .article-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .article-content a {
+        color: #0071e3;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    .article-content a:hover {
+        color: #0062c3;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #0071e3;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(245, 245, 247, 0.7);
+    }
+
+    .article-content code {
+        background-color: #2a2a2a;
+        color: #f5f5f7;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        border-radius: 3px;
+    }
+
+    .article-content pre {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content pre code {
+        background-color: transparent;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+    }
+
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<main class="pt-24 pb-16 bg-tech-black">
+    <div class="container mx-auto px-4 max-w-4xl">
+        
+        
+
+        
+        <div id="article-content" class="article-content"><h1>Добро пожаловать в DOCAN</h1>
+<p><strong>DOCAN</strong> — ведущий китайский производитель UV-принтеров, специализирующийся на исследованиях, разработках, производстве и продаже оборудования с собственными интеллектуальными правами. С момента основания в 2005 году мы постоянно внедряем инновации, стремясь предоставлять клиентам по всему миру высококачественное цифровое печатное оборудование и комплексные решения.</p>
+<p>Наши UV-принтеры широко применяются для печати на стекле, алюминиевых композитных панелях, картоне и других материалах. Благодаря превосходному качеству и инновационным технологиям мы заслужили доверие и признание клиентов по всему миру.</p>
+<p>Как лидер отрасли, DOCAN продолжает задавать тенденции в развитии UV-печати, создавая большую ценность для клиентов по всему миру.</p>
+</div>
+    </div>
+</main>
+
+<section id="contact" class="py-20 bg-tech-black">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Контакты</h2>
+                <p class="text-lg text-tech-light/80 mb-8 fade-in">
+                    Наша профессиональная команда готова помочь вам с любой информацией о продукции или разработкой индивидуальных решений.
+                </p>
+
+                <div class="space-y-6 fade-in">
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Адрес компании</h4>
+                            <p class="text-tech-light/70">Китай, Шанхай, район Пудун, зона высоких технологий Чжанцзян, ул. Кэюань, 88</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Телефон</h4>
+                            <p class="text-tech-light/70">400-888-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="text-white text-xl mt-1 mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Email</h4>
+                            <p class="text-tech-light/70">info@techprint.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 fade-in">
+                    <h4 class="font-medium mb-4">Мы в соцсетях</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-tech-gray flex items-center justify-center text-tech-light hover:bg-white hover:text-tech-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apple-card p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">Запрос цены</h3>
+                <form id="contactForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Имя</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium">Название компании</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium">Телефон</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interest" class="block mb-2 text-sm font-medium">Интересующая продукция</label>
+                        <select id="interest" name="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
+                            <option value="">Выберите...</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
+                            <option value="custom">Индивидуальные решения</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium">Сообщение</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light"></textarea>
+                    </div>
+
+                    <div id="formStatus" class="mb-4 hidden">
+                        <p id="formStatusMessage" class="text-center py-2 rounded-md"></p>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 btn-primary rounded-full">
+                        Отправить запрос
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const formStatusMessage = document.getElementById('formStatusMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Отправка...';
+                submitButton.disabled = true;
+                
+                
+                const formData = {
+                    name: contactForm.elements['name'].value,
+                    company: contactForm.elements['company'].value,
+                    email: contactForm.elements['email'].value,
+                    phone: contactForm.elements['phone'].value,
+                    interest: contactForm.elements['interest'].value,
+                    message: contactForm.elements['message'].value
+                };
+                
+                try {
+                    
+                    const response = await fetch('/api/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    
+                    formStatus.classList.remove('hidden');
+                    
+                    if (result.success) {
+                        formStatus.classList.add('bg-green-600');
+                        formStatus.classList.remove('bg-red-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = 'Ваше сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.';
+                        contactForm.reset();
+                    } else {
+                        formStatus.classList.add('bg-red-600');
+                        formStatus.classList.remove('bg-green-600');
+                        formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                        formStatusMessage.textContent = `Ошибка отправки: ${result.message}`;
+                    }
+                } catch (error) {
+                    
+                    formStatus.classList.remove('hidden');
+                    formStatus.classList.add('bg-red-600');
+                    formStatus.classList.remove('bg-green-600');
+                    formStatusMessage.className = 'text-center py-2 rounded-md text-white';
+                    formStatusMessage.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.';
+                    console.error('Ошибка при отправке формы:', error);
+                } finally {
+                    
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            });
+        }
+    });
+</script><style>
+    .article-content h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+        .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(245, 245, 247, 0.2);
+        color: #ffffff;
+    }
+
+    .article-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #f5f5f7;
+    }
+
+    .article-content p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul,
+    .article-content ol {
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        color: rgba(245, 245, 247, 0.8);
+    }
+
+    .article-content ul {
+        list-style-type: disc;
+    }
+
+    .article-content ol {
+        list-style-type: decimal;
+    }
+
+    .article-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .article-content a {
+        color: #0071e3;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    .article-content a:hover {
+        color: #0062c3;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #0071e3;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(245, 245, 247, 0.7);
+    }
+
+    .article-content code {
+        background-color: #2a2a2a;
+        color: #f5f5f7;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        border-radius: 3px;
+    }
+
+    .article-content pre {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content pre code {
+        background-color: transparent;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+    }
+
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<main class="pt-24 pb-16 bg-tech-black">
+    <div class="container mx-auto px-4 max-w-4xl">
+        
+        
+
+        
+        <div id="article-content" class="article-content"><h2>Введение</h2>
+<p>TechPrint с гордостью представляет <strong>ProPrint X9000</strong> - революционный промышленный UV-принтер, который переопределяет стандарты печатной индустрии. Сочетая передовые технологии и выдающуюся производительность, X9000 предлагает непревзойденные решения для различных отраслей.</p>
+<p><img src="https://picsum.photos/800/400?random=31" alt="Образцы печати ProPrint X9000"></p>
+<h2>Ключевые преимущества</h2>
+<p>ProPrint X9000 обладает рядом уникальных характеристик:</p>
+<h3>1. Высокая точность и скорость</h3>
+<p>Оснащенный новейшими промышленными печатающими головками, X9000 достигает физического разрешения до <strong>1440 dpi</strong>. Инновационный режим печати обеспечивает впечатляющую скорость до <strong>60м²/час</strong> без потери качества.</p>
+<p>```javascript
+// Пример кода: управление скоростью печати
+function setPrintSpeed(mode) {
+  if (mode === 'draft') {
+    return 60; // м²/час
+  } else if (mode === 'standard') {
+    return 30;
+  } else {
+    return 15; // высокое качество
+  }
+}
+```</p>
+<h3>2. Широкая совместимость с материалами</h3>
+<p>Будь то <strong>стекло, акрил, дерево, металл</strong> или <strong>пластик</strong>, X9000 справляется со всеми. Передовая система UV LED-отверждения обеспечивает мгновенное закрепление чернил на любых поверхностях.</p>
+<ul>
+<li>Стекло</li>
+<li>Акрил</li>
+<li>Дерево</li>
+<li>Металл (требуется подготовка)</li>
+<li>ПВХ-панели</li>
+<li>Кожа</li>
+<li>И многое другое...</li>
+</ul>
+<h3>3. Интеллектуальная система управления</h3>
+<p>15.6-дюймовый сенсорный экран и собственное программное обеспечение обеспечивают интуитивно понятное управление. Поддержка удаленного мониторинга, автоматической верстки и интеллектуального управления цветом.</p>
+<p>&gt; "Умная система ProPrint X9000 значительно упростила наши рабочие процессы и сократила количество ошибок." - отзыв клиента</p>
+<h2>Технические особенности</h2>
+<table>
+<thead>
+<tr>
+<th>Характеристика</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Технология головок</td>
+<td>8-12 промышленных пьезоэлектрических головок</td>
+</tr>
+<tr>
+<td>Конфигурация чернил</td>
+<td>CMYK + W + V + специальные цвета (опция)</td>
+</tr>
+<tr>
+<td>Макс. высота печати</td>
+<td>150мм</td>
+</tr>
+<tr>
+<td>Система UV-отверждения</td>
+<td>Двойные LED-лампы, регулируемая мощность, длительный срок службы</td>
+</tr>
+<tr>
+<td>Платформа</td>
+<td>Вакуумная платформа с зональным управлением</td>
+</tr>
+</tbody></table>
+<h2>Области применения</h2>
+<p>ProPrint X9000 находит применение в самых разных сферах:</p>
+<ol>
+<li><strong>Рекламные вывески</strong>: высококачественная наружная реклама, внутренние указатели.</li>
+<li><strong>Интерьерный декор</strong>: индивидуальные панно, стеклянные двери, мебельные фасады.</li>
+<li><strong>Промышленное производство</strong>: панели управления, маркировка оборудования.</li>
+<li><strong>Персонализированные изделия</strong>: чехлы для телефонов, подарки, репродукции произведений искусства.</li>
+</ol>
+<p><a href="https://example.com/proprint-x9000">Узнать больше о ProPrint X9000</a> или <a href="#contact">запросить коммерческое предложение</a>.</p>
+<hr>
+<p><em>TechPrint - будущее печатных технологий</em></p>
+</div>
+    </div>
+</main>
+
+<footer class="bg-tech-dark py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="#" class="text-tech-light text-2xl font-bold mb-6 inline-block">
+                    TechPrint
+                </a>
+                <p class="text-tech-light/70 mb-6">
+                    Специализируемся на промышленных UV-печатных решениях, предлагая высококачественное оборудование и комплексную техническую поддержку.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Продукция</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X9000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X7000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">ProPrint X5000</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Рулонный принтер ProPrint R-Series</a>
+                    </li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Аксессуары и расходные материалы</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Решения</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Рекламная индустрия</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Декор интерьеров</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Промышленный кастомизация</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Упаковочная печать</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Электронная промышленность</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Поддержка</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Техподдержка</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Сервисное обслуживание</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Обучение</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">FAQ</a></li>
+                    <li><a href="#" class="text-tech-light/70 hover:text-white transition-colors">Центр загрузок</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-tech-gray/30 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-tech-light/50 text-sm mb-4 md:mb-0">
+                © 2023 TechPrint Technologies. Все права защищены.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Политика конфиденциальности</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Условия использования</a>
+                <a href="#" class="text-tech-light/50 hover:text-white transition-colors text-sm">Карта сайта</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                
+                if (window.innerWidth < 768 && entry.target.style.transitionDelay) {
+                    entry.target.style.transitionDelay = '0s';
+                }
+
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+
+                
+                if (entry.target.style.transitionDelay) {
+                    
+                    const delayMs = entry.target.style.transitionDelay.endsWith('ms') ?
+                        parseFloat(entry.target.style.transitionDelay) :
+                        parseFloat(entry.target.style.transitionDelay) * 1000;
+                    setTimeout(() => {
+                        entry.target.style.transitionDelay = '0s';
+                    }, delayMs + 1000);
+                }
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeElementsOpacity = document.querySelectorAll('.fade-in-opacity');
+        
+        const allFadeElements = [...fadeElementsOpacity, ...fadeElements];
+
+        allFadeElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+
+
+</body></html>
