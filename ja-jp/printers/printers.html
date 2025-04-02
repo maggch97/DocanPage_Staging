@@ -1145,7 +1145,7 @@
     }
 </style>
 
-<section id="#flatbed" class="pd-20 bg-tech-black product-category-section">
+<section id="flatbed" class="pd-20 bg-tech-black product-category-section">
     <div class="container mx-auto px-4">
         <div class="mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">フラットベッドプリンター</h2>
@@ -1759,6 +1759,96 @@
             
         </div>
     </div>
+</section><style>
+    .product-category-section {
+        scroll-margin-top: 144px;
+    }
+</style>
+
+<section id="accessories" class="pd-20 bg-tech-black product-category-section">
+    <div class="container mx-auto px-4">
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">アクセサリー＆消耗品</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
+                高品質な純正アクセサリーと消耗品で、プリンターの最適な状態を維持
+            </p>
+        </div>
+
+        
+    </div>
+</section>
+
+<section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
+    <div class="container mx-auto px-4">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=20" alt="UVインク" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-3">UVインク </h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        
+                        
+                        
+                    </div>
+                    <p class="text-tech-light/70 mb-4">
+                        純正高品質UVインク。鮮やかで長持ちする発色、各種素材表面に対応、環境に優しく無臭。
+                    </p>
+                    <a href="/ja-jp/inks/inks.html" class="inline-flex items-center text-tech-accent">
+                        詳細を見る <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=21" alt="純正プリントヘッド" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-3">純正プリントヘッド </h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        
+                        
+                        
+                    </div>
+                    <p class="text-tech-light/70 mb-4">
+                        産業用高精度プリントヘッド。安定性と信頼性に優れ、長寿命で全シリーズのプリンターに対応。
+                    </p>
+                    <a href="/ja-jp/contact.html" class="inline-flex items-center text-tech-accent">
+                        購入のお問い合わせ <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=22" alt="メンテナンスキット" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-3">メンテナンスキット </h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        
+                        
+                        
+                    </div>
+                    <p class="text-tech-light/70 mb-4">
+                        専門メンテナンスキット。クリーニング液、ワイプ、インク吸収材などを含み、機器の寿命を延長。
+                    </p>
+                    <a href="/ja-jp/contact.html" class="inline-flex items-center text-tech-accent">
+                        購入のお問い合わせ <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </div>
 </section><footer class="bg-tech-dark py-12">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -1876,103 +1966,4 @@
 </script>
 
 
-<style>
-    .category-nav {
-        position: sticky;
-        top: 72px;
-        z-index: 10;
-        margin-top: 0;
-    }
-
-    .category-nav-item {
-        transition: all 0.3s ease;
-    }
-
-    .category-nav-item.active {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-    }
-
-    .category-nav-item:hover:not(.active) {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-</style>
-
-<div class="bg-tech-dark category-nav">
-    <div class="container mx-auto px-4 mb-16">
-        <div class="flex overflow-x-auto py-4 space-x-4 no-scrollbar">
-            <a href="#flatbed" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">フラットベッドプリンター</a>
-            <a href="#hybrid" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">ハイブリッドプリンター</a>
-            <a href="#roll" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">ロールプリンター</a>
-            <a href="#accessories" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">アクセサリーと消耗品</a>
-            
-            
-            
-        </div>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        
-        const navItems = document.querySelectorAll('.category-nav-item');
-        const sections = document.querySelectorAll('section[id]');
-
-        function setActiveNavItem() {
-            let scrollY = window.pageYOffset;
-            let activeCategory = null;
-
-            
-            const categoryElements = document.querySelectorAll('.product-category-section');
-
-            categoryElements.forEach(categoryEl => {
-                const categoryId = categoryEl.getAttribute('id');
-                
-                const categoryTop = categoryEl.offsetTop - 144;
-                let categoryBottom = categoryTop + categoryEl.offsetHeight;
-
-                
-                const seriesElements = document.querySelectorAll(`.product-series-section`);
-
-                
-                let nextCategoryTop = Infinity;
-                const currentIndex = Array.from(categoryElements).indexOf(categoryEl);
-                if (currentIndex < categoryElements.length - 1) {
-                    const nextCategoryEl = categoryElements[currentIndex + 1];
-                    nextCategoryTop = nextCategoryEl.offsetTop;
-                }
-
-                
-                seriesElements.forEach(seriesEl => {
-                    
-                    if (seriesEl.offsetTop > categoryEl.offsetTop && seriesEl.offsetTop < nextCategoryTop) {
-                        
-                        const seriesBottom = seriesEl.offsetTop + seriesEl.offsetHeight;
-                        if (seriesBottom > categoryBottom) {
-                            categoryBottom = seriesBottom;
-                        }
-                    }
-                });
-
-                
-                if (scrollY >= categoryTop && scrollY < categoryBottom) {
-                    activeCategory = categoryId;
-                }
-            });
-
-            
-            if (activeCategory) {
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    const href = item.getAttribute('href');
-                    if (href === `#${activeCategory}`) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        }
-
-        window.addEventListener('scroll', setActiveNavItem);
-        setActiveNavItem();
-    });
-</script></body></html>
+</body></html>

@@ -1145,7 +1145,7 @@
     }
 </style>
 
-<section id="#flatbed" class="pd-20 bg-tech-black product-category-section">
+<section id="flatbed" class="pd-20 bg-tech-black product-category-section">
     <div class="container mx-auto px-4">
         <div class="mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Impresoras de mesa plana</h2>
@@ -1759,6 +1759,96 @@
             
         </div>
     </div>
+</section><style>
+    .product-category-section {
+        scroll-margin-top: 144px;
+    }
+</style>
+
+<section id="accessories" class="pd-20 bg-tech-black product-category-section">
+    <div class="container mx-auto px-4">
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Accesorios y consumibles</h2>
+            <p class="text-lg text-tech-light/80 max-w-3xl fade-in">
+                Accesorios y consumibles originales de alta calidad para garantizar el rendimiento óptimo de su impresora
+            </p>
+        </div>
+
+        
+    </div>
+</section>
+
+<section id="horizo-series" class="pb-10 bg-tech-black product-series-section">
+    <div class="container mx-auto px-4">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=20" alt="Tinta UV" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-3">Tinta UV </h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        
+                        
+                        
+                    </div>
+                    <p class="text-tech-light/70 mb-4">
+                        Tinta UV original de alta calidad, colores vibrantes y duraderos, compatible con múltiples superficies, ecológica y sin olores.
+                    </p>
+                    <a href="/es-es/inks/inks.html" class="inline-flex items-center text-tech-accent">
+                        Ver detalles <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.1s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=21" alt="Cabezales de impresión originales" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-3">Cabezales de impresión originales </h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        
+                        
+                        
+                    </div>
+                    <p class="text-tech-light/70 mb-4">
+                        Cabezales industriales de alta precisión, fiables y duraderos, compatibles con todas las series de impresoras.
+                    </p>
+                    <a href="/es-es/contact.html" class="inline-flex items-center text-tech-accent">
+                        Contactar para compra <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="product-card apple-card overflow-hidden rounded-2xl fade-in" style="transition-delay: 0.2s;">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=22" alt="Kit de mantenimiento" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-3">Kit de mantenimiento </h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        
+                        
+                        
+                    </div>
+                    <p class="text-tech-light/70 mb-4">
+                        Kit profesional con líquido limpiador, paños y absorbentes para prolongar la vida útil del equipo.
+                    </p>
+                    <a href="/es-es/contact.html" class="inline-flex items-center text-tech-accent">
+                        Contactar para compra <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </div>
 </section><footer class="bg-tech-dark py-12">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -1876,103 +1966,4 @@
 </script>
 
 
-<style>
-    .category-nav {
-        position: sticky;
-        top: 72px;
-        z-index: 10;
-        margin-top: 0;
-    }
-
-    .category-nav-item {
-        transition: all 0.3s ease;
-    }
-
-    .category-nav-item.active {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-    }
-
-    .category-nav-item:hover:not(.active) {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-</style>
-
-<div class="bg-tech-dark category-nav">
-    <div class="container mx-auto px-4 mb-16">
-        <div class="flex overflow-x-auto py-4 space-x-4 no-scrollbar">
-            <a href="#flatbed" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Impresoras de mesa plana</a>
-            <a href="#hybrid" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Impresoras híbridas</a>
-            <a href="#roll" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Impresoras de rollo</a>
-            <a href="#accessories" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">Accesorios y consumibles</a>
-            
-            
-            
-        </div>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        
-        const navItems = document.querySelectorAll('.category-nav-item');
-        const sections = document.querySelectorAll('section[id]');
-
-        function setActiveNavItem() {
-            let scrollY = window.pageYOffset;
-            let activeCategory = null;
-
-            
-            const categoryElements = document.querySelectorAll('.product-category-section');
-
-            categoryElements.forEach(categoryEl => {
-                const categoryId = categoryEl.getAttribute('id');
-                
-                const categoryTop = categoryEl.offsetTop - 144;
-                let categoryBottom = categoryTop + categoryEl.offsetHeight;
-
-                
-                const seriesElements = document.querySelectorAll(`.product-series-section`);
-
-                
-                let nextCategoryTop = Infinity;
-                const currentIndex = Array.from(categoryElements).indexOf(categoryEl);
-                if (currentIndex < categoryElements.length - 1) {
-                    const nextCategoryEl = categoryElements[currentIndex + 1];
-                    nextCategoryTop = nextCategoryEl.offsetTop;
-                }
-
-                
-                seriesElements.forEach(seriesEl => {
-                    
-                    if (seriesEl.offsetTop > categoryEl.offsetTop && seriesEl.offsetTop < nextCategoryTop) {
-                        
-                        const seriesBottom = seriesEl.offsetTop + seriesEl.offsetHeight;
-                        if (seriesBottom > categoryBottom) {
-                            categoryBottom = seriesBottom;
-                        }
-                    }
-                });
-
-                
-                if (scrollY >= categoryTop && scrollY < categoryBottom) {
-                    activeCategory = categoryId;
-                }
-            });
-
-            
-            if (activeCategory) {
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    const href = item.getAttribute('href');
-                    if (href === `#${activeCategory}`) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        }
-
-        window.addEventListener('scroll', setActiveNavItem);
-        setActiveNavItem();
-    });
-</script></body></html>
+</body></html>
