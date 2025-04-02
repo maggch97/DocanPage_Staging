@@ -1118,6 +1118,9 @@
             <a href="#hybrid" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">ニュートラルインク</a>
             <a href="#roll" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">フレキシブルインク</a>
             <a href="#accessories" class="category-nav-item px-5 py-2 rounded-full whitespace-nowrap">アクセサリーと消耗品</a>
+            
+            
+            
         </div>
     </div>
 </div>
@@ -1134,16 +1137,16 @@
 
             
             const categoryElements = document.querySelectorAll('.product-category-section');
-            
+
             categoryElements.forEach(categoryEl => {
                 const categoryId = categoryEl.getAttribute('id');
                 
                 const categoryTop = categoryEl.offsetTop - 144;
                 let categoryBottom = categoryTop + categoryEl.offsetHeight;
-                
+
                 
                 const seriesElements = document.querySelectorAll(`.product-series-section`);
-                
+
                 
                 let nextCategoryTop = Infinity;
                 const currentIndex = Array.from(categoryElements).indexOf(categoryEl);
@@ -1151,7 +1154,7 @@
                     const nextCategoryEl = categoryElements[currentIndex + 1];
                     nextCategoryTop = nextCategoryEl.offsetTop;
                 }
-                
+
                 
                 seriesElements.forEach(seriesEl => {
                     
@@ -1163,13 +1166,13 @@
                         }
                     }
                 });
-                
+
                 
                 if (scrollY >= categoryTop && scrollY < categoryBottom) {
                     activeCategory = categoryId;
                 }
             });
-            
+
             
             if (activeCategory) {
                 navItems.forEach(item => {
