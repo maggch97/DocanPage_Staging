@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head>
+<!DOCTYPE html><html lang="zh-CN" class="no-js"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProPrint X9000 - Professional UV Flatbed Printer | TechPrint</title>
@@ -21,6 +21,7 @@
     </script>
 
     
+    <script>document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');</script>
     <style>
         body {
             font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -40,7 +41,7 @@
             overflow: hidden;
         }
 
-        .fade-in {
+        .js .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
@@ -1914,16 +1915,14 @@
         threshold: 0.1
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeElements = document.querySelectorAll('.fade-in');
 
-        const fadeElementsOpacity = document.querySelectorAll('.fade-in-opacity');
-        
-        const allFadeElements = [...fadeElementsOpacity, ...fadeElements];
+    const fadeElementsOpacity = document.querySelectorAll('.fade-in-opacity');
+    
+    const allFadeElements = [...fadeElementsOpacity, ...fadeElements];
 
-        allFadeElements.forEach(element => {
-            observer.observe(element);
-        });
+    allFadeElements.forEach(element => {
+        observer.observe(element);
     });
 </script>
 <script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;a2b0f3404a454d44a6567166b264ade2&quot;}" defer=""></script>
