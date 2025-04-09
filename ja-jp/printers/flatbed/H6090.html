@@ -1421,7 +1421,7 @@
             <div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">お問い合わせ</h2>
                 <p class="text-lg text-tech-light/80 mb-8 fade-in">
-                    製品に関するご相談からカスタムソリューションまで、専門チームがいつでもサポートいたします。
+                    製品情報の詳細を知りたい方や、カスタムソリューションが必要な方に、専門チームがいつでもサポートいたします。
                 </p>
 
                 <div class="space-y-6 fade-in">
@@ -1441,7 +1441,7 @@
                         </div>
                         <div>
                             <h4 class="font-medium mb-1">電話番号</h4>
-                            <p class="text-tech-light/70">+86-21-33522693</p>
+                            <p class="text-tech-light/70">+86-18930026930</p>
                         </div>
                     </div>
 
@@ -1457,7 +1457,7 @@
                 </div>
 
                 <div class="mt-8 fade-in">
-                    <h4 class="font-medium mb-4">SNSフォロー</h4>
+                    <h4 class="font-medium mb-4">フォローする</h4>
                     <div class="flex space-x-4">
                         
                         
@@ -1476,7 +1476,7 @@
                 <form id="contactForm">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label for="name" class="block mb-2 text-sm font-medium">お名前</label>
+                            <label for="name" class="block mb-2 text-sm font-medium">名前</label>
                             <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
                         </div>
                         <div>
@@ -1500,9 +1500,9 @@
                         <label for="interest" class="block mb-2 text-sm font-medium">興味のある製品</label>
                         <select id="interest" name="interest" class="w-full px-4 py-3 bg-tech-gray border border-tech-gray rounded-md focus:outline-none focus:ring-2 focus:ring-white text-tech-light">
                             <option value="">選択してください...</option>
-                            <option value="x9000">W2525</option>
-                            <option value="x7000">C3200</option>
-                            <option value="x5000">FR3210</option>
+                            <option value="x9000">ProPrint X9000</option>
+                            <option value="x7000">ProPrint X7000</option>
+                            <option value="x5000">ProPrint X5000</option>
                             <option value="custom">その他/カスタムソリューション</option>
                         </select>
                     </div>
@@ -1570,7 +1570,7 @@
                         formStatus.classList.add('bg-green-600');
                         formStatus.classList.remove('bg-red-600');
                         formStatusMessage.className = 'text-center py-2 rounded-md text-white';
-                        formStatusMessage.textContent = 'お問い合わせを承りました。折り返しご連絡いたします。';
+                        formStatusMessage.textContent = 'お問い合わせは正常に送信されました。折り返しご連絡いたします。';
                         contactForm.reset();
                     } else {
                         formStatus.classList.add('bg-red-600');
@@ -1584,7 +1584,7 @@
                     formStatus.classList.add('bg-red-600');
                     formStatus.classList.remove('bg-green-600');
                     formStatusMessage.className = 'text-center py-2 rounded-md text-white';
-                    formStatusMessage.textContent = '送信時にエラーが発生しました。しばらくしてから再度お試しいただくか、直接ご連絡ください。';
+                    formStatusMessage.textContent = '送信中にエラーが発生しました。しばらくしてから再度お試しいただくか、直接ご連絡ください。';
                     console.error('フォーム送信エラー:', error);
                 } finally {
                     
